@@ -1,0 +1,8 @@
+{
+  "agent_turns": 11,
+  "cache_creation_tokens": 0,
+  "cache_read_tokens": 2444032,
+  "input_tokens": 2586290,
+  "output_tokens": 23749,
+  "wallclock_seconds": 534.959104285
+}

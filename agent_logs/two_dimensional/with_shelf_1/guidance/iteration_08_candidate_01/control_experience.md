@@ -1,0 +1,111 @@
+# Dogfish L64 Second-Row Wake-Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. The same guidance is used by matched 2-, 3-, and 4-worker runs.
+- The fixed task is `L64`, target `(9,9.5)L`, first-crossing radius `0.75L`,
+  inflow `0.18`, held-fish prewarm `200`, released horizon `300`, and actuator
+  envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect shared prewarm and released keyframe sheets before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination.
+- The sampled siblings now validate one narrow steering translation: adding a
+  bounded, same-sign body-frame bearing residual directly to the seed's
+  `0.55`-period acceleration carrier reached `0.7496L` after `62.304` time
+  units with head displacement `(-10.922,-4.153)L`. The target-blind seed
+  instead exited downward after `50.127`; an opposite-signed curvature-center
+  translation exited after `13.915` with negative progress; and a wholesale
+  slower/smaller curvature-center carrier became unstable after `121.517`
+  with RMS force/moment `16749.8/290421`. Preserve the successful carrier,
+  steering sign, and acceleration-residual interface before testing a new
+  mechanism; avoid interpreting slower scalar gait settings or an abstract
+  curvature bias as interchangeable with the validated residual. This lesson
+  is bounded to the shared prewarm case and is falsified if a later wake phase
+  loses target reach with the same residual topology.
+- The successful residual policy still touched both joint speed and
+  acceleration limits and used command-energy mean `1436.3`, while its visible
+  route corrected through a `4.293L` maximum lateral target offset. Because
+  compact diagnostics report maxima rather than saturation duty cycle, test
+  steering-prioritized carrier/residual allocation or another bounded
+  structural mixer before claiming bang-bang behavior or applying a broad
+  scalar slowdown. Retain such a mixer only if it preserves target reach and
+  leftward propulsion while improving limit contact, effort, load, or route
+  compactness; otherwise restore the validated composition and obtain richer
+  saturation histories before tuning authority.
+- The evaluated signal-routing sequence separates route response from actuator
+  allocation. Course-slip correction shortened arrival from `49.142` to
+  `48.032` and reduced RMS force/moment from `39.05/617.13` to `37.92/605.38`,
+  but raised mean command energy from `1272.25` to `1299.71`. Raw-bearing
+  steering reservation reached at `46.035` with mean effort `1237.06` and RMS
+  force/moment `51.40/761.46`. Feeding slip correction into both residual and
+  reservation regressed to `46.761`, `1259.82`, and `59.04/923.45`, whereas
+  using slip only in the residual and raw bearing independently for reservation
+  improved arrival to `45.727`, mean distance to `2.0543L`, and RMS force to
+  `49.36`; its effort `1264.65` and moment `799.31` did not improve. Therefore
+  treat measured lateral slip as route-response feedback and persistent target
+  geometry as the owner of recovery authority; composing them through one
+  corrected signal can release steering allocation too early. This is not a
+  general effort or load-reduction rule, is bounded to the shared prewarm, and
+  is falsified if a changed wake phase loses capture or reverses the observed
+  routing tradeoff. Three sampled artifacts with the `45.727` trajectory are
+  semantically equivalent copies, so they do not count as independent tests of
+  new mechanisms.
+- Phase-selective steering is the first sampled mechanism in this lineage to
+  improve the successful route by a large margin: applying a bounded
+  joint-state half-cycle asymmetry to the role-separated residual shortened
+  arrival from `45.727` to `36.471`, reduced mean distance from `2.0543L` to
+  `1.6860L`, and reduced total command energy from `57829` to `48700`. Its
+  earlier alignment and shallower final approach are visible in the released
+  sheets, so the gain is not passive wake advection. The tradeoff is higher
+  mean effort (`1264.7 -> 1335.3`), RMS force (`49.36 -> 63.59`), and RMS
+  moment (`799.31 -> 953.42`), with both joints still touching speed and
+  acceleration limits. Preserve the observed-phase redistribution when fast
+  capture is valuable, but treat it as redirect authority rather than an
+  efficiency result; test geometry-conditioned release or allocation before
+  increasing asymmetry. This boundary is falsified if another prewarm phase
+  loses capture or if reduced authority retains neither its route advantage
+  nor a measurable load/effort benefit.
+- Prefer normalized body-frame feedback. Wake phase, inflow, cylinder layout,
+  and target position are intended held-out axes; coordinate memorization is
+  not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

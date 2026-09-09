@@ -1,0 +1,62 @@
+{
+  "id": "2d_d3",
+  "kind": "2d",
+  "case": "d3",
+  "policy": "source_2d/cases/dogfish_2d_shape_policy/candidate_target_policy.jl",
+  "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46",
+  "config": "configs/d3.toml",
+  "config_sha256": "d21b4c3be6b17583046323673a7e339ac9f0aafbc66ef10cf5899e1467a9fd18",
+  "cylinders": [
+    {
+      "diameter_L": 0.65,
+      "label": "C1",
+      "x_L": 3.0,
+      "y_L": 8.5
+    },
+    {
+      "diameter_L": 0.65,
+      "label": "C2",
+      "x_L": 3.0,
+      "y_L": 11.0
+    },
+    {
+      "diameter_L": 0.65,
+      "label": "C3",
+      "x_L": 6.0,
+      "y_L": 7.25
+    },
+    {
+      "diameter_L": 0.65,
+      "label": "C4",
+      "x_L": 6.0,
+      "y_L": 9.75
+    }
+  ],
+  "prewarm_snapshot_sha256": "1e715e604764be48ce9e8bea4de38bb5a8fe94bb21aa6db6cce4992392a2f9b4",
+  "requested_frames": [
+    {
+      "frame_index": 1,
+      "sim_time": 200.0054931640625
+    },
+    {
+      "frame_index": 25,
+      "sim_time": 207.501953125
+    },
+    {
+      "frame_index": 50,
+      "sim_time": 215.31700134277344
+    },
+    {
+      "frame_index": 74,
+      "sim_time": 222.8135986328125
+    },
+    {
+      "frame_index": 99,
+      "sim_time": 230.62904357910156
+    },
+    {
+      "frame_index": 123,
+      "sim_time": 237.82852172851562
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "agent-fluid.field-selection.v1",
+  "field_values_modified": false,
+  "vorticity_limits": [
+    -0.8,
+    0.8
+  ],
+  "raw_repository": "https://github.com/scaling-group/agent-fluid",
+  "inputs": {
+    "raw_data/illustrated_2d/seed/frames.csv.gz": "a172e4f8d53ed3a1bdc5370567e48e3929bdf7bf751b56651efea54cd0b3ba43",
+    "raw_data/illustrated_2d/seed/summary.json": "1291aa53509e33525d9ce66ba792ad2245b44e1f9f53e1d19df4a6cfbd4249b4",
+    "raw_data/illustrated_2d/seed/final.vti.gz": "ec9f48792e6edcc69dd455059f872822fa2d33dfa6856a1f15045809eba3e125",
+    "raw_data/illustrated_2d/i6/frames.csv.gz": "da02756571d94481f9f0387ab1c510babc70779b789b65344b90a084f6a74e3c",
+    "raw_data/illustrated_2d/i6/summary.json": "81b2b6bebee18edc0affa98904c1b66d1e48fb54e28756f9fd9cf047cb15f87b",
+    "raw_data/illustrated_2d/i6/final.vti.gz": "3a2016c473291d978c925e8ed48426529358da110f99a3591c2e243b8f561a18",
+    "raw_data/illustrated_2d/i19/frames.csv.gz": "09ec06e319c8f545d3f17b8fe75f4bb803a58f10b5666b4b57d7e97102a857ba",
+    "raw_data/illustrated_2d/i19/summary.json": "2abdcc58bbd125e60649e1ec39e0f4962b26a8559cf65f0ec9b3ab5295ee83c8",
+    "raw_data/illustrated_2d/i19/final.vti.gz": "42315722b2e6b9cb2f70fa4ffb031d877e56cca02f3dab2558cd3ca044381bf2"
+  },
+  "frames": [
+    {
+      "id": "seed",
+      "figure": "2e",
+      "stage": "seed",
+      "raw_field": "raw_data/illustrated_2d/seed/final.vti.gz",
+      "sim_time": 250.12692260742188
+    },
+    {
+      "id": "i6",
+      "figure": "2e",
+      "stage": "i6",
+      "raw_field": "raw_data/illustrated_2d/i6/final.vti.gz",
+      "sim_time": 245.72702026367188
+    },
+    {
+      "id": "i19",
+      "figure": "2e",
+      "stage": "i19",
+      "raw_field": "raw_data/illustrated_2d/i19/final.vti.gz",
+      "sim_time": 233.72598266601562
+    }
+  ]
+}

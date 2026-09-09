@@ -1,0 +1,19 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "supplementary_table_02",
+  "display_label": "Implemented control structures across policy evolution",
+  "title": "Implemented control structures across policy evolution",
+  "panels": [
+    {
+      "id": "table",
+      "content": "Implemented control structures across policy evolution",
+      "mapping": "Seven author-written structural descriptions of the archived controller milestones.",
+      "inputs": []
+    }
+  ],
+  "inputs": {},
+  "output_stem": "supplementary_table_02_control_lineage",
+  "scientific_sources": [
+    "code/plotting/tables.index.json"
+  ]
+}

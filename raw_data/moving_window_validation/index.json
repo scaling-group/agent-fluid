@@ -1,0 +1,73 @@
+{
+  "schema": "aqua-moving-window-validation.v1",
+  "displays": [
+    "supplementary_table_01",
+    "supplementary_figure_03"
+  ],
+  "comparison_interval_T": [
+    0.0,
+    10.0
+  ],
+  "target_L": [
+    12.0,
+    8.0
+  ],
+  "policy": "code/simulation/validation/moving_window/moving_window_policy3d.jl",
+  "pairs": [
+    {
+      "case_id": "southwest_to_center",
+      "release": "Southwest",
+      "initial_center_L": [
+        5.0,
+        4.0
+      ],
+      "initial_heading_deg": -150.2551187,
+      "moving_window4x3": "raw_data/moving_window_validation/southwest_to_center/moving_window4x3",
+      "fullfield24x16": "raw_data/moving_window_validation/southwest_to_center/fullfield24x16"
+    },
+    {
+      "case_id": "southeast_to_center",
+      "release": "Southeast",
+      "initial_center_L": [
+        19.0,
+        4.0
+      ],
+      "initial_heading_deg": -29.7448813,
+      "moving_window4x3": "raw_data/moving_window_validation/southeast_to_center/moving_window4x3",
+      "fullfield24x16": "raw_data/moving_window_validation/southeast_to_center/fullfield24x16"
+    },
+    {
+      "case_id": "northwest_to_center",
+      "release": "Northwest",
+      "initial_center_L": [
+        5.0,
+        12.0
+      ],
+      "initial_heading_deg": 150.2551187,
+      "moving_window4x3": "raw_data/moving_window_validation/northwest_to_center/moving_window4x3",
+      "fullfield24x16": "raw_data/moving_window_validation/northwest_to_center/fullfield24x16"
+    },
+    {
+      "case_id": "northeast_to_center",
+      "release": "Northeast",
+      "initial_center_L": [
+        19.0,
+        12.0
+      ],
+      "initial_heading_deg": 29.7448813,
+      "moving_window4x3": "raw_data/moving_window_validation/northeast_to_center/moving_window4x3",
+      "fullfield24x16": "raw_data/moving_window_validation/northeast_to_center/fullfield24x16"
+    },
+    {
+      "case_id": "west_to_center",
+      "release": "West",
+      "initial_center_L": [
+        5.0,
+        8.0
+      ],
+      "initial_heading_deg": 180.0,
+      "moving_window4x3": "raw_data/moving_window_validation/west_to_center/moving_window4x3",
+      "fullfield24x16": "raw_data/moving_window_validation/west_to_center/fullfield24x16"
+    }
+  ]
+}

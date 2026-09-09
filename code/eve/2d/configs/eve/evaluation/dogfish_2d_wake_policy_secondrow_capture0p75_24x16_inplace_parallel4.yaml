@@ -1,0 +1,12 @@
+# @package _global_
+# Four policies rendezvous by iteration, then up to four independent CFD
+# processes share the outer PBS job's allocated H100. No child PBS jobs.
+
+evaluation:
+  steps:
+    - configs/eve/evaluation/dogfish_2d_wake_policy_secondrow_capture0p75_24x16_inplace_parallel4/evaluation.sh
+  failure_score:
+    score: -100.0
+    summary: 24x16 in-place parallel4 wake policy evaluation failed
+  seed_solver_score: null
+  seed_solver_skip_evaluation: false

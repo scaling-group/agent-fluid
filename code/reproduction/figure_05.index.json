@@ -1,0 +1,98 @@
+{
+  "schema": "agent-fluid.3d-render.v1",
+  "description": "Original Figure 5 field sources. The 9 T panel comes from a separate replay of the same controller; it is not interpolated from the other replay.",
+  "controller_sha256": "a445ed7dc42bad43b14ccfe0c1558ec554f5af29f0be35476291f38c02490390",
+  "frames": [
+    {
+      "id": "t03",
+      "frame": {
+        "frame_index": "2",
+        "sim_time": "3.0030007362365723",
+        "cycles": "0.03003000736236572",
+        "frame_path": "projected_multiwake_target_episode3d_000002.vti",
+        "center_x": "94.6944580078125",
+        "center_y": "93.08740234375",
+        "z_plane": "48.0",
+        "heading": "0.41445523500442505"
+      },
+      "raw_field": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000002.vti.gz",
+      "source_replay": "three_dimensional_keyframes_final_camera_20260822",
+      "sha256": "be944eedab6d63ae13b405fe8c7a4ae6870e78fff9eca8f2d648ca9cd5d275ce",
+      "frame_index_source": "raw_data/three_dimensional/illustrated_replay/vtk/frames.csv.gz"
+    },
+    {
+      "id": "t09",
+      "frame": {
+        "frame_index": "4",
+        "sim_time": "9.003498077392578",
+        "cycles": "0.500194337632921",
+        "frame_path": "projected_multiwake_target_episode3d_000004.vti",
+        "center_x": "94.7630615234375",
+        "center_y": "92.42547607421875",
+        "z_plane": "48.0",
+        "heading": "0.17926402390003204"
+      },
+      "raw_field": "raw_data/three_dimensional/illustrated_replay_t09/frame_t09.vti.gz",
+      "source_replay": "three_dimensional_closeup_v2_20260821",
+      "sha256": "8b417fb0ff815bcbf2b0cc280b345d7d2cb04b6f619dd88aa3c35dc497f2cfa9",
+      "frame_index_source": "raw_data/three_dimensional/illustrated_replay_t09/frames.csv.gz"
+    },
+    {
+      "id": "t12",
+      "frame": {
+        "frame_index": "3",
+        "sim_time": "12.001007080078125",
+        "cycles": "0.12001007080078124",
+        "frame_path": "projected_multiwake_target_episode3d_000003.vti",
+        "center_x": "92.766845703125",
+        "center_y": "92.31903076171875",
+        "z_plane": "48.0",
+        "heading": "0.2693463861942291"
+      },
+      "raw_field": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000003.vti.gz",
+      "source_replay": "three_dimensional_keyframes_final_camera_20260822",
+      "sha256": "8098ff9ad3f292da47d5bd00775c2758dc1965ede949634254cf1bec6793768a",
+      "frame_index_source": "raw_data/three_dimensional/illustrated_replay/vtk/frames.csv.gz"
+    },
+    {
+      "id": "t18",
+      "frame": {
+        "frame_index": "4",
+        "sim_time": "18.650497436523438",
+        "cycles": "0.1865049743652344",
+        "frame_path": "projected_multiwake_target_episode3d_000004.vti",
+        "center_x": "94.536376953125",
+        "center_y": "95.44122314453125",
+        "z_plane": "48.0",
+        "heading": "0.2944004237651825"
+      },
+      "raw_field": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000004.vti.gz",
+      "source_replay": "three_dimensional_keyframes_final_camera_20260822",
+      "sha256": "a733350a9bfa322653641b7090aaef3b48bf6289d432507d1ed60a69d1277aea",
+      "frame_index_source": "raw_data/three_dimensional/illustrated_replay/vtk/frames.csv.gz"
+    }
+  ],
+  "parameters": {
+    "percentile": 30,
+    "weak_percentile": 63,
+    "weak_core_fraction": 0.0,
+    "body_buffer_cells": -0.25,
+    "smoothing_iterations": 24,
+    "field_smoothing_sigma": 0.75,
+    "field_smoothing_radius": 1.5,
+    "color_smoothing_sigma": 0.65,
+    "color_field": "vertical-vorticity",
+    "color_limit_percentile": 92,
+    "fixed_color_limit": 0.0828802180290222,
+    "weak_opacity": 0.09,
+    "core_opacity": 0.38,
+    "elevation_deg": 16,
+    "side": -1,
+    "distance_l": 3.1,
+    "yaw_offset_deg": -45,
+    "focus_aft_l": -0.55,
+    "view_angle_deg": 27,
+    "body_opacity": 1
+  },
+  "panel_a": "Midplane and head trajectory from the same replay/VTI as the t=12 hero."
+}

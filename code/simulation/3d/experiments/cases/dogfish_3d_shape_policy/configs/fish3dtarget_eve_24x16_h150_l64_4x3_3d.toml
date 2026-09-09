@@ -1,0 +1,69 @@
+schema_version = "dogfish.projected_multiwake_3d.v1"
+
+# EvE continuation on the same 24L x 16L inertial task canvas as the
+# August-5 2D experiment. The world initial center (21.93,6.50)L and target
+# (9.00,9.50)L preserve the validated long-case displacement
+# (-12.93,+3.00)L. The 4L x 3L x 1.5L box remains only translated CFD storage.
+
+[free_swim]
+L = 64
+backend = "cuda"
+Re = 1000.0
+body_density = 1.0
+added_mass_scale = 1.0
+added_inertia_scale = 1.0
+max_dimensionless_dt = 0.0055
+
+[projected_multiwake_3d]
+source_case = "fish3dtarget_eve_24x16_h150_l64_4x3"
+source_case_sha256 = "26dfda789ad1363c8371691e5cdf7fac9088b3d0d095488198b166bd90b09b4a"
+reference_3d_commit = "9c009b2ad1ab380283e6aa0ea9b35e9ccde72b40"
+projection_contract = "quiescent_inertial_integer_cell_moving_window"
+
+domain_scale_x_L = 4.0
+domain_scale_y_L = 3.0
+domain_scale_z_L = 1.5
+z_plane_fraction = 0.5
+
+# Local storage anchor. World coordinates are supplied by the EvE evaluator.
+initial_center_x_L = 1.5
+initial_center_y_L = 1.5
+initial_heading_deg = 0.0
+
+target_x_L = 9.00
+target_y_L = 9.50
+capture_metric = "planar_xy"
+success_radius_L = 0.1
+
+cylinder_centers_x_L = []
+cylinder_centers_y_L = []
+cylinder_diameters_L = []
+cylinder_span_mode = "none"
+
+flow_velocity_L = [0.0, 0.0, 0.0]
+flow_perturbation = 0.0
+flow_seed = 20260815
+exit_bc = true
+prewarm_horizon = 0.05
+rollout_horizon = 150.0
+
+height_scale = 1.0
+caudal_fin = false
+fin_x_start = 0.80
+fin_x_end = 1.07
+fin_height = 0.11
+fin_half_thickness = 0.012
+locked_dofs = ["heave", "roll", "pitch"]
+
+initial_phi1_deg = 0.0
+initial_phi2_deg = 0.0
+phi_limit_deg = 45.0
+phi_dot_limit_deg = 260.0
+phi_ddot_limit_deg = 1800.0
+observation_history_length = 8
+
+vtk = false
+vtk_collection_name = "fish3dtarget_eve_24x16_h150_l64_4x3"
+vtk_fields = ["lambda2", "body"]
+vtk_flush_collection = true
+vtk_compress = true

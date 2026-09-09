@@ -1,0 +1,131 @@
+{
+  "Re": 1000.0,
+  "achieved_horizon": 10.0,
+  "horizon": 10.0,
+  "status": "ok",
+  "termination": "horizon",
+  "steps": 1819,
+  "wall_seconds": 6641.760439563,
+  "ms_per_step": 3651.3251454441997,
+  "runtime_resolution": 64,
+  "max_dimensionless_dt": 0.0055,
+  "domain_dims": [
+    1536,
+    1024,
+    96
+  ],
+  "domain_scale_L": [
+    24.0,
+    16.0,
+    1.5
+  ],
+  "body_geometry": "june13_superellipse_fan",
+  "body_geometry_source_sha256": "3c0cf44d069fdb130d615c0e98297ff7e3f04b54fe86220fb331527485e03015",
+  "geometry_sha256": "0ec11c16d63c5f687dc1bc50ff01af04824767892028536b23fa0ba8515677b0",
+  "body_height_scale": 1.0,
+  "added_mass": {
+    "forward": 135.76307678222656,
+    "forward_coefficient": 0.10000000149011612,
+    "inertia": 1303499.125,
+    "lateral": 2044.232666015625,
+    "model": "slender_body_superellipse",
+    "reference_volume": 1357.6307373046875,
+    "rotational_scale": 1.0,
+    "translational_scale": 1.0
+  },
+  "body_added_inertia_scale": 1.0,
+  "body_volume_centroid_x": 27.532766342163086,
+  "dry_mass": 1544.487060546875,
+  "dry_yaw_inertia": 429354.09375,
+  "caudal_fin_enabled": true,
+  "fin_half_thickness": 0.012,
+  "fin_lower_height": 0.11,
+  "fin_upper_height": 0.11,
+  "fin_x_start": 0.8,
+  "fin_x_end": 1.07,
+  "free_dofs": [
+    "surge_x",
+    "sway_y",
+    "yaw_z"
+  ],
+  "locked_dofs": [
+    "heave",
+    "roll",
+    "pitch"
+  ],
+  "fish_motion": "free_xy_yaw",
+  "fish_initial_center_L": [
+    5.0,
+    12.0
+  ],
+  "fish_initial_heading_deg": 150.2551187,
+  "fish_initial_joint_angles_deg": [
+    8.0,
+    -8.0
+  ],
+  "fish_initial_yaw_rate_rad_per_T": 0.0,
+  "target_L": [
+    12.0,
+    8.0
+  ],
+  "success_radius_L": 0.75,
+  "initial_distance_L": 7.565216064453125,
+  "final_distance_L": 4.447611331939697,
+  "minimum_distance_L": 4.447611331939697,
+  "captured": false,
+  "flow_velocity_L_per_T": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "cylinder_count": 0,
+  "cylinder_centers_L": [],
+  "cylinder_diameters_L": [],
+  "direct_quiescent_init": true,
+  "direct_uniform_initial_condition": true,
+  "initialization_mode": "uniform_direct",
+  "moving_window": false,
+  "moving_window_contract": null,
+  "moving_window_shift_count": 0,
+  "moving_window_shift_events": [],
+  "initial_frame_origin_L": [
+    0.0,
+    0.0
+  ],
+  "final_frame_origin_L": [
+    0.0,
+    0.0
+  ],
+  "frame_anchor_local_L": [
+    21.0,
+    14.0
+  ],
+  "virtual_domain": null,
+  "policy_sha256": "69e91e5da2a6c4018ae365ad53bb305d31dc64950d9fcf21b6fc9809635b2ecf",
+  "policy_params": {
+    "acceleration_limit": 31.41592653589793,
+    "control_period": 0.55,
+    "half_cycle_steering_fraction": 0.2,
+    "head_bias_limit": 0.06981317007977318,
+    "oscillator_amplitude": 0.4886921905584123,
+    "oscillator_mu": 0.35,
+    "response_rate_scale": 1.0,
+    "response_release_fraction": 0.35,
+    "tail_bias_limit": 0.17453292519943295,
+    "tail_damping": 0.65,
+    "tail_lag_gain": 0.8,
+    "target_lateral_scale": 0.3,
+    "turn_amplitude_relief_fraction": 0.15,
+    "turn_rate_limit": 2.5
+  },
+  "policy_adapter_gain_changes": false,
+  "observation_adapter": {
+    "force_normalization": "F/(rho*U^2*L^2)",
+    "local_flow_filter_alpha": 0.25,
+    "local_flow_sampling": "head_centered_face_average_plus_temporal_ema",
+    "moment_normalization": "Mz/(rho*U^2*L^3)"
+  },
+  "control_mode": "candidate_policy",
+  "reflection_equivariant_ibm_enabled": true,
+  "reflection_equivariant_ibm_sha256": "1fb90fad44fda1616a0537e2a6407d1d6ec1db395bf5197bf8501ed2337039f6"
+}

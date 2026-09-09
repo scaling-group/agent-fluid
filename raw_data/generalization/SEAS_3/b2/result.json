@@ -1,0 +1,84 @@
+{
+  "method": "SEAS",
+  "policy": "SEAS_3",
+  "case": "b2",
+  "summary": {
+    "target_reached": true,
+    "termination": "target_reached",
+    "steps": 6288,
+    "release_elapsed": 34.584014892578125,
+    "horizon": 300.0,
+    "L": 64,
+    "target": [
+      576.0,
+      608.0
+    ],
+    "target_x_L": 9.0,
+    "target_y_L": 9.5,
+    "success_radius": 48.0,
+    "success_radius_L": 0.75,
+    "initial_center": [
+      1344.0,
+      896.0
+    ],
+    "initial_head": [
+      1322.15283203125,
+      882.7548217773438
+    ],
+    "final_center": [
+      648.7032470703125,
+      615.259033203125
+    ],
+    "final_head": [
+      623.5947875976562,
+      613.6522216796875
+    ],
+    "final_distance": 47.92923355102539,
+    "min_distance": 47.92923355102539,
+    "domain_dims": [
+      1536,
+      1024
+    ],
+    "flow_speed": 0.18000000715255737,
+    "flow_seed": 20260714,
+    "initial_center_x_L": 21.0,
+    "initial_center_y_L": 14.0,
+    "initial_heading_deg": 28.99999966863366,
+    "cylinder_centers_x_L": [
+      3.0,
+      3.0,
+      7.5,
+      7.5
+    ],
+    "cylinder_centers_y_L": [
+      8.5,
+      11.0,
+      7.25,
+      9.75
+    ],
+    "cylinder_diameters_L": [
+      0.6499999761581421,
+      0.6499999761581421,
+      0.6499999761581421,
+      0.6499999761581421
+    ],
+    "dynamics_force_limit": 1000000.0,
+    "dynamics_speed_limit": 100.0,
+    "domain_exit_margin_L": 0.800000011920929,
+    "collision_clearance_L": 0.0,
+    "phi_dot_limit_deg": 260.0,
+    "phi_ddot_limit_deg": 1800.0,
+    "max_dimensionless_dt": 0.005499999970197678,
+    "distance_integral_score": -1.7486202714383527,
+    "observed_distance_integral_L": 1.0860585663139204,
+    "terminal_hold_integral_L": 0.6625617051244324,
+    "loaded_prewarm_snapshot": true,
+    "prewarm_steps": 0,
+    "loaded_episode_snapshot": false,
+    "unstable_failure": false
+  },
+  "configuration_sha256": "75e32c200846e32b9aaddfba63238137e6fa4888e07ee78ff11855cf1d4bdb95",
+  "initial_flow_state_sha256": "e51bfa491cba8565c6d1740e3409baef3eb8c46ea5c965ff26ebde282740dabd",
+  "original_summary_sha256": "64d2cc3e8fc29a1aa64c121bd240b74f7beffcdca82b3d2b65574bb0300a47f1",
+  "trajectory_sha256": "bef67bbe77e8c7d04d927a782f7912b3daa4f129cbde980e2f5864d633c516d7"
+}

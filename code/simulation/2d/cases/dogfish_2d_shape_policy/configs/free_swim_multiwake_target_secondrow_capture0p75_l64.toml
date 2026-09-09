@@ -1,0 +1,91 @@
+schema_version = "dogfish.run_config.v1"
+
+[free_swim]
+L = 64
+backend = "cuda"
+Re = 1000.0
+body_density = 1.0
+added_mass_scale = 1.0
+added_inertia_scale = 1.0
+max_dimensionless_dt = 0.0055
+gpu_monitor = true
+gpu_monitor_interval_s = 1
+gpu_monitor_indices = "0"
+
+[free_swim_multiwake_target_episode]
+output_root = "logs/free_swim_multiwake_target_secondrow_capture0p75_l64"
+horizon = 300.0
+prewarm_horizon = 200.0
+prewarm_with_fish = true
+prewarm_only = false
+wall_time_limit_s = 43200.0
+
+domain_scale_x = 24.0
+domain_scale_y = 16.0
+initial_center_x_L = 21.0
+initial_center_y_L = 14.0
+initial_heading_deg = 29.0
+
+# The cylinder rows are at x=3L and x=6L. Placing the target one more
+# row-spacing (3L) downstream of the second row gives x=9L. The target stays
+# on the wake corridor's y-midline used by the near-geometry campaign.
+target_x_L = 9.0
+target_y_L = 9.5
+success_radius_L = 0.75
+
+cylinder_centers_x_L = [3.0, 3.0, 6.0, 6.0]
+cylinder_centers_y_L = [8.5, 11.0, 7.25, 9.75]
+cylinder_diameters_L = [0.65, 0.65, 0.65, 0.65]
+collision_clearance_L = 0.0
+domain_exit_margin_L = 0.8
+cylinder_kick_amplitude_L = 0.0
+cylinder_kick_start = 0.0
+cylinder_kick_duration = 0.0
+cylinder_kick_cycles = 1.0
+
+flow_speed = 0.18
+flow_perturbation = 0.001
+flow_seed = 0x0135276a
+exit_bc = true
+
+# Production EvE evaluations stream sparse full-domain vorticity/body fields.
+# The scaling-side evaluator renders these VTK frames into the compact visual
+# observation consumed by the next official-core worker generation.
+frame_count = 32
+fps = 16
+render_frames = false
+plot_frames = false
+vtk = true
+vtk_collection_name = "wake_flow"
+vtk_fields = ["vorticity", "body"]
+vtk_flush_collection = true
+vtk_compress = false
+vtk_force_trigger = 1.0e6
+vtk_speed_trigger = 100.0
+vtk_trigger_min_interval = 0.01
+
+actuation_mode = "policy"
+# The selected engineering hard-cap / burst envelope.
+initial_phi1_deg = 8.0
+initial_phi2_deg = -8.0
+phi_limit_deg = 45.0
+phi_dot_limit_deg = 260.0
+phi_ddot_limit_deg = 1800.0
+observation_history_length = 8
+
+dynamics_force_limit = 1.0e6
+dynamics_speed_limit = 100.0
+command_energy_weight = 0.0
+power_proxy_weight = 0.0
+unstable_dynamics_penalty = 2.0
+station_success_bonus = 2.0
+survival_bonus_weight = 0.2
+final_distance_weight = 0.2
+distance_integral_weight = 1.0
+
+# A compatible held-fish prewarm state may be supplied at runtime.
+save_prewarm_snapshot = ""
+load_prewarm_snapshot = ""
+save_final_snapshot = true
+final_snapshot_path = ""
+load_episode_snapshot = ""

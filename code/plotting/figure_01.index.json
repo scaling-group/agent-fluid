@@ -1,0 +1,22 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "figure_01",
+  "display_label": "Figure 1",
+  "title": "Self-evolving scientific agent workflow",
+  "panels": [
+    {
+      "id": "workflow",
+      "content": "EvE workflow: co-evolution of design agents and executable controllers",
+      "mapping": "Executable workflow schematic with illustrative measured trajectory, flow field and progress from Figure 2; no synthetic observations.",
+      "inputs": [],
+      "output_stem": "figure_01_workflow"
+    }
+  ],
+  "inputs": {},
+  "build_id": "1",
+  "scientific_sources": [
+    "derived_data/figure_02/data/trajectory_centerlines.csv",
+    "derived_data/figure_02/data/figure_02_ab_candidates.csv",
+    "derived_data/figure_02/data/fields/i19.npz"
+  ]
+}

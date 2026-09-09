@@ -1,0 +1,40 @@
+# Matched still-water fallback for the formal 3D moving-window lane.  Relative
+# to dogfish_3d_moving_window_policy_eve64, only the physical environment fact
+# U_infinity=(0,0,0) and the corresponding evidence contract differ.
+
+defaults:
+  - runtime: default
+  - loop: default
+  - driver: codex_max
+  - logger: many_loggers
+  - application: dogfish_3d_moving_window_policy
+  - optimizer: dogfish_3d_moving_window_policy_stillwater
+  - evaluation: dogfish_3d_moving_window_policy_inplace_parallel4
+  - _self_
+
+label: dogfish-3d-moving-window-stillwater-l64-eve40-bookshelf-structured-guidance-evolving-minimal-cue-inplace-parallel4
+
+loop:
+  max_iterations: 40
+  n_workers_phase2: 4
+  n_parallel_phase2: 4
+  n_solver_examples_phase2: 4
+  n_optimizer_examples_phase2: 4
+  exclude_all_working_optimizers_from_examples: false
+  produce_optimizer_in_phase2: ${loop.n_workers_phase2}
+  optimizer_log_inheritance: current
+  boundary_repair_attempts: 2
+
+driver:
+  model: gpt-5.6-sol
+  reasoning_effort: xhigh
+  rollout_max_turns: 18
+  budget_prompt: true
+  web_search: live
+  timeout_seconds: 1800
+
+logger:
+  csv:
+    enabled: true
+  wandb:
+    enabled: false

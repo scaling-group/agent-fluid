@@ -1,0 +1,33 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "supplementary_figure_01",
+  "display_label": "Supplementary Figure 1",
+  "title": "Two-dimensional CFD validation",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Wake-transition boundary",
+      "mapping": "Plot Sr versus interpolated_A_D, with the reported +/-0.05 transition bracket and the published reference fit encoded in the plotting script.",
+      "inputs": [
+        "data/lagopoulos_transition_summary_7sr.csv"
+      ],
+      "output_stem": "supplementary_figure_01_a"
+    },
+    {
+      "id": "b",
+      "content": "Grid/time refinement",
+      "mapping": "Plot N_c versus mean_C_T and eta on paired axes. The second CSV preserves the underlying fixed-grid/fixed-phase time-step and waveform convergence checks; it is supporting source data, not an extra plotted curve.",
+      "inputs": [
+        "data/lagopoulos_grid_ct_eta_convergence.csv",
+        "data/lagopoulos_grid_convergence.csv"
+      ],
+      "output_stem": "supplementary_figure_01_b"
+    }
+  ],
+  "inputs": {
+    "data/lagopoulos_grid_convergence.csv": "32f2e24b2f24f0f7ebab96a8d53d27b3597583d13fd67a83603264596ed2e14e",
+    "data/lagopoulos_grid_ct_eta_convergence.csv": "736c74cc11120a47861f9e6eda608f9331afe34dfe1f6254f446f1b59613671b",
+    "data/lagopoulos_transition_summary_7sr.csv": "b4b2634e2c1e1379c0f0909138e008d57210f1ce9a379ef550911cf2b6c19779"
+  },
+  "build_id": "S1"
+}

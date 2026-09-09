@@ -1,0 +1,535 @@
+{
+  "schema": "agent-fluid-extraction.v2",
+  "controller_sources": {
+    "figure_02/code/figure_02_champion_policy.jl": "code/generalization/policies/SEAS_1/controller.jl",
+    "figure_04/code/iteration_00.jl": "code/simulation/2d/cases/dogfish_2d_shape_policy/candidate_target_policy.jl",
+    "figure_04/code/iteration_01.jl": "agent_logs/two_dimensional/with_shelf_1/policies/iteration_01_candidate_03.jl",
+    "figure_04/code/iteration_06.jl": "agent_logs/two_dimensional/with_shelf_1/policies/iteration_06_candidate_01.jl",
+    "figure_04/code/iteration_07.jl": "agent_logs/two_dimensional/with_shelf_1/policies/iteration_07_candidate_01.jl",
+    "figure_04/code/iteration_12.jl": "agent_logs/two_dimensional/with_shelf_1/policies/iteration_12_candidate_04.jl",
+    "figure_04/code/iteration_18.jl": "agent_logs/two_dimensional/with_shelf_1/policies/iteration_18_candidate_04.jl",
+    "figure_04/code/iteration_19.jl": "code/generalization/policies/SEAS_1/controller.jl"
+  },
+  "transition_cases": [
+    {
+      "directory": "raw_data/cfd_validation/transition/point_000_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_001_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_002_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_003_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_004_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_005_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_006_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_007_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_008_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_009_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_010_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_011_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_012_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_013_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_014_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_015_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_016_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_017_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_018_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_019_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_020_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_021_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_022_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_023_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_024_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_025_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_026_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_027_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_028_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_029_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_030_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_031_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_032_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_033_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_034_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_035_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_036_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_037_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_038_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_039_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_040_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_041_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_042_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_043_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_044_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_045_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_046_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_047_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_048_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_049_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_050_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_051_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_052_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_053_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_053_replicate_1"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_054_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_055_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_056_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_057_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_058_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_058_replicate_1"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_059_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_060_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_061_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_062_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_063_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_064_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_065_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_066_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_067_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_068_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_069_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_070_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_071_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_072_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_073_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_074_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_075_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_076_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_077_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_077_replicate_1"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_078_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_079_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_080_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_081_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_082_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_083_replicate_0"
+    },
+    {
+      "directory": "raw_data/cfd_validation/transition/point_084_replicate_0"
+    }
+  ],
+  "learning_curve_basis": "raw_data/policy_scores/three_dimensional/index.json",
+  "comparison_root": "derived_data",
+  "required_derived_data": {
+    "figure_02/code/figure_02_champion_policy.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_02/data/fields.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/figure_02_ab_candidates.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/figure_02_ab_reference_summary.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/figure_02_drl_cohort.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/figure_02_drl_comparison.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/flow_rendering.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/swimmer_pose_states.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/trajectory_centerlines.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/fields/i19.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/fields/i6.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_02/data/fields/seed.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/a1_trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/b3_trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/c1_trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/d3_trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/flow_rendering.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/a1_frame_000001_start.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/a1_frame_000026_20pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/a1_frame_000051_40pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/a1_frame_000077_60pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/a1_frame_000102_80pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/a1_frame_000127_final.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/b3_frame_000001_start.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/b3_frame_000023_20pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/b3_frame_000045_40pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/b3_frame_000067_60pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/b3_frame_000089_80pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/b3_frame_000111_final.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/c1_frame_000001_start.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/c1_frame_000023_20pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/c1_frame_000044_40pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/c1_frame_000066_60pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/c1_frame_000087_80pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/c1_frame_000109_final.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/d3_frame_000001_start.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/d3_frame_000025_20pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/d3_frame_000050_40pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/d3_frame_000074_60pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/d3_frame_000099_80pct.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_03/data/fields/d3_frame_000123_final.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/code/iteration_00.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/code/iteration_01.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/code/iteration_06.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/code/iteration_07.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/code/iteration_12.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/code/iteration_18.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/code/iteration_19.jl": {
+      "kind": "selected_controller_source"
+    },
+    "figure_04/data/ablation.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/field_0.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/field_1.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/field_2.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/frames.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/phase_0.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/phase_1.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_04/data/phase_2.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/fields.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/iteration40_endpoints.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/iteration40_measured_candidates.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/learning_curves.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/midplane_t12.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/point_provenance.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/replay_scene.json": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/replay_trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/fields/t03.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/fields/t09.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/fields/t12.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "figure_05/data/fields/t18.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_01/data/lagopoulos_grid_convergence.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_01/data/lagopoulos_grid_ct_eta_convergence.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_01/data/lagopoulos_transition_summary_7sr.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_02/data/oscillating_cylinder_resolution_convergence.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/fullfield24x16/summary.json": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/fullfield24x16/trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/moving_window4x3/summary.json": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/moving_window4x3/trajectory.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/fullfield24x16/midplane/field.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/fullfield24x16/midplane/frames.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/moving_window4x3/midplane/field.npz": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_figure_03/data/moving_window4x3/midplane/frames.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "supplementary_table_01/data/paired_releases.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "table_01/data/matrix.csv": {
+      "kind": "derived_scientific_data"
+    },
+    "table_01/data/policy_results.csv": {
+      "kind": "derived_scientific_data"
+    }
+  }
+}

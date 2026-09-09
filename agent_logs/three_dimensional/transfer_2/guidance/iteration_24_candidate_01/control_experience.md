@@ -1,0 +1,152 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Preserve the now-supported capture scaffold as a combination rather than
+  attributing success to a scalar steering gain. The assigned 2D-sign parent
+  formed a coherent self-propelled wake but reversed after reaching `6.18L` and
+  exited at `10.60L`; inherited intermediate variants likewise repeatedly left
+  the domain after `2.12--7.53L` near misses. In contrast, all four current
+  samples combining the corrected 3D bend sign, fore/aft-aware body-frame
+  target vector, distance/closing drive relief, and bounded velocity-course
+  redirect captured in `20.21--20.97T` from direct quiescent initialization,
+  with coherent wakes and peak force/moment coefficients no greater than about
+  `0.025/0.013`. Keep this full scaffold when testing one additional mechanism;
+  invalidate its portability if a held-out pose or inflow restores a pass-and-
+  exit topology, destroys wake coherence, or materially increases load or
+  joint-limit residence.
+- Once that scaffold captures, joint-state half-cycle asymmetry is supported as
+  a trajectory-shaping mechanism, with actuator cost as its boundary. Against
+  an otherwise matched terminal course redirect, phase-aligned steering reduced
+  capture time from `20.971T` to `20.207T`, improved score from `-0.27435` to
+  `-0.22712`, and slightly reduced peak planar force/yaw moment from
+  `0.0249/0.0130` to `0.0244/0.0128`; however, anterior mean command increased
+  from `18.67` to `19.29 rad/T^2` and residence above 90% of the smooth command
+  bound increased from `34.6%` to `36.6%`. Transfer only the invariant—derive a
+  bounded useful/return-stroke asymmetry from normalized joint phase and
+  body-frame turn request—not the sampled gains. Reject or reduce it if capture
+  timing/integral fails to improve, near-bound command residence approaches
+  persistent saturation, or joint margin, loads, and wake coherence regress;
+  its composition with earlier middle-field course correction remains untested.
+- Keep posterior half-cycle allocation regime-specific, and use measured route
+  response rather than measured velocity-course error to release it. The
+  distance-only far-amplitude/near-lag handoff retained the earlier far-field
+  progress and captured at `19.354T/2.07892L` with a `12.416L` head path. Two
+  additional byte-identical response-aware executions now give three coherent
+  captures at `19.162--19.338T`, integrals `2.06924--2.07983L`, and paths
+  `12.304--12.370L`, all shorter than the distance-only sample and in the same
+  approximately `0.0254/0.0136` peak force/moment class. Treat route-response
+  release as supported for path shaping, but use the three-run spread rather
+  than the earlier `12.304--12.309L` pair as its repeat boundary; a `12.370L`
+  route alone is not causal evidence of regression. Actuator cost remains a
+  boundary: anterior greater-than-90%-bound residence is `35.7--36.0%` versus
+  `35.5%` for the distance-only run, and about `6.3%` of combined joint-rate
+  samples remain above 99% of the envelope. Conversely, velocity-course-error/
+  yaw agreement regressed to `19.398T/2.08187L/12.341L` and raised peak planar
+  force to `0.02587`; do not tune or compose that signal on this release.
+  Transfer only the invariant—blend amplitude allocation into lag allocation
+  with normalized distance and release it when yaw follows persistent route
+  demand. The evaluated implementation mixes that demand with fast yaw-rate
+  braking and reverses against unbraked geometric demand for `16.6--23.2%` of
+  the active `4--6L` band; separating those roles is an unproven semantic test,
+  not license for another gain. Reject it if early progress, capture, path,
+  integral, command/rate headroom, joint margin, load class, or either coherent
+  wake view regresses beyond the three-run boundary.
+- Do not reserve smooth-limit headroom by attenuating both traveling-wave
+  carrier accelerations from instantaneous raw-command overlap on this direct-
+  quiescent release. Added to the supported response-aware handoff, that
+  mechanism retained capture, the coherent two-view wake, and the common
+  `~0.0254/~0.0136` force/moment class at `12.370L/2.07854L`. A third exact
+  uninterrupted-carrier repeat now overlaps that outcome at
+  `12.370L/2.07983L`, so the route difference cannot be attributed to the
+  reserve beyond execution variation. The negative conclusion instead rests
+  on absent actuator return: mean commands fell only about `1.2%/0.9%`,
+  greater-than-90%-bound residence changed by at most about `0.2` percentage
+  point per joint, and combined greater-than-99%-rate residence changed only
+  from `6.34--6.36%` to `6.29%`. Restore the simpler uninterrupted carrier
+  rather than tuning an unidentifiable reserve fraction. Reconsider reservation
+  only if a held-out release exhibits persistent saturation, and then require
+  materially recovered headroom without sacrificing path, integral, wake
+  coherence, joint margin, or load class.
+- Do not suppress the shared traveling carrier from instantaneous normalized
+  joint-rate proximity and outward carrier/velocity alignment on this release.
+  That proprioceptive governor retained coherent capture but delayed every
+  milestone, moving arrival/integral/path from the response-aware envelope to
+  `19.657T/2.09937L/12.427L` and raising peak planar force to `0.02588`. It
+  nearly eliminated posterior greater-than-99%-rate residence, yet anterior
+  residence increased to `9.01%`; thus the removed posterior motion was useful
+  wave propagation, not proven wasted command. Restore the uninterrupted
+  carrier instead of weakening the governor or lowering global gait scalars.
+  Reconsider rate-aware allocation only after persistent saturation appears in
+  a held-out release, and require reduced rate residence in both joints plus
+  unchanged early progress, capture, path, integral, loads, joint margin, and
+  coherent wake structure.
+- Do not treat the repeatable late hook of this fixed direct-quiescent release
+  as evidence for another terminal steering gate or an unfiltered slip-to-mean-
+  curvature residual. An exact projected-miss/intercept-corridor controller
+  first captured at `19.701T/2.10438L/-0.21449` but replicated at
+  `19.817T/2.10672L/-0.21655`, straddling the simpler LOS-led controller's
+  `19.706T/2.10594L/-0.21598` while using more mean command. The inherited
+  approach-gated tail residual from relative crossflow then preserved the same
+  coherent capture class but regressed to `19.894T/2.11284L/-0.22287`, raised
+  sub-`2L` mean yaw from `0.437` to `0.486 rad/T`, and increased head-path
+  inefficiency. On this release, restore the plain scaffold instead of tuning
+  corridor or slip scalars; reconsider either observation only when a held-out
+  pose or inflow exposes a repeatable intercept/slip failure, and require a
+  different useful trajectory plus timing/integral improvement beyond repeat
+  variation without worse command, load, joint-margin, or wake metrics.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

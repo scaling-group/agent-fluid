@@ -1,0 +1,13 @@
+# @package _global_
+# Dogfish fixed-morphology 2D cylinder-wake policy application definition.
+
+application:
+  name: agent-fluid-dogfish-2d-wake-policy-secondrow-capture0p75-24x16
+  path: ${oc.env:EVE_AGENT_FLUID_TESTBED_PATH,../../simulation/2d}
+  editable:
+    files:
+      - cases/dogfish_2d_shape_policy/candidate_target_policy.jl
+    folders: []
+  boundary_failure_score:
+    score: -100.0
+    summary: wake policy boundary check failed

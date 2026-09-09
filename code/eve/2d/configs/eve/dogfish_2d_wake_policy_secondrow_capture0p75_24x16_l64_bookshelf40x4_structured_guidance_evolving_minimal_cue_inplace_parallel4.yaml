@@ -1,0 +1,40 @@
+# Fresh 40x4 minimal-cue structured-transfer Knowledge Bookshelf experiment.
+# The seed supplies propulsion only; initial guidance does not name a missing
+# mechanism or a task-solving observation.
+
+defaults:
+  - runtime: default
+  - loop: default
+  - driver: codex_max
+  - logger: many_loggers
+  - application: dogfish_2d_wake_policy_secondrow_capture0p75_24x16
+  - optimizer: dogfish_2d_wake_policy_secondrow_capture0p75_24x16_bookshelf_structured_guidance_evolving_minimal_cue
+  - evaluation: dogfish_2d_wake_policy_secondrow_capture0p75_24x16_inplace_parallel4
+  - _self_
+
+label: dogfish-2d-wake-policy-secondrow-capture0p75-24x16-l64-bookshelf40x4-structured-guidance-evolving-minimal-cue-inplace-parallel4
+
+loop:
+  max_iterations: 40
+  n_workers_phase2: 4
+  n_parallel_phase2: 4
+  n_solver_examples_phase2: 4
+  n_optimizer_examples_phase2: 4
+  exclude_all_working_optimizers_from_examples: false
+  produce_optimizer_in_phase2: ${loop.n_workers_phase2}
+  optimizer_log_inheritance: current
+  boundary_repair_attempts: 2
+
+driver:
+  model: gpt-5.6-sol
+  reasoning_effort: xhigh
+  rollout_max_turns: 18
+  budget_prompt: true
+  web_search: live
+  timeout_seconds: 1800
+
+logger:
+  csv:
+    enabled: true
+  wandb:
+    enabled: false

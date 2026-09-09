@@ -1,0 +1,10 @@
+# @package _global_
+
+evaluation:
+  steps:
+    - configs/eve/evaluation/dogfish_3d_moving_window_policy_inplace_parallel4/evaluation.sh
+  failure_score:
+    score: -100.0
+    summary: 3D moving-window in-place evaluation failed
+  seed_solver_score: null
+  seed_solver_skip_evaluation: false

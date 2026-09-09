@@ -1,0 +1,117 @@
+# Dogfish L64 Second-Row Wake-Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. The same guidance is used by matched 2-, 3-, and 4-worker runs.
+- The fixed task is `L64`, target `(9,9.5)L`, first-crossing radius `0.75L`,
+  inflow `0.18`, held-fish prewarm `200`, released horizon `300`, and actuator
+  envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect shared prewarm and released keyframe sheets before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination.
+- In the common seed failure, the fish left the lower boundary after only
+  `50.127` released time with head displacement `(-3.545,-13.300)L`, while
+  mean velocity differed from mean local flow by only about `0.038U` and both
+  joint velocity and acceleration limits were reached. Large world displacement
+  is therefore not evidence of useful propulsion when local-flow advection
+  explains most of it. For a target-blind, advection-dominated failure with no
+  visible recovery turn, test bounded body-frame target-bearing mean curvature
+  before increasing drive or adding an uncalibrated wake residual; this lesson
+  does not apply once target-directed turning is visible, and is falsified for
+  this controller family if the added bias leaves the turn sign and
+  lower-boundary trajectory topology unchanged.
+- On the demonstrated bearing-biased carrier, moving posterior steering onto
+  the target-favored joint-state half-cycle changed a roughly `93.03`-time
+  dogleg into a direct `43.9505`-time capture; three byte-identical samples
+  reproduced `2.1391L` mean distance and RMS force/moment `49.44/701.26`.
+  Releasing that boost whenever bearing converged reduced loads to
+  `36.25/587.15` but delayed capture to `46.6730`; restricting the same release
+  to small bearing arrived marginally earlier at `43.8955` yet increased mean
+  command from `1207.8` to `1216.2`, RMS crossflow from `0.2111` to `0.2166`,
+  and force/moment to `55.12/764.85`, with both rate and acceleration caps
+  unchanged. Do not continue tuning bearing thresholds on half-cycle release:
+  it trades away the evidenced steering locus rather than reliably relieving
+  actuation. A posterior outward-rate projection is the more specific load
+  mechanism: after accounting for a neutral taper ablation, its sampled direct
+  capture at `44.2420` lowered mean command to `1197.1`, force/moment to
+  `43.46/649.26`, and posterior peak rate just below the cap while preserving
+  reversal acceleration. The completed alignment-gated variant preserved the
+  same visible direct route and captured at `44.0220`; against the reproduced
+  `43.9505` carrier it reduced RMS crossflow from `0.21115` to `0.21016`, force
+  from `49.44` to `44.86`, and moment from `701.26` to `663.89`. However, mean
+  command changed only from `1207.8` to `1206.6`, and both joint rate and
+  acceleration caps remained. This confirms the direction-aware projection as
+  load shaping with a semantic-success boundary, but falsifies it as cap or
+  effort relief. Preserve its projection-free large-error redirect and do not
+  continue scalar tuning of its alignment/rate thresholds; if more load relief
+  is needed, test one separately bounded normalized body-frame load residual
+  only after alignment, and reject it if direct-route topology, capture time,
+  command effort, or force/moment worsens.
+- The completed test of that load-residual boundary is negative: adding a
+  bounded, alignment-gated instantaneous `moment_z_L2` bias to the useful
+  posterior rate projection still reached the target, but delayed arrival
+  from `44.0220` to `45.1935`, raised mean distance from `2.1418L` to
+  `2.1965L`, RMS crossflow from `0.21016` to `0.21451`, force from `44.86` to
+  `71.51`, and moment from `663.89` to `957.29`; maximum joint angles grew
+  while mean command stayed within `0.1%` and all rate/acceleration caps
+  remained.  For this direct carrier, do not retune or weaken an instantaneous
+  yaw-moment-to-curvature residual: it couples alternating wake load back into
+  the body wave without evidenced effort relief.  Revert to the isolated
+  direction-aware rate projection.  This falsifies direct instantaneous load
+  opposition in the established curvature path, not all disturbance feedback;
+  a later test must first evidence the sign, scale, and phase of a slower or
+  filtered body-frame signal and isolate it against the projection-only
+  control.
+- A sampled joint-state phase lead on the target-favored posterior half-cycle
+  preserved the same direct capture topology but moved arrival from `43.9505`
+  to `43.9780` and increased mean command from `1207.8` to `1209.5`, RMS
+  crossflow from `0.2111` to `0.2136`, force from `49.44` to `53.18`, and
+  moment from `701.26` to `736.58`, with the same hard-cap contacts.  Do not
+  pursue scalar phase shifts of this half-cycle gate in the common wake; test
+  a different feedback primitive only if it preserves the evidenced steering
+  locus, and revisit phase only when keyframes show a meaningfully different
+  turn or wake-entry topology.
+- Prefer normalized body-frame feedback. Wake phase, inflow, cylinder layout,
+  and target position are intended held-out axes; coordinate memorization is
+  not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

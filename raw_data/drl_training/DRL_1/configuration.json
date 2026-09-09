@@ -1,0 +1,259 @@
+{
+  "action_mode": "absolute_two_joint_angular_accelerations",
+  "algorithm": "Behavior cloning warm-start plus Stable-Baselines3 PPO",
+  "analytic_seed_used_during_ppo": false,
+  "arguments": {
+    "action_repeat": 4,
+    "action_std": 0.05,
+    "batch_size": 64,
+    "bc_batch_size": 512,
+    "bc_epochs": 30,
+    "bc_learning_rate": 0.001,
+    "bc_steps_per_env": 8192,
+    "bc_teacher_noise_std": 0.05,
+    "bc_validation_fraction": 0.1,
+    "checkpoint_interval": 10,
+    "clip_range": 0.2,
+    "config": "code/drl/configs/free_swim_multiwake_ppo_l64.toml",
+    "episode_budget": 600,
+    "freeze_observation_normalization": true,
+    "gae_lambda": 0.9980014995000627,
+    "gamma": 0.9996000599960001,
+    "learning_rate": 3e-05,
+    "n_epochs": 10,
+    "n_steps": 512,
+    "observation_history_length": 8,
+    "require_complete_teacher_episode_per_env": true,
+    "resume_checkpoint": null,
+    "rollout_horizon": 300.0,
+    "seed": 1743685058,
+    "seed_policy": "agent_logs/two_dimensional/with_shelf_1/policies/seed.jl",
+    "target_kl": 0.03,
+    "testbed_root": "code/simulation/2d"
+  },
+  "bc_dataset": {
+    "action_repeat": 4,
+    "cfd_transitions": 131053,
+    "collection_wall_time_s": 1123.4557726928033,
+    "completed_episode_summaries": [
+      {
+        "raw_score": -13.537067354997864,
+        "shifted_score": -15.537067354997864,
+        "steps": 7232,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 1,
+        "worker_id": 1
+      },
+      {
+        "raw_score": -12.071686146848153,
+        "shifted_score": -14.071686146848153,
+        "steps": 8129,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 1,
+        "worker_id": 3
+      },
+      {
+        "raw_score": -11.612901571900522,
+        "shifted_score": -13.612901571900522,
+        "steps": 8541,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 1,
+        "worker_id": 0
+      },
+      {
+        "raw_score": -11.647315420166679,
+        "shifted_score": -13.647315420166679,
+        "steps": 8680,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 1,
+        "worker_id": 2
+      },
+      {
+        "raw_score": -11.526362362023752,
+        "shifted_score": -13.526362362023752,
+        "steps": 8572,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 2,
+        "worker_id": 1
+      },
+      {
+        "raw_score": -11.815102044481806,
+        "shifted_score": -13.815102044481806,
+        "steps": 8403,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 2,
+        "worker_id": 3
+      },
+      {
+        "raw_score": -11.753868649420209,
+        "shifted_score": -13.753868649420209,
+        "steps": 8409,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 2,
+        "worker_id": 2
+      },
+      {
+        "raw_score": -11.562908416091439,
+        "shifted_score": -13.562908416091439,
+        "steps": 8597,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 2,
+        "worker_id": 0
+      },
+      {
+        "raw_score": -11.799812356784603,
+        "shifted_score": -13.799812356784603,
+        "steps": 8271,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 3,
+        "worker_id": 1
+      },
+      {
+        "raw_score": -11.693540773774531,
+        "shifted_score": -13.693540773774531,
+        "steps": 8396,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 3,
+        "worker_id": 0
+      },
+      {
+        "raw_score": -11.153651952634398,
+        "shifted_score": -13.153651952634398,
+        "steps": 9222,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 3,
+        "worker_id": 3
+      },
+      {
+        "raw_score": -11.367333386976414,
+        "shifted_score": -13.367333386976414,
+        "steps": 8928,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 3,
+        "worker_id": 2
+      },
+      {
+        "raw_score": -11.892012813168236,
+        "shifted_score": -13.892012813168236,
+        "steps": 8213,
+        "target_reached": false,
+        "termination": "left_domain",
+        "worker_episode": 4,
+        "worker_id": 1
+      }
+    ],
+    "completed_teacher_episodes": 13,
+    "completed_teacher_episodes_by_worker": {
+      "0": 3,
+      "1": 4,
+      "2": 3,
+      "3": 3
+    },
+    "environment_count": 4,
+    "path": "bc_dataset.npz",
+    "policy_steps_per_environment": 8192,
+    "policy_transitions": 32768,
+    "schema_version": "eve-aqua.bc-teacher-dataset.v1",
+    "sha256": "6aca8ed75530e6bf284e4020bf175ae468e1352eb54d71f1c9dbe2a113dd57d7",
+    "steps_per_environment": 8192,
+    "teacher_action_noise_std": 0.05
+  },
+  "bc_metrics": "bc_metrics.json",
+  "contract": {
+    "action": {
+      "action_repeat": 4,
+      "dimension": 2,
+      "mode": "absolute",
+      "physical_scale_deg_s2": 1800.0
+    },
+    "behavior_cloning": {
+      "batch_size": 512,
+      "environment_count": 4,
+      "epochs": 30,
+      "learning_rate": 0.001,
+      "require_complete_teacher_episode_per_environment": true,
+      "steps_per_environment": 8192,
+      "teacher_action_noise_std": 0.05,
+      "validation_fraction": 0.1
+    },
+    "observation_history_length": 8,
+    "ppo": {
+      "activation": "tanh",
+      "actor_hidden_layers": [
+        128,
+        128
+      ],
+      "batch_size": 64,
+      "checkpoint_interval_episodes": 10,
+      "clip_range": 0.2,
+      "critic_hidden_layers": [
+        128,
+        128
+      ],
+      "environment_count": 4,
+      "episode_budget": 600,
+      "freeze_observation_normalization": true,
+      "gae_lambda": 0.9980014995000627,
+      "gamma": 0.9996000599960001,
+      "implementation": "stable-baselines3 2.9.0 PPO-Clip",
+      "initial_action_standard_deviation": 0.05,
+      "learning_rate": 3e-05,
+      "n_epochs": 10,
+      "n_steps": 512,
+      "score_based_early_stopping": false,
+      "target_kl": 0.03
+    },
+    "schema_version": "eve-aqua.bc-absolute-ppo-minimal-seed-aligned.v1",
+    "seed_policy": {
+      "observations_used_by_teacher": [
+        "phi",
+        "phi_dot"
+      ],
+      "role": "behavior-cloning teacher only; disabled during PPO",
+      "sha256": "511b898cd3be991fff977679bafb58050e3428809fd88da18d04d654ec5052fd",
+      "target_aware": false
+    },
+    "task_hashes": {
+      "environment_config_sha256": "a8f34386bdc76b287a914ab716f551d2cce80e75b4216e8d2927134e0d3a32af",
+      "prewarm_snapshot_sha256": "d846eea2437b9380085ca387aaf035b3aadcd1b46013b79d1c1be44f8c59b0b4"
+    }
+  },
+  "data_efficiency_accounting": {
+    "ppo_completed_episodes": 600,
+    "teacher_cfd_transitions": 131053,
+    "teacher_completed_episodes": 13,
+    "ppo_execution_records": 600,
+    "cost_rule": "Teacher CFD transitions plus CFD steps from every PPO execution record."
+  },
+  "environment_config": {
+    "path": "code/drl/configs/free_swim_multiwake_ppo_l64.toml",
+    "sha256": "a8f34386bdc76b287a914ab716f551d2cce80e75b4216e8d2927134e0d3a32af"
+  },
+  "numpy": "2.5.2",
+  "prewarm_snapshot": {
+    "path": "multiwake_3e5331021420_f9758a1a89661c3b.jld2",
+    "sha256": "d846eea2437b9380085ca387aaf035b3aadcd1b46013b79d1c1be44f8c59b0b4"
+  },
+  "python": "3.12.3",
+  "schema_version": "eve-aqua.bc-absolute-ppo-training.v1",
+  "stable_baselines3": "2.9.0",
+  "teacher_seed_policy": {
+    "path": "agent_logs/two_dimensional/with_shelf_1/policies/seed.jl",
+    "sha256": "511b898cd3be991fff977679bafb58050e3428809fd88da18d04d654ec5052fd",
+    "used_after_behavior_cloning": false
+  },
+  "testbed_revision": "fd86b1bd81323551ac8322deb3f9b437196b6d66",
+  "torch": "2.13.0+cpu"
+}

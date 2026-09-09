@@ -1,0 +1,62 @@
+{
+  "schema": "agent-fluid.figure2-drl-cohort.v2",
+  "episode_view": "600 original training episodes per execution; last record retained for duplicate episode indices",
+  "cost_view": "All append-only training records and one demonstration collection per execution",
+  "score": "Unaugmented distance_integral_score s; training_return is separately retained",
+  "rows": 6414,
+  "drl_episode_rows": 3000,
+  "drl_cost_rows": 3004,
+  "runs": [
+    {
+      "run": 1,
+      "run_label": "DRL_1",
+      "original_training_episodes": 600,
+      "charged_training_records": 600,
+      "teacher_cfd_steps": 131053,
+      "policy": "DRL_1",
+      "training_records": "raw_data/drl_training/DRL_1/episodes.jsonl.gz",
+      "training_records_sha256": "8a5a1c5952c9567eb2c3153047fe02c95f3751756862e6f32861e71fc316e744"
+    },
+    {
+      "run": 2,
+      "run_label": "DRL_2",
+      "original_training_episodes": 600,
+      "charged_training_records": 600,
+      "teacher_cfd_steps": 131047,
+      "policy": "DRL_2",
+      "training_records": "raw_data/drl_training/DRL_2/episodes.jsonl.gz",
+      "training_records_sha256": "6f27246a2ef5897ecef79e43ce9e770f331044b3733d00b8902f63c92aeeba61"
+    },
+    {
+      "run": 3,
+      "run_label": "DRL_3",
+      "original_training_episodes": 600,
+      "charged_training_records": 600,
+      "teacher_cfd_steps": 131054,
+      "policy": "DRL_3",
+      "training_records": "raw_data/drl_training/DRL_3/episodes.jsonl.gz",
+      "training_records_sha256": "e6dc83dc93a5cc2906d01c3af1d287805ae96467012083324fb0028adbeb7f08"
+    },
+    {
+      "run": 4,
+      "run_label": "DRL_4",
+      "original_training_episodes": 600,
+      "charged_training_records": 604,
+      "teacher_cfd_steps": 131049,
+      "policy": "DRL_4",
+      "training_records": "raw_data/drl_training/DRL_4/episodes.jsonl.gz",
+      "training_records_sha256": "88ab32b56e8506c1c1d4fd60d5b28874fb8321c8b6a866659d1e5201704a5413"
+    },
+    {
+      "run": 5,
+      "run_label": "DRL_5",
+      "original_training_episodes": 600,
+      "charged_training_records": 600,
+      "teacher_cfd_steps": 131054,
+      "policy": "DRL_5",
+      "training_records": "raw_data/drl_training/DRL_5/episodes.jsonl.gz",
+      "training_records_sha256": "cc1f46ccc4bba8a146d8166e607dee96cd687c0c11f970f34d3ea8d3ae834cc5"
+    }
+  ],
+  "policy_index": "code/generalization/policies/index.json"
+}

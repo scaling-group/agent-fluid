@@ -1,0 +1,105 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- In the direct-uniform L64 still-water rollout of the inherited 2D champion,
+  coherent propulsion and an initially correct turn reduced body-frame bearing
+  from `+8.88 deg` to `-2.02 deg` by `4 T`, but the stacked bearing-trend,
+  recovery, tail-curvature, and half-cycle layers then overshot to `75.46 deg`
+  by `16 T`; distance bottomed at `6.1797 L` before a lower-boundary exit at
+  `26.18 T`.  Raw acceleration also exceeded the physical limit on
+  `70.4%/77.0%` of joint rows.  For this 3D morphology, do not reuse that
+  layered 2D steering architecture unchanged: first isolate one bounded
+  body-frame bearing-to-curvature request with observed yaw-rate braking while
+  preserving the demonstrated posterior-lag drive.  Falsify it if the
+  correct-sign initial turn still fails to settle near centerline, the same
+  low-exit topology remains, or command saturation persists; this lesson does
+  not yet justify wake-disturbance or terminal-approach terms because the
+  sampled fish encountered neither cylinders nor the capture neighborhood.
+- The first compact bearing-to-curvature child improved the layered 2D
+  transfer's `6.1797 L` minimum and lower-boundary exit to `5.3570 L` and an
+  upper-boundary exit while retaining a coherent alternating 3D wake, but it
+  did not validate instantaneous yaw-rate braking. Propulsive yaw oscillated by
+  roughly `+/-2.5 rad/T`, later body-frame bearing stayed about `-40` to
+  `-80 deg`, and the fish passed about `5 L` above the target; commands also
+  remained above `95%` of the controller's acceleration bound on `24%/49%` of
+  rows. Its positive-bearing map simultaneously applied negative anterior
+  acceleration and positive posterior mean tangent, so the two steering paths
+  opposed each other. For this fast-gait regime, do not treat sub-cycle yaw as
+  a slow route-rate estimate or mix steering signs across joints: first test
+  one coordinated signed mean bend from normalized target geometry while
+  preserving posterior lag. This does not rule out rate damping when a genuine
+  cycle-scale estimate becomes available; falsify the implication if
+  coordinated curvature fails to recenter cycle-mean bearing, improve the
+  `5.3570 L` minimum/exit topology, or preserve wake coherence and actuator
+  residence.
+- Speed-gating a body-frame course estimate does not make instantaneous course
+  and yaw rate suitable owners of posterior mean curvature in this fast-gait
+  regime.  The assigned course-response child regressed the coherent compact
+  controller's `5.3570 L` minimum to `12.2257 L`: its forward speed was only
+  `0.028 L/T` at `4 T`, bearing crossed from `+8.9 deg` to `-3.4 deg` while
+  course and yaw were still dominated by release transients, and it then
+  curled to `-84.7 deg` bearing and exited the upper boundary at `8.65 T`.
+  The weak, short wake in both visual rows agrees with that propulsion
+  collapse.  Do not feed speed-gated course-minus-target and beat-scale yaw
+  error directly into a static posterior offset; preserve the symmetric
+  posterior-lag wave and test a joint-state half-cycle asymmetry whose sign is
+  owned only by persistent body-frame target geometry.  Falsify this boundary
+  if a cycle-scale course estimate later yields coherent propulsion and a
+  settled route, or if half-cycle steering fails to outlive the `8.65 T`
+  upper-exit topology without increasing actuator-limit residence.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

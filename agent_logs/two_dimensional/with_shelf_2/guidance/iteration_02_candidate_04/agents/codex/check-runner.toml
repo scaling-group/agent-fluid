@@ -1,0 +1,69 @@
+name = "check-runner"
+description = "Validate the dogfish 2D wake-policy contract without running CFD."
+model = "gpt-5.4-mini"
+model_reasoning_effort = "low"
+developer_instructions = """
+# Dogfish Wake-Policy Sanity Check
+
+From the workspace root, run these commands separately and report PASS or FAIL.
+
+1. Verify that transient notes exist and `guidance/control_experience.md` has
+   a non-cosmetic, evidence-backed semantic change from the assigned parent:
+
+```bash
+python3 .scaling_evolve/check_wake_guidance.py --workspace-root .
+```
+
+2. Run the lightweight policy contract check from `solver/`. This must not run
+   a CFD rollout.
+
+```bash
+cd solver && julia --project=. --startup-file=no -e '
+include("cases/dogfish_2d_shape_policy/candidate_target_policy.jl")
+params = target_policy_params()
+@assert !hasproperty(params, :L)
+state = (
+    task_family=:multi_cylinder_wake_targeting,
+    target_body=(0.2, 0.0), target_body_L=(0.2, 0.0),
+    previous_target_body=(0.2, 0.0), previous_target_body_L=(0.2, 0.0),
+    target_body_delta_L=(0.0, 0.0), target_body_rate_L=(0.0, 0.0),
+    target_body_history_L=ntuple(_ -> (0.2, 0.0), 8),
+    target_body_window_delta_L=(0.0, 0.0), target_body_window_rate_L=(0.0, 0.0),
+    distance=0.8, distance_L=0.8, previous_distance=0.8,
+    previous_distance_L=0.8, distance_rate_L=0.0,
+    closing_speed_L=0.0, distance_history_L=ntuple(_ -> 0.8, 8),
+    distance_window_delta_L=0.0, window_closing_speed_L=0.0,
+    bearing=0.0, previous_bearing=0.0, bearing_rate=0.0,
+    bearing_history=ntuple(_ -> 0.0, 8), bearing_window_delta=0.0,
+    bearing_window_rate=0.0, history_dt=0.0, history_count=1,
+    history_window_dt=0.0, history_time_offsets=ntuple(_ -> 0.0, 8),
+    velocity_body=(-0.1, 0.03), velocity_body_U=(-0.1, 0.03),
+    force_body=(0.0, 0.0), force_body_L=(0.0, 0.0),
+    moment_z=0.0, moment_z_L2=0.0,
+    heading_rate=0.0, turn_rate_recent=0.0, phi=(0.1, -0.1),
+    phi_dot=(0.0, 0.0), previous_action=(0.0, 0.0),
+    cylinder_body=(-2.0, 0.0), cylinder_center_L=(3.0, 7.0),
+    cylinder_centers_L=((3.0, 4.5), (3.0, 7.0), (3.0, 9.5), (6.0, 5.75), (6.0, 8.25)),
+    cylinder_distance_L=2.0,
+    wake_position_L=(2.5, 0.0),
+    local_flow_velocity_body=(-0.8, 0.1), local_flow_velocity_body_U=(-0.8, 0.1),
+    relative_flow_velocity_body=(-0.7, 0.07), relative_flow_velocity_body_U=(-0.7, 0.07),
+    local_flow_speed=0.82, local_flow_speed_U=0.82,
+    wake_crossflow_velocity=0.1, wake_crossflow_velocity_U=0.1,
+    wake_streamwise_velocity=-0.8, wake_streamwise_velocity_U=-0.8,
+)
+action = target_policy(state, params)
+@assert hasproperty(action, :phi_ddot)
+vals = Tuple(action.phi_ddot)
+@assert length(vals) == 2
+@assert all(isfinite, map(Float64, vals))
+'
+```
+
+3. Run the boundary check:
+
+```bash
+python3 ${SCRATCH_ROOT}/repos/scaling-evolve-aqua-paper-withshelf-1c8a64c9/src/scaling_evolve/algorithms/eve/workflow/boundary.py --baseline-root .repo_cache/snapshots/782dc4e1b8c92c1daff1dd33cdc4e5e3837369e2 --candidate-root solver --editable-file cases/dogfish_2d_shape_policy/candidate_target_policy.jl
+```
+"""
+

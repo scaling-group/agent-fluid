@@ -1,0 +1,67 @@
+{
+  "L": 64,
+  "Re": 1000.0,
+  "cylinder_center_x_L": 3.0,
+  "cylinder_center_y_fraction": 0.53125,
+  "cylinder_centers_x_L": [
+    3.0,
+    3.0,
+    6.0
+  ],
+  "cylinder_centers_y_L": [
+    8.5,
+    11.0,
+    9.75
+  ],
+  "cylinder_diameter_L": 0.6499999761581421,
+  "cylinder_diameters_L": [
+    0.6499999761581421,
+    0.6499999761581421,
+    0.6499999761581421
+  ],
+  "cylinder_kick_amplitude_L": 0.0,
+  "cylinder_kick_cycles": 1.0,
+  "cylinder_kick_duration": 0.0,
+  "cylinder_kick_start": 0.0,
+  "domain_dims": [
+    1536,
+    1024
+  ],
+  "domain_scale": [
+    24.0,
+    16.0
+  ],
+  "flow_perturbation": 0.0010000000474974513,
+  "flow_seed": 20260714,
+  "flow_speed": 0.18000000715255737,
+  "initial_center_x_L": 21.0,
+  "initial_center_y_L": 14.0,
+  "initial_center_y_fraction": 0.5,
+  "initial_head_distance_from_target_L": null,
+  "initial_heading": 0.5061454772949219,
+  "initial_joint_state": [
+    0.13962634015954636,
+    -0.13962634015954636,
+    0.0,
+    0.0
+  ],
+  "max_dimensionless_dt": 0.005499999970197678,
+  "prewarm_horizon": 200.0,
+  "prewarm_steps": 36364,
+  "prewarm_with_fish": true,
+  "raw_dt_cap": 0.35199999809265137,
+  "raw_time": 12800.0,
+  "run_config": "configs/c1.toml",
+  "schema_version": "dogfish.wake_prewarm_snapshot.v0",
+  "sim_time": 200.0,
+  "snapshot_path": "prewarm_snapshot.jld2",
+  "success_radius": 48.0,
+  "success_radius_L": 0.75,
+  "target": [
+    576.0,
+    608.0
+  ],
+  "target_x_L": 9.0,
+  "target_y_L": 9.5,
+  "target_y_fraction": 0.5
+}

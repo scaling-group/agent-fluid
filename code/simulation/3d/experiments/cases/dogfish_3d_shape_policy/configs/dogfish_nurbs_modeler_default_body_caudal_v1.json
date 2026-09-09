@@ -1,0 +1,256 @@
+{
+  "schema_version": "dogfish.nurbs_modeler_geometry.v1",
+  "name": "dogfish_nurbs_modeler_default_body_caudal_v1",
+  "source": "cases/dogfish_3d_shape_policy/docs/body_geometry_review/tools/nurbs_body_modeler.html",
+  "source_commit": "a6df3ed87508a86e8ca0f3cd78cd787085262e71",
+  "source_sha256": "fcbb7f6ee99be23232e97babdc6ac94cc814b18ca80dd7202661e48b51c5255d",
+  "selection_contract": "exact_reset_default_body_with_caudal_only",
+  "coordinate_frame": {
+    "x": "snout_to_tail",
+    "y": "lateral",
+    "z": "dorsal_up",
+    "units": "body_length_fraction"
+  },
+  "rigid_control": {
+    "free_dofs": [
+      "surge_x",
+      "sway_y",
+      "yaw_z"
+    ],
+    "locked_dofs": [
+      "heave_z",
+      "roll_x",
+      "pitch_y"
+    ],
+    "z_plane_fraction": 0.5,
+    "locked_loads_are_diagnostics_only": [
+      "force_z",
+      "moment_x",
+      "moment_y"
+    ]
+  },
+  "mass_model": {
+    "schema": "fixed_material_reference_body_only_dry_mass_v1",
+    "reference_definition": "centerline_at_maximum_continuous_cfd_cross_section",
+    "reference_station_s": 0.3333333333333333,
+    "reference_y_L": 0.0,
+    "reference_z": "locked_midplane",
+    "body_material_density": 1.0,
+    "caudal_material_density": 0.0,
+    "dry_mass": "superellipse_body_only",
+    "dry_yaw_inertia": "superellipse_body_about_fixed_reference",
+    "hydrodynamic_added_mass": "body_and_caudal_about_fixed_reference",
+    "resolution_invariant": true
+  },
+  "curves": {
+    "lateral_half_width": [
+      {
+        "x": 0.0,
+        "value": 0.0
+      },
+      {
+        "x": 0.2,
+        "value": 0.06
+      },
+      {
+        "x": 0.4,
+        "value": 0.07
+      },
+      {
+        "x": 0.6,
+        "value": 0.05
+      },
+      {
+        "x": 0.8,
+        "value": 0.025
+      },
+      {
+        "x": 1.0,
+        "value": 0.0
+      }
+    ],
+    "dorsal_half_height": [
+      {
+        "x": 0.0,
+        "value": 0.0
+      },
+      {
+        "x": 0.2,
+        "value": 0.052
+      },
+      {
+        "x": 0.4,
+        "value": 0.06
+      },
+      {
+        "x": 0.6,
+        "value": 0.044
+      },
+      {
+        "x": 0.8,
+        "value": 0.02
+      },
+      {
+        "x": 1.0,
+        "value": 0.0
+      }
+    ],
+    "ventral_half_height": [
+      {
+        "x": 0.0,
+        "value": 0.0
+      },
+      {
+        "x": 0.2,
+        "value": 0.034
+      },
+      {
+        "x": 0.4,
+        "value": 0.045
+      },
+      {
+        "x": 0.6,
+        "value": 0.032
+      },
+      {
+        "x": 0.8,
+        "value": 0.014
+      },
+      {
+        "x": 1.0,
+        "value": 0.0
+      }
+    ],
+    "dorsal_fullness": [
+      {
+        "x": 0.0,
+        "value": 2.0
+      },
+      {
+        "x": 0.2,
+        "value": 2.1
+      },
+      {
+        "x": 0.4,
+        "value": 2.3
+      },
+      {
+        "x": 0.6,
+        "value": 2.4
+      },
+      {
+        "x": 0.8,
+        "value": 2.3
+      },
+      {
+        "x": 1.0,
+        "value": 2.0
+      }
+    ],
+    "ventral_fullness": [
+      {
+        "x": 0.0,
+        "value": 2.0
+      },
+      {
+        "x": 0.2,
+        "value": 2.0
+      },
+      {
+        "x": 0.4,
+        "value": 1.9
+      },
+      {
+        "x": 0.6,
+        "value": 1.8
+      },
+      {
+        "x": 0.8,
+        "value": 1.9
+      },
+      {
+        "x": 1.0,
+        "value": 2.0
+      }
+    ]
+  },
+  "sampled_julia_profiles": {
+    "stations": [
+      0.0,
+      0.16666666666666666,
+      0.3333333333333333,
+      0.5,
+      0.6666666666666666,
+      0.8333333333333334,
+      1.0
+    ],
+    "width": [
+      0.0,
+      0.0549,
+      0.0642,
+      0.0589,
+      0.0471,
+      0.0293,
+      0.0
+    ],
+    "ztop": [
+      0.0,
+      0.0474,
+      0.0553,
+      0.051,
+      0.0407,
+      0.0246,
+      0.0
+    ],
+    "zbot": [
+      0.0,
+      0.0326,
+      0.0401,
+      0.0376,
+      0.0297,
+      0.0176,
+      0.0
+    ],
+    "etop": [
+      2.0,
+      2.1458,
+      2.2667,
+      2.3406,
+      2.3583,
+      2.2885,
+      2.0
+    ],
+    "ebot": [
+      2.0,
+      1.9698,
+      1.9083,
+      1.8563,
+      1.8417,
+      1.8865,
+      2.0
+    ]
+  },
+  "fins": {
+    "pectoral_pair": {
+      "enabled": false
+    },
+    "pelvic_pair": {
+      "enabled": false
+    },
+    "dorsal_front": {
+      "enabled": false
+    },
+    "dorsal_rear": {
+      "enabled": false
+    },
+    "caudal": {
+      "enabled": true,
+      "x_start": 0.8,
+      "x_end": 1.07,
+      "upper_height": 0.13,
+      "lower_height": 0.09,
+      "lower_tip_fraction": 0.78,
+      "root_half_thickness": 0.012
+    }
+  }
+}

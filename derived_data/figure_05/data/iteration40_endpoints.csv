@@ -1,0 +1,7 @@
+replicate_id,iteration,candidate_count,iteration39_best,measured_iteration40_max,cumulative_best,improvement_over_iteration39,maximum_candidate_id,observation_basis
+naive_1,40,4,-2.0885452328351946,-2.1019915371583093,-2.0885452328351946,0.0,3d_naive_1_c2_cuda124,evaluation
+naive_2,40,4,-1.8926430406807775,-1.8945907848457448,-1.8926430406807775,0.0,3d_naive_2_c4_cuda124,evaluation
+naive_3,40,4,-3.8591750039737205,-3.91437778639071,-3.8591750039737205,0.0,3d_naive_3_c3_cuda124,evaluation
+transfer_1,40,4,-2.037246827105129,-2.049364615395951,-2.037246827105129,0.0,3d_transfer_1_c1_cuda124,evaluation
+transfer_2,40,4,-1.7876816739115389,-1.7906751399292058,-1.7876816739115389,0.0,3d_transfer_2_c1_cuda124,evaluation
+transfer_3,40,4,-2.0195948661000096,-2.0235838205535885,-2.0195948661000096,0.0,3d_transfer_3_c4_cuda124,evaluation

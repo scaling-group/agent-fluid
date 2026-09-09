@@ -1,0 +1,12 @@
+# @package _global_
+
+application:
+  name: agent-fluid-dogfish-3d-moving-window-policy
+  path: ${oc.env:EVE_AGENT_FLUID_TESTBED_PATH,../../simulation/3d/experiments}
+  editable:
+    files:
+      - cases/dogfish_3d_shape_policy/candidate_target_policy.jl
+    folders: []
+  boundary_failure_score:
+    score: -100.0
+    summary: 3D moving-window policy boundary check failed

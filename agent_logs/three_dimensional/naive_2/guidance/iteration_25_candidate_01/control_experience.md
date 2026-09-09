@@ -1,0 +1,170 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- In the direct-quiescent L64 seed rollout, a coherent self-generated wake and
+  0.94 L of targetward x motion did not provide navigation: y drifted 1.20 L
+  away, distance improved by only 0.258 L, both joint-rate limits were reached,
+  and the fish exited the upper boundary at 8.60 T. With the same carrier,
+  shared-joint bearing/slip half-cycle asymmetry first improved displacement to
+  `2.041L` left and `11.347L` closest distance; gating stronger redirect
+  authority on wrong-side response then preserved the coherent alternating 3D
+  wake and extended those results to `3.801L` left and `9.759L` closest.
+  Posterior static curvature (`1.056L` left, `12.056L` closest) and tail-only
+  half-cycle variants (`11.670--11.867L` closest) remained weaker. Prefer
+  bounded shared-joint beat asymmetry over persistent curvature when this
+  carrier already propels, and treat response-gated authority as a real
+  distance/translation improvement rather than semantic success: even the
+  strongest sample drifted `1.202L` upward, occupied a joint-rate limit for
+  `11.1%` of logged steps, and exited the same upper boundary at `10.32T`.
+  Falsify the ranking under a different carrier or if wake coherence, loads,
+  limit occupancy, closest approach, and termination do not improve together.
+- Protecting joint-rate reserve is not by itself evidence of better control.
+  On the same carrier, a course-residual half-cycle policy with a smooth rate
+  barrier reduced sampled near-limit occupancy from `11.1%` to zero, but
+  weakened leftward displacement from `3.801L` to `1.647L`, worsened closest
+  approach from `9.759L` to `11.643L`, and still exited the upper boundary at
+  `9.14T`. Avoid broad carrier braking as an add-on to steering unless it
+  preserves translation; to isolate whether course feedback is useful, test
+  it as a geometry/response gate on the high-progress carrier and require a
+  better termination class as well as distance progress.
+- Phase-compensating body yaw before response feedback is the first sampled
+  mechanism to escape the repeated early upper-boundary topology on this
+  carrier. Subtracting a two-joint-rate carrier model from heading rate while
+  retaining response-gated shared half-cycle steering extended survival from
+  `10.32T` to `27.43T`, improved closest distance from `9.759L` to `3.174L`,
+  and preserved a compact alternating 3D wake. It did not capture: the fish
+  crossed the target x station about `3.16L` high at roughly `0.98L/T`, then
+  exited the left boundary with distance back at `9.415L`. Preserve the
+  phase-separated response mechanism when the carrier dominates raw yaw, but
+  treat full-drive approach overshoot as its new boundary; test normalized
+  approach hold or terminal steering without broad far-field carrier braking,
+  and require capture or a closer pass without loss of pre-approach translation
+  and wake coherence.
+- Do not infer a universal terminal common-curvature sign from one quiet
+  closest-pass state.  A closing-speed hold improved the inherited
+  course-residual route from `1.276L` to `1.00784L`, removed `>40 deg` joint
+  dwell, and limited peak normalized planar force/moment to about
+  `0.028/0.018`, yet still crossed at `1.011L/T` and exited left.  Reversing
+  only that hold's common-curvature sign then worsened closest approach to
+  `1.106L` and retained `left_domain`, despite improving final distance from
+  `9.228L` to `8.686L`.  Together with the sampled mean/posterior bend releases
+  (`2.664L` at `0.488/0.220` peaks versus `3.312L` at `0.890/0.414`), this
+  rejects further static-bend sign/gain or bend-threshold iteration on this
+  carrier.  Test a distinct normalized response-gated actuator that preserves
+  the rhythmic restoring half-cycle, and retain it only if capture/closest
+  pass and termination improve together without losing wake, joint, and load
+  quality; revisit persistent curvature only under a different carrier or a
+  reflected-case response map.
+- Preserve body-frame constant-course predicted miss as the first repeatable
+  direct-route capture architecture, but demote the present terminal composite
+  from robust controller to threshold-sensitive mechanism. Three byte-identical
+  always-pulse samples and one response-released-pulse sibling all capture at
+  `15.983--16.044T` and `0.7472--0.7500L` behind the same compact alternating
+  3D wake, with zero joint-angle dwell beyond `40 deg`, about `17%` occupancy
+  in the last `10 deg/T` of each rate envelope, and peak normalized planar
+  force/moment no larger than `0.0309/0.0186`. Yet inherited executions of the
+  same response/pulse composite later missed at `1.01564L`, `1.12140L`, and
+  `1.21644L` before exiting left, while a no-pulse sibling also captured.
+  Pulse presence or response release is therefore neither necessary nor
+  sufficient for reliable capture; avoid further pulse/static-bend gain
+  tuning. In the inherited replay of three captures, raw terminal bearing
+  changed sign five times and the blended request six times in the final
+  `2.5T`; removing the two-joint angle-domain carrier contribution reduced
+  request variation by about one third and left two brief crossings. Treat
+  that replay only as evidence of beat-sensitive terminal geometry: test a
+  bounded phase-separated terminal observation while leaving far-field route,
+  carrier, and course prediction intact, and retain it only on repeated capture
+  plus preserved wake, joint, load, and trajectory quality. Falsify phase
+  separation if it changes the route class, fails to improve the inherited
+  `1.0--1.22L` miss band, or degrades those physical diagnostics.
+- Treat carrier changes and static steering offsets as a coupled risk, not
+  independent scalar knobs. Inherited equal two-joint mean-curvature variants
+  weakened useful translation, while centering a slower carrier on
+  bearing/slip/yaw curvature removed rate saturation but produced a large
+  wrong-way loop, moved `2.201L` away in x, and ended at `15.408L`. The sampled
+  continuous approach-hold mechanism makes the terminal boundary sharper:
+  relieving symmetric drive inside `5L` while leaving steering unrelieved
+  reached only `2.703L`, then folded into a broad-wake loop, dwelled at both
+  `45 deg` joint stops, peaked at `0.713/0.300` normalized planar force/moment,
+  and exited left at `24.518T` with `7.056L` final distance. Do not infer a
+  universal curvature-to-yaw sign across carrier regimes, accept longer
+  survival as improvement, or use continuous carrier relief to buy terminal
+  steering authority on this traveling-bend carrier. Prefer a bounded
+  phase-separated observation or response-gated actuator that leaves the
+  propulsive rhythm active, and retain it only if capture/closest approach and
+  termination improve together without changing the compact-wake route or
+  worsening joint/load quality. Revisit drive relief only under a different
+  carrier or evidence that excess closing speed, rather than steering-induced
+  deformation, causes the miss.
+- Prefer one normalized geometric completion residual across coupled rhythmic
+  redirect actuators when their effects must hand off coherently. On the same
+  direct-route carrier, a unified corrective-yaw plus constant-course
+  predicted-miss gate captured at `15.501T` with only `0.179L` raw terminal
+  miss; the sampled raw, corridor-only, pulse-only, and inherited
+  actuator-specific handoffs also captured, but later at `15.854--16.027T`
+  with `0.643--0.746L` terminal miss. The unified case retained the compact
+  alternating 3D wake, zero `>=40 deg` joint dwell, `17.8/17.0%` near-rate
+  occupancy, and `0.0365/0.0180` peak normalized planar force/moment. This
+  supports shared response-plus-predicted-miss consensus over mixing a lateral
+  corridor for one actuator with course miss for another; it does not yet show
+  repeatability because each architecture has one sampled CFD outcome. Falsify
+  on repeated loss of capture/terminal centering or worse wake, joint, load, or
+  route quality. To probe remaining beat sensitivity, change a phase-specific
+  actuator mechanism while preserving this shared residual and the far-field
+  carrier, rather than tuning another corridor or pulse magnitude.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

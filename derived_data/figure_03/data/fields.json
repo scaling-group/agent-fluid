@@ -1,0 +1,530 @@
+[
+  {
+    "id": "a1_frame_000001_start",
+    "array": "fields/a1_frame_000001_start.npz",
+    "frame": {
+      "frame_index": "1",
+      "sim_time": "200.0054931640625",
+      "cycles": "0.6666849772135417",
+      "frame_path": "wake_flow_000001.vti",
+      "center_x": "1344.0",
+      "center_y": "896.0",
+      "heading": "0.5061464309692383"
+    },
+    "summary": {
+      "target": [
+        480.0,
+        512.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 0.0054931640625,
+    "source": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000001.vti.gz"
+  },
+  {
+    "id": "a1_frame_000026_20pct",
+    "array": "fields/a1_frame_000026_20pct.npz",
+    "frame": {
+      "frame_index": "26",
+      "sim_time": "207.8154296875",
+      "cycles": "0.6927180989583334",
+      "frame_path": "wake_flow_000026.vti",
+      "center_x": "1351.41943359375",
+      "center_y": "818.2271118164062",
+      "heading": "1.2426459789276123"
+    },
+    "summary": {
+      "target": [
+        480.0,
+        512.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 7.8154296875,
+    "source": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000026.vti.gz"
+  },
+  {
+    "id": "a1_frame_000051_40pct",
+    "array": "fields/a1_frame_000051_40pct.npz",
+    "frame": {
+      "frame_index": "51",
+      "sim_time": "215.62539672851562",
+      "cycles": "0.7187513224283855",
+      "frame_path": "wake_flow_000051.vti",
+      "center_x": "1211.0885009765625",
+      "center_y": "665.3399047851562",
+      "heading": "0.3413976728916168"
+    },
+    "summary": {
+      "target": [
+        480.0,
+        512.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 15.625396728515625,
+    "source": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000051.vti.gz"
+  },
+  {
+    "id": "a1_frame_000077_60pct",
+    "array": "fields/a1_frame_000077_60pct.npz",
+    "frame": {
+      "frame_index": "77",
+      "sim_time": "223.75453186035156",
+      "cycles": "0.7458484395345052",
+      "frame_path": "wake_flow_000077.vti",
+      "center_x": "978.3790893554688",
+      "center_y": "597.2561645507812",
+      "heading": "0.15233086049556732"
+    },
+    "summary": {
+      "target": [
+        480.0,
+        512.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 23.754531860351562,
+    "source": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000077.vti.gz"
+  },
+  {
+    "id": "a1_frame_000102_80pct",
+    "array": "fields/a1_frame_000102_80pct.npz",
+    "frame": {
+      "frame_index": "102",
+      "sim_time": "231.56446838378906",
+      "cycles": "0.7718815612792969",
+      "frame_path": "wake_flow_000102.vti",
+      "center_x": "756.8959350585938",
+      "center_y": "549.3135375976562",
+      "heading": "-0.1496037244796753"
+    },
+    "summary": {
+      "target": [
+        480.0,
+        512.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 31.564468383789062,
+    "source": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000102.vti.gz"
+  },
+  {
+    "id": "a1_frame_000127_final",
+    "array": "fields/a1_frame_000127_final.npz",
+    "frame": {
+      "frame_index": "127",
+      "sim_time": "239.07192993164062",
+      "cycles": "0.7969064331054687",
+      "frame_path": "wake_flow_000127.vti",
+      "center_x": "550.6641235351562",
+      "center_y": "518.2086791992188",
+      "heading": "0.5648499131202698"
+    },
+    "summary": {
+      "target": [
+        480.0,
+        512.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 39.071929931640625,
+    "source": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000127.vti.gz"
+  },
+  {
+    "id": "b3_frame_000001_start",
+    "array": "fields/b3_frame_000001_start.npz",
+    "frame": {
+      "frame_index": "1",
+      "sim_time": "200.0054931640625",
+      "cycles": "0.6666849772135417",
+      "frame_path": "wake_flow_000001.vti",
+      "center_x": "1344.0",
+      "center_y": "896.0",
+      "heading": "0.5061466097831726"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 0.0054931640625,
+    "source": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000001.vti.gz"
+  },
+  {
+    "id": "b3_frame_000023_20pct",
+    "array": "fields/b3_frame_000023_20pct.npz",
+    "frame": {
+      "frame_index": "23",
+      "sim_time": "206.88043212890625",
+      "cycles": "0.6896014404296875",
+      "frame_path": "wake_flow_000023.vti",
+      "center_x": "1351.40966796875",
+      "center_y": "848.2537231445312",
+      "heading": "0.6372935771942139"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 6.88043212890625,
+    "source": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000023.vti.gz"
+  },
+  {
+    "id": "b3_frame_000045_40pct",
+    "array": "fields/b3_frame_000045_40pct.npz",
+    "frame": {
+      "frame_index": "45",
+      "sim_time": "213.75003051757812",
+      "cycles": "0.7125001017252605",
+      "frame_path": "wake_flow_000045.vti",
+      "center_x": "1250.373046875",
+      "center_y": "702.6874389648438",
+      "heading": "0.33952367305755615"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 13.750030517578125,
+    "source": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000045.vti.gz"
+  },
+  {
+    "id": "b3_frame_000067_60pct",
+    "array": "fields/b3_frame_000067_60pct.npz",
+    "frame": {
+      "frame_index": "67",
+      "sim_time": "220.63047790527344",
+      "cycles": "0.7354349263509115",
+      "frame_path": "wake_flow_000067.vti",
+      "center_x": "1046.605224609375",
+      "center_y": "638.109375",
+      "heading": "-0.17729908227920532"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 20.630477905273438,
+    "source": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000067.vti.gz"
+  },
+  {
+    "id": "b3_frame_000089_80pct",
+    "array": "fields/b3_frame_000089_80pct.npz",
+    "frame": {
+      "frame_index": "89",
+      "sim_time": "227.50540161132812",
+      "cycles": "0.7583513387044271",
+      "frame_path": "wake_flow_000089.vti",
+      "center_x": "861.3125610351562",
+      "center_y": "616.3907470703125",
+      "heading": "0.06422345340251923"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 27.505401611328125,
+    "source": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000089.vti.gz"
+  },
+  {
+    "id": "b3_frame_000111_final",
+    "array": "fields/b3_frame_000111_final.npz",
+    "frame": {
+      "frame_index": "111",
+      "sim_time": "234.29249572753906",
+      "cycles": "0.7809749857584636",
+      "frame_path": "wake_flow_000111.vti",
+      "center_x": "648.6865234375",
+      "center_y": "608.8035278320312",
+      "heading": "0.2872577905654907"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 34.29249572753906,
+    "source": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000111.vti.gz"
+  },
+  {
+    "id": "c1_frame_000001_start",
+    "array": "fields/c1_frame_000001_start.npz",
+    "frame": {
+      "frame_index": "1",
+      "sim_time": "200.0054931640625",
+      "cycles": "0.6666849772135417",
+      "frame_path": "wake_flow_000001.vti",
+      "center_x": "1344.0",
+      "center_y": "896.0",
+      "heading": "0.5061467289924622"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 0.0054931640625,
+    "source": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000001.vti.gz"
+  },
+  {
+    "id": "c1_frame_000023_20pct",
+    "array": "fields/c1_frame_000023_20pct.npz",
+    "frame": {
+      "frame_index": "23",
+      "sim_time": "206.88043212890625",
+      "cycles": "0.6896014404296875",
+      "frame_path": "wake_flow_000023.vti",
+      "center_x": "1354.3592529296875",
+      "center_y": "838.9940185546875",
+      "heading": "0.5150797963142395"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 6.88043212890625,
+    "source": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000023.vti.gz"
+  },
+  {
+    "id": "c1_frame_000044_40pct",
+    "array": "fields/c1_frame_000044_40pct.npz",
+    "frame": {
+      "frame_index": "44",
+      "sim_time": "213.4420166015625",
+      "cycles": "0.711473388671875",
+      "frame_path": "wake_flow_000044.vti",
+      "center_x": "1275.8480224609375",
+      "center_y": "703.2119750976562",
+      "heading": "0.21774433553218842"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 13.4420166015625,
+    "source": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000044.vti.gz"
+  },
+  {
+    "id": "c1_frame_000066_60pct",
+    "array": "fields/c1_frame_000066_60pct.npz",
+    "frame": {
+      "frame_index": "66",
+      "sim_time": "220.31695556640625",
+      "cycles": "0.7343898518880209",
+      "frame_path": "wake_flow_000066.vti",
+      "center_x": "1081.97412109375",
+      "center_y": "641.593994140625",
+      "heading": "0.5020198225975037"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 20.31695556640625,
+    "source": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000066.vti.gz"
+  },
+  {
+    "id": "c1_frame_000087_80pct",
+    "array": "fields/c1_frame_000087_80pct.npz",
+    "frame": {
+      "frame_index": "87",
+      "sim_time": "226.87840270996094",
+      "cycles": "0.7562613423665364",
+      "frame_path": "wake_flow_000087.vti",
+      "center_x": "864.4598388671875",
+      "center_y": "608.9070434570312",
+      "heading": "-0.08111000061035156"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 26.878402709960938,
+    "source": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000087.vti.gz"
+  },
+  {
+    "id": "c1_frame_000109_final",
+    "array": "fields/c1_frame_000109_final.npz",
+    "frame": {
+      "frame_index": "109",
+      "sim_time": "233.5444793701172",
+      "cycles": "0.7784815979003906",
+      "frame_path": "wake_flow_000109.vti",
+      "center_x": "649.06396484375",
+      "center_y": "603.7017211914062",
+      "heading": "0.08508377522230148"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 33.54447937011719,
+    "source": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000109.vti.gz"
+  },
+  {
+    "id": "d3_frame_000001_start",
+    "array": "fields/d3_frame_000001_start.npz",
+    "frame": {
+      "frame_index": "1",
+      "sim_time": "200.0054931640625",
+      "cycles": "0.6666849772135417",
+      "frame_path": "wake_flow_000001.vti",
+      "center_x": "1344.0001220703125",
+      "center_y": "896.0",
+      "heading": "0.5061472058296204"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 0.0054931640625,
+    "source": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000001.vti.gz"
+  },
+  {
+    "id": "d3_frame_000025_20pct",
+    "array": "fields/d3_frame_000025_20pct.npz",
+    "frame": {
+      "frame_index": "25",
+      "sim_time": "207.501953125",
+      "cycles": "0.6916731770833333",
+      "frame_path": "wake_flow_000025.vti",
+      "center_x": "1367.8040771484375",
+      "center_y": "836.3717651367188",
+      "heading": "0.7201449275016785"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 7.501953125,
+    "source": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000025.vti.gz"
+  },
+  {
+    "id": "d3_frame_000050_40pct",
+    "array": "fields/d3_frame_000050_40pct.npz",
+    "frame": {
+      "frame_index": "50",
+      "sim_time": "215.31700134277344",
+      "cycles": "0.7177233378092448",
+      "frame_path": "wake_flow_000050.vti",
+      "center_x": "1298.4105224609375",
+      "center_y": "656.6448974609375",
+      "heading": "0.01832016371190548"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 15.317001342773438,
+    "source": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000050.vti.gz"
+  },
+  {
+    "id": "d3_frame_000074_60pct",
+    "array": "fields/d3_frame_000074_60pct.npz",
+    "frame": {
+      "frame_index": "74",
+      "sim_time": "222.8135986328125",
+      "cycles": "0.7427119954427084",
+      "frame_path": "wake_flow_000074.vti",
+      "center_x": "1100.97705078125",
+      "center_y": "588.4794311523438",
+      "heading": "0.3951089084148407"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 22.8135986328125,
+    "source": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000074.vti.gz"
+  },
+  {
+    "id": "d3_frame_000099_80pct",
+    "array": "fields/d3_frame_000099_80pct.npz",
+    "frame": {
+      "frame_index": "99",
+      "sim_time": "230.62904357910156",
+      "cycles": "0.7687634785970052",
+      "frame_path": "wake_flow_000099.vti",
+      "center_x": "875.2074584960938",
+      "center_y": "596.0718994140625",
+      "heading": "0.17952443659305573"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 30.629043579101562,
+    "source": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000099.vti.gz"
+  },
+  {
+    "id": "d3_frame_000123_final",
+    "array": "fields/d3_frame_000123_final.npz",
+    "frame": {
+      "frame_index": "123",
+      "sim_time": "237.82852172851562",
+      "cycles": "0.7927617390950521",
+      "frame_path": "wake_flow_000123.vti",
+      "center_x": "647.9186401367188",
+      "center_y": "621.9855346679688",
+      "heading": "0.20599953830242157"
+    },
+    "summary": {
+      "target": [
+        576.0,
+        608.0
+      ],
+      "success_radius": 48.0
+    },
+    "elapsed_T": 37.828521728515625,
+    "source": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000123.vti.gz"
+  }
+]

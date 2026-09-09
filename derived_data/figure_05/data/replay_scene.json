@@ -1,0 +1,17 @@
+{
+  "domain_scale_L": [
+    4.0,
+    3.0,
+    1.5
+  ],
+  "runtime_resolution": 64,
+  "target_L": [
+    9.0,
+    9.5
+  ],
+  "success_radius_L": 0.75,
+  "fish_initial_center_L": [
+    21.0,
+    14.0
+  ]
+}

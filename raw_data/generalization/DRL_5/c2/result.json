@@ -1,0 +1,88 @@
+{
+  "method": "DRL",
+  "policy": "DRL_5",
+  "case": "c2",
+  "summary": {
+    "target_reached": false,
+    "termination": "unstable_dynamics",
+    "steps": 209,
+    "release_elapsed": 0.993194580078125,
+    "horizon": 300.0,
+    "L": 64,
+    "target": [
+      576.0,
+      608.0
+    ],
+    "target_x_L": 9.0,
+    "target_y_L": 9.5,
+    "success_radius": 48.0,
+    "success_radius_L": 0.75,
+    "initial_center": [
+      1344.0,
+      896.0
+    ],
+    "initial_head": [
+      1322.15283203125,
+      882.7548217773438
+    ],
+    "final_center": [
+      1328.7142333984375,
+      878.2296752929688
+    ],
+    "final_head": [
+      1309.0980224609375,
+      863.375
+    ],
+    "final_distance": 776.3047485351562,
+    "min_distance": 776.3047485351562,
+    "domain_dims": [
+      1536,
+      1024
+    ],
+    "flow_speed": 0.18000000715255737,
+    "flow_seed": 20260714,
+    "initial_center_x_L": 21.0,
+    "initial_center_y_L": 14.0,
+    "initial_heading_deg": 28.99999966863366,
+    "cylinder_centers_x_L": [
+      3.0,
+      6.0
+    ],
+    "cylinder_centers_y_L": [
+      11.0,
+      9.75
+    ],
+    "cylinder_diameters_L": [
+      0.6499999761581421,
+      0.6499999761581421
+    ],
+    "dynamics_force_limit": 1000000.0,
+    "dynamics_speed_limit": 100.0,
+    "domain_exit_margin_L": 0.800000011920929,
+    "collision_clearance_L": 0.0,
+    "phi_dot_limit_deg": 260.0,
+    "phi_ddot_limit_deg": 1800.0,
+    "max_dimensionless_dt": 0.005499999970197678,
+    "distance_integral_score": -12.13085123046151,
+    "observed_distance_integral_L": 0.041246913179590304,
+    "terminal_hold_integral_L": 12.08960431728192,
+    "loaded_prewarm_snapshot": true,
+    "prewarm_steps": 0,
+    "loaded_episode_snapshot": false,
+    "unstable_failure": true
+  },
+  "configuration_sha256": "3649ad341b77da458b2a527a34e51f08fb811087bc019150f215b9df9a23f057",
+  "initial_flow_state_sha256": "bcae9a216a5bb23ddccb813f120092802e9d223ecbd42b2ecf7deb2bb3558c44",
+  "original_summary_sha256": "d30ee23c7b1559bfbe2cc1a43f02665a2e83cc060211777db9b2dfd5ff846ecd",
+  "trajectory_sha256": "307199f161829e299b955eef67469d23b4579e1f1a3b34613225c075a7ca9c93",
+  "inference": {
+    "mode": "mean",
+    "sampling_seed": null,
+    "model_sha256": "600e54a1dee4231bef609e6724e6454f88fa65ed3c2b6a9a1c60fa4ce57bf38a",
+    "vecnormalize_sha256": "9c02b25836b51bba4dd06aead82ab6bda672eba1a5b89f25ffe407fdfd0ef95f",
+    "initial_sampling_state_sha256": null,
+    "action_repeat": 4,
+    "observation_history_length": 8,
+    "normalization_training": false
+  }
+}

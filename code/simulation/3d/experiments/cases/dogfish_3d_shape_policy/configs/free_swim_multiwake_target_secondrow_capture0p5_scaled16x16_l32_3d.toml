@@ -1,0 +1,71 @@
+schema_version = "dogfish.projected_multiwake_3d.v1"
+
+# Declarative, dry-build specification for the strict 3D continuation of the
+# final scaled 2D case. It is intentionally separate from the older quiescent
+# free_swim_target_episode3d runner: no expensive 3D CFD is launched here.
+
+[free_swim]
+L = 32
+backend = "cuda"
+# Resolution is the intentional exception to the strict x-y science projection:
+# the accepted 2D mother case is L64, while 3D search uses the proven L32 tier.
+Re = 1000.0
+body_density = 1.0
+added_mass_scale = 1.0
+added_inertia_scale = 1.0
+max_dimensionless_dt = 0.0055
+
+[projected_multiwake_3d]
+source_case = "cases/dogfish_2d_shape_policy/configs/free_swim_multiwake_target_secondrow_capture0p5_scaled16x16_l64.toml"
+source_case_sha256 = "4fedaeb198db3e3f1dc29bdcf8048b5388268f21cb7a9a99bc92846d2bb19db6"
+reference_3d_commit = "1ba47b340bbbc7dc01e4fe12f25c8a3b684bff70"
+projection_contract = "strict_xy_plus_locked_z"
+
+domain_scale_x_L = 16.0
+domain_scale_y_L = 16.0
+domain_scale_z_L = 2.0
+z_plane_fraction = 0.5
+
+initial_center_x_L = 14.0
+initial_center_y_L = 13.0
+initial_heading_deg = 29.0
+
+target_x_L = 6.0
+target_y_L = 8.75
+capture_metric = "planar_xy"
+success_radius_L = 0.5
+
+cylinder_centers_x_L = [1.0, 1.0, 3.0, 3.0]
+cylinder_centers_y_L = [8.333333333333334, 10.0, 7.5, 9.166666666666666]
+cylinder_diameters_L = [0.43333333333333335, 0.43333333333333335, 0.43333333333333335, 0.43333333333333335]
+cylinder_span_mode = "domain_spanning"
+
+flow_velocity_L = [0.18, 0.0, 0.0]
+flow_perturbation = 0.001
+flow_seed = 20260714
+exit_bc = true
+prewarm_horizon = 200.0
+rollout_horizon = 300.0
+
+# Reuse the branch-proven body of revolution, Hero caudal fin, and planar
+# control manifold. The fluid and body are 3D; rigid control stays x-y-yaw.
+height_scale = 1.0
+caudal_fin = true
+fin_x_start = 0.80
+fin_x_end = 1.07
+fin_height = 0.11
+fin_half_thickness = 0.012
+locked_dofs = ["heave", "roll", "pitch"]
+
+initial_phi1_deg = 8.0
+initial_phi2_deg = -8.0
+phi_limit_deg = 45.0
+phi_dot_limit_deg = 260.0
+phi_ddot_limit_deg = 1800.0
+observation_history_length = 8
+
+vtk = true
+vtk_collection_name = "projected_multiwake_flow3d"
+vtk_fields = ["lambda2", "body"]
+vtk_flush_collection = true
+vtk_compress = true

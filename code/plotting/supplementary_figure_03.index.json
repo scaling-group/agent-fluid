@@ -1,0 +1,43 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "supplementary_figure_03",
+  "display_label": "Supplementary Figure 3",
+  "title": "Matched moving-window and full-field calculations",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Moving window",
+      "mapping": "The matching midplane field/frames, full center trajectory and domain/resolution metadata are used. Scale vorticity by runtime_resolution; overlay swimmer occupancy and the trajectory.",
+      "inputs": [
+        "data/moving_window4x3/midplane/field.npz",
+        "data/moving_window4x3/midplane/frames.csv",
+        "data/moving_window4x3/summary.json",
+        "data/moving_window4x3/trajectory.csv"
+      ],
+      "output_stem": "supplementary_figure_03_a"
+    },
+    {
+      "id": "b",
+      "content": "Full field",
+      "mapping": "The matching midplane field/frames, full center trajectory and domain/resolution metadata are used. Scale vorticity by runtime_resolution; overlay swimmer occupancy and the trajectory.",
+      "inputs": [
+        "data/fullfield24x16/midplane/field.npz",
+        "data/fullfield24x16/midplane/frames.csv",
+        "data/fullfield24x16/summary.json",
+        "data/fullfield24x16/trajectory.csv"
+      ],
+      "output_stem": "supplementary_figure_03_b"
+    }
+  ],
+  "inputs": {
+    "data/fullfield24x16/midplane/field.npz": "582b8551ed7aa178e78d59dfe708f6ccef9093c534e7af194e9da3c289d82b1a",
+    "data/fullfield24x16/midplane/frames.csv": "3abd1d469e61aee79102b3d7bccca2b9c1b8c83df63b3ad4767c00160ecb5d13",
+    "data/fullfield24x16/summary.json": "0233b654a18759cce875d8c52c438b3380302fe711a2554331a498266d1cacd9",
+    "data/fullfield24x16/trajectory.csv": "9568e186333b0a7a04fde2e5da2bf30fc7a3a476fc479c4112b772727412271a",
+    "data/moving_window4x3/midplane/field.npz": "a16be2087ccd8c9e4e4525a4b82a1185399e483a49f203c0a7146ed0963dd994",
+    "data/moving_window4x3/midplane/frames.csv": "54d028ae04e3da8274292518df79a5cef15dbd1f449738a34cda326fd07ee1eb",
+    "data/moving_window4x3/summary.json": "78e37328d75f697a843f08b31b278492aa1299c3df55330f1d9e97d6e7bdac7d",
+    "data/moving_window4x3/trajectory.csv": "97cda38c59791a6acf4f88b543a6533b144b9036a8e56de2343e26be375fdb49"
+  },
+  "build_id": "S3"
+}

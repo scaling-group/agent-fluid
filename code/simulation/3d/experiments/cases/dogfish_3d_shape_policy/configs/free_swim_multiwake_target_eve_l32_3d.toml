@@ -1,0 +1,31 @@
+schema_version = "dogfish.projected_multiwake_target3d_evaluation.v1"
+
+# This file controls evaluator artifacts and scoring only.  The CFD geometry,
+# time step, prewarm fingerprint, and rollout horizon remain owned by
+# free_swim_multiwake_target_secondrow_capture0p75_24x16_l32_3d.toml.
+
+[episode]
+physics_config = "configs/free_swim_multiwake_target_secondrow_capture0p75_24x16_l32_3d.toml"
+candidate_policy = "candidate_target_policy.jl"
+prewarm_snapshot_env = "DOGFISH3D_PREWARM_SNAPSHOT"
+require_fingerprint_match = true
+control_mode = "candidate_policy"
+allow_scientific_failure = true
+
+[artifacts]
+trace_csv = true
+summary_json = true
+midplane = true
+midplane_frame_count = 21
+midplane_representation = "z=L vorticity-z plus BDIM occupancy"
+video_fps = 4
+full_3d_vtk = false
+
+[score]
+semantics = "dogfish.projected_multiwake_target3d.v1"
+distance_integral_weight = 1.0
+final_distance_weight = 0.2
+survival_bonus_weight = 0.2
+capture_bonus = 2.0
+unstable_dynamics_penalty = 2.0
+higher_is_better = true

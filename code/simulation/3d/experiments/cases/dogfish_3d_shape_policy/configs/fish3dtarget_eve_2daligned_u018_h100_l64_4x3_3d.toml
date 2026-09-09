@@ -1,0 +1,73 @@
+schema_version = "dogfish.projected_multiwake_3d.v1"
+
+# Formal 3D EvE task aligned to the August-5 2D production geometry. The
+# 4L x 3L x 1.5L box is translated CFD storage inside the 24L x 16L virtual
+# task canvas. The obstacle-free flow is a steady uniform U_infinity=0.18.
+
+[free_swim]
+L = 64
+backend = "cuda"
+Re = 1000.0
+body_density = 1.0
+added_mass_scale = 1.0
+added_inertia_scale = 1.0
+max_dimensionless_dt = 0.0055
+
+[projected_multiwake_3d]
+source_case = "fish3dtarget_eve_24x16_h100_l64_4x3"
+source_case_sha256 = "26dfda789ad1363c8371691e5cdf7fac9088b3d0d095488198b166bd90b09b4a"
+reference_3d_commit = "9c009b2ad1ab380283e6aa0ea9b35e9ccde72b40"
+projection_contract = "uniform_inflow_inertial_integer_cell_moving_window"
+
+domain_scale_x_L = 4.0
+domain_scale_y_L = 3.0
+domain_scale_z_L = 1.5
+z_plane_fraction = 0.5
+
+# Local storage anchor. With world start (21,14)L this places the L64 frame
+# origin at the exact integer-cell location (1248,800).
+initial_center_x_L = 1.5
+initial_center_y_L = 1.5
+initial_heading_deg = 29.0
+
+# Match the August-5 article's formal 2D second-row task: the swimmer starts
+# at world (21,14)L in the upper right and travels toward the central target.
+target_x_L = 9.00
+target_y_L = 9.50
+capture_metric = "planar_xy"
+# Match the August-5 2D production case: success is the first planar head
+# crossing of the same 0.75L target radius.
+success_radius_L = 0.75
+
+cylinder_centers_x_L = []
+cylinder_centers_y_L = []
+cylinder_diameters_L = []
+cylinder_span_mode = "none"
+
+flow_velocity_L = [0.18, 0.0, 0.0]
+flow_perturbation = 0.0
+flow_seed = 20260815
+exit_bc = true
+prewarm_horizon = 0.0
+rollout_horizon = 100.0
+
+height_scale = 1.0
+caudal_fin = false
+fin_x_start = 0.80
+fin_x_end = 1.07
+fin_height = 0.11
+fin_half_thickness = 0.012
+locked_dofs = ["heave", "roll", "pitch"]
+
+initial_phi1_deg = 8.0
+initial_phi2_deg = -8.0
+phi_limit_deg = 45.0
+phi_dot_limit_deg = 260.0
+phi_ddot_limit_deg = 1800.0
+observation_history_length = 8
+
+vtk = false
+vtk_collection_name = "fish3dtarget_eve_24x16_h100_l64_4x3"
+vtk_fields = ["lambda2", "body"]
+vtk_flush_collection = true
+vtk_compress = true

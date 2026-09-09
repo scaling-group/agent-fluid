@@ -1,0 +1,43 @@
+{
+  "schema": "agent-fluid.table-content.v1",
+  "supplementary_table_02": {
+    "basis": "Author-written structural interpretation of the retained controller code, not an experimental measurement or automatic causal analysis.",
+    "rows": [
+      {
+        "structure": "Travelling body wave",
+        "stage": "Seed",
+        "interpretation": "A state-feedback oscillator drives the anterior joint, while the posterior joint follows with a phase lag. The Seed observes only joint state and has no target or flow input."
+      },
+      {
+        "structure": "Body-frame bearing guidance",
+        "stage": "Iteration 1",
+        "interpretation": "Bearing is converted into a signed, bounded steering command and distributed across the two joint accelerations without prescribing a world-frame route."
+      },
+      {
+        "structure": "Course-responsive authority allocation",
+        "stage": "Iteration 6",
+        "interpretation": "Body-frame forward and lateral velocity modify the bearing request, while large bearing error reserves actuator authority for redirection."
+      },
+      {
+        "structure": "Half-cycle asymmetry",
+        "stage": "Iteration 7",
+        "interpretation": "Joint phase redistributes steering toward the half-cycle already moving in the requested direction while preserving the travelling-wave carrier."
+      },
+      {
+        "structure": "Response-scheduled redirect burst",
+        "stage": "Iteration 12",
+        "interpretation": "A transient burst augments the base asymmetry while large bearing error remains unmet. Recent bearing response, assisting yaw moment and high joint speed withdraw only this surplus authority."
+      },
+      {
+        "structure": "Crossflow response",
+        "stage": "Iteration 18",
+        "interpretation": "Target-aligned relative crossflow replaces bearing history as the response signal used to release surplus redirect authority."
+      },
+      {
+        "structure": "Force-confirmed wake assistance",
+        "stage": "Iteration 19",
+        "interpretation": "Lateral force must co-sign target-aligned crossflow before wake assistance releases the burst. This champion remained best through Iteration 20."
+      }
+    ]
+  }
+}
