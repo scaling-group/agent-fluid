@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-fluid-drl"
+version = "0.1.0"
+description = "Behavior cloning and PPO for the Agent Fluid CFD experiments"
+requires-python = ">=3.12,<3.13"
+license = { text = "Apache-2.0" }
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["environment/requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_fluid_ppo*"]

@@ -1,0 +1,478 @@
+{
+  "schema": "agent-fluid.field-selection.v1",
+  "field_values_modified": false,
+  "vorticity_limits": [
+    -0.8,
+    0.8
+  ],
+  "raw_repository": "https://github.com/scaling-group/agent-fluid",
+  "inputs": {
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/frames.csv.gz": "dde96149ce4780f9548b1899689ff72874d23f15e8382f78df83a28de3872d4a",
+    "raw_data/illustrated_generalization/a1/simulation/episode/summary.json": "b5134d95e4216f2819ff03b6abd434fb18f9ba49304dce468cdcf4d210081762",
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000001.vti.gz": "1f66e6f1f16c37fed29a5804c160875c1487ab5d9433e0df71e9f683f8fa52da",
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000026.vti.gz": "2dc9e5a0d639a601f143e7564cdbb87a9fd78fbf666bd73c03fc68ffe104721f",
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000051.vti.gz": "a75f85cd5502e5aef12f923b63ce30d474a8c15f356b9cf630dfee5a23134a18",
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000077.vti.gz": "6c5ca39117fa0d912ab3e6a0c1287a639d723ca9224fc54ed8150f693cb88f07",
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000102.vti.gz": "6885a9261eefaac19da0deabd102603a8acd736af182478c08af536036b3d309",
+    "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000127.vti.gz": "b378e0a36727ea8060d69e1f6a83cdbcbdc4e8f18cc5e95887181132c87d32b6",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/frames.csv.gz": "c564546b40db7ba8c510b24ad0abc0afec6afd7a0379175e2d61cb70d76df323",
+    "raw_data/illustrated_generalization/b3/simulation/episode/summary.json": "c3f02930320b9af25ebcd74419cec1c15df4e81c7b6c912536141d936d1d5ac9",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000001.vti.gz": "a73f70a0f2c5c2b1439a3cffa02bc11f53f06a159d7e4da61a29c5317a7cc61c",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000023.vti.gz": "3606e2c81df84f76768f9e1bca46f5bcdb23cc4030c14b3613447584d088ec62",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000045.vti.gz": "9d4c552adcfd30a96556d87e9072c92cafc35780a9fac016e2b2b9f6db845379",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000067.vti.gz": "f56bebd6685cfcd7045bc83a18491da35e35adb2d840b7fb0ab0b338df6c8859",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000089.vti.gz": "ffffa9a61105ea107fe9053d0f28ad01ab5d47104b4fae7173fbde0f4c7123f1",
+    "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000111.vti.gz": "6bc47309fe1d20b88a83deb14e2f0ca7e983253fc03a4e94ceba55e52e21e1a1",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/frames.csv.gz": "8a3a764de6debf11325c6c49d45c0f00250e71cdce51aa34742978d23ca62371",
+    "raw_data/illustrated_generalization/c1/simulation/episode/summary.json": "351ba3861c69bb4f714f8ec9e8a8c279f04b47c8738aaf31c5948beec0d44c7a",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000001.vti.gz": "758c957df0023a8aed26b626b781dc419e9a99014323a3c5b12b06e5ff63ca56",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000023.vti.gz": "b2c1c1bac0de178a20d726c0db5d355f06f1ad5b5e30d217bcf26a22de562fd9",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000044.vti.gz": "a5be33e7da77c595044111cbc76b3b984f1dba5d62f170be67a4253c034a34da",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000066.vti.gz": "6a74b63a6ee9a162ecacb71dc619eeb68b77688804fa643844aa213fe1573e82",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000087.vti.gz": "1206e67eb38ac780b6a0a43cdc1a2c2c3497de6a24383b1092f1b6d5fbb2a9a4",
+    "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000109.vti.gz": "97d12dc4e348246da43f3d75693f7cb3daac89a70432c99e38c335fb0a007caa",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/frames.csv.gz": "c2e16747b17108a15c8a6b0a26107e37fb27f9d699b64b2739e8ff280f11f9d4",
+    "raw_data/illustrated_generalization/d3/simulation/episode/summary.json": "a56cab473603ae53f553d1c6dfa917cb6ecfc59a4a2b0d96b56ee72a03917175",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000001.vti.gz": "7aa7ef7ba7fb14484096a6709062ca8158d25ebde1d538ff94deed73dbc25674",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000025.vti.gz": "c72668c00f7ecd1d1c6a07523becedea2ce31165ec965f078ab764af2fe2c4a9",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000050.vti.gz": "85e498d7d62f3310a0211a5e8c6a849b58ecf1884a0b11b604522f91235be92e",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000074.vti.gz": "ac74e14558d2545d8ce516be56d0c4b4b35177c12b8a756efe78c31ee79c7c4e",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000099.vti.gz": "f3ea94874a87707ef3b2d2ae42929103c60cd5a5c22083651036c98184fd1189",
+    "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000123.vti.gz": "00a1cdea1af9ffa6b73e1f9de19002e1bb11ab6063ef52e43fbb00ca15c8b520"
+  },
+  "frames": [
+    {
+      "id": "a1_frame_000001_start",
+      "figure": "3",
+      "case": "a1",
+      "frame_index": 1,
+      "sim_time": 200.0054931640625,
+      "raw_field": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "a1_frame_000026_20pct",
+      "figure": "3",
+      "case": "a1",
+      "frame_index": 26,
+      "sim_time": 207.8154296875,
+      "raw_field": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000026.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "a1_frame_000051_40pct",
+      "figure": "3",
+      "case": "a1",
+      "frame_index": 51,
+      "sim_time": 215.62539672851562,
+      "raw_field": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000051.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "a1_frame_000077_60pct",
+      "figure": "3",
+      "case": "a1",
+      "frame_index": 77,
+      "sim_time": 223.75453186035156,
+      "raw_field": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000077.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "a1_frame_000102_80pct",
+      "figure": "3",
+      "case": "a1",
+      "frame_index": 102,
+      "sim_time": 231.56446838378906,
+      "raw_field": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000102.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "a1_frame_000127_final",
+      "figure": "3",
+      "case": "a1",
+      "frame_index": 127,
+      "sim_time": 239.07192993164062,
+      "raw_field": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000127.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "b3_frame_000001_start",
+      "figure": "3",
+      "case": "b3",
+      "frame_index": 1,
+      "sim_time": 200.0054931640625,
+      "raw_field": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "b3_frame_000023_20pct",
+      "figure": "3",
+      "case": "b3",
+      "frame_index": 23,
+      "sim_time": 206.88043212890625,
+      "raw_field": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000023.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "b3_frame_000045_40pct",
+      "figure": "3",
+      "case": "b3",
+      "frame_index": 45,
+      "sim_time": 213.75003051757812,
+      "raw_field": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000045.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "b3_frame_000067_60pct",
+      "figure": "3",
+      "case": "b3",
+      "frame_index": 67,
+      "sim_time": 220.63047790527344,
+      "raw_field": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000067.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "b3_frame_000089_80pct",
+      "figure": "3",
+      "case": "b3",
+      "frame_index": 89,
+      "sim_time": 227.50540161132812,
+      "raw_field": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000089.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "b3_frame_000111_final",
+      "figure": "3",
+      "case": "b3",
+      "frame_index": 111,
+      "sim_time": 234.29249572753906,
+      "raw_field": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000111.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "c1_frame_000001_start",
+      "figure": "3",
+      "case": "c1",
+      "frame_index": 1,
+      "sim_time": 200.0054931640625,
+      "raw_field": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "c1_frame_000023_20pct",
+      "figure": "3",
+      "case": "c1",
+      "frame_index": 23,
+      "sim_time": 206.88043212890625,
+      "raw_field": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000023.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "c1_frame_000044_40pct",
+      "figure": "3",
+      "case": "c1",
+      "frame_index": 44,
+      "sim_time": 213.4420166015625,
+      "raw_field": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000044.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "c1_frame_000066_60pct",
+      "figure": "3",
+      "case": "c1",
+      "frame_index": 66,
+      "sim_time": 220.31695556640625,
+      "raw_field": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000066.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "c1_frame_000087_80pct",
+      "figure": "3",
+      "case": "c1",
+      "frame_index": 87,
+      "sim_time": 226.87840270996094,
+      "raw_field": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000087.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "c1_frame_000109_final",
+      "figure": "3",
+      "case": "c1",
+      "frame_index": 109,
+      "sim_time": 233.5444793701172,
+      "raw_field": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000109.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "d3_frame_000001_start",
+      "figure": "3",
+      "case": "d3",
+      "frame_index": 1,
+      "sim_time": 200.0054931640625,
+      "raw_field": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "d3_frame_000025_20pct",
+      "figure": "3",
+      "case": "d3",
+      "frame_index": 25,
+      "sim_time": 207.501953125,
+      "raw_field": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000025.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "d3_frame_000050_40pct",
+      "figure": "3",
+      "case": "d3",
+      "frame_index": 50,
+      "sim_time": 215.31700134277344,
+      "raw_field": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000050.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "d3_frame_000074_60pct",
+      "figure": "3",
+      "case": "d3",
+      "frame_index": 74,
+      "sim_time": 222.8135986328125,
+      "raw_field": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000074.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "d3_frame_000099_80pct",
+      "figure": "3",
+      "case": "d3",
+      "frame_index": 99,
+      "sim_time": 230.62904357910156,
+      "raw_field": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000099.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "d3_frame_000123_final",
+      "figure": "3",
+      "case": "d3",
+      "frame_index": 123,
+      "sim_time": 237.82852172851562,
+      "raw_field": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000123.vti.gz",
+      "origin": [
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "trajectory_samples": 470
+}

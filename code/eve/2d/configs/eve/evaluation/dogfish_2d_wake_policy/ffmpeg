@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+julia_bin="${JULIA_BIN:-${EVE_EVAL_PBS_JULIA_BIN:-julia}}"
+project_root="${EVE_SOLVER_ROOT:-${TESTBED_ROOT:-$PWD}}"
+julia_depot="${JULIA_DEPOT_PATH:-${EVE_EVAL_PBS_JULIA_DEPOT_PATH:-}}"
+
+if [[ "$julia_bin" == */* ]]; then
+    if [[ ! -x "$julia_bin" ]]; then
+        echo "Julia executable for ffmpeg is not executable: $julia_bin" >&2
+        exit 127
+    fi
+elif ! command -v "$julia_bin" >/dev/null 2>&1; then
+    echo "Julia executable for ffmpeg is not on PATH: $julia_bin" >&2
+    exit 127
+fi
+if [[ ! -f "$project_root/Project.toml" || ! -f "$project_root/Manifest.toml" ]]; then
+    echo "Julia project for ffmpeg is incomplete: $project_root" >&2
+    exit 127
+fi
+if [[ -n "$julia_depot" ]]; then
+    export JULIA_DEPOT_PATH="$julia_depot"
+fi
+
+# Rendering and encoding do not use CUDA. Clearing visibility here also keeps
+# a GPU-lease Julia wrapper from recursively waiting on the lease held by the
+# parent Julia renderer.
+unset CUDA_VISIBLE_DEVICES AGENT_FLUID_GPU_DEVICES
+
+exec "$julia_bin" --project="$project_root" --startup-file=no -e '
+pkg = Base.PkgId(
+    Base.UUID("b22a6f82-2f65-5046-a5b2-351ab43fb4e5"),
+    "FFMPEG_jll",
+)
+ffmpeg_jll = Base.require(pkg)
+ffmpeg_jll.ffmpeg() do executable
+    run(Cmd(vcat([executable], ARGS)))
+end
+' -- "$@"

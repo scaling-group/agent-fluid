@@ -1,0 +1,119 @@
+{
+  "schema": "aqua-evaluation-2d-inputs.v1",
+  "files": {
+    "source_2d/cases/dogfish_2d_shape_policy/candidate.jl": {
+      "sha256": "897730f15614ca5e1326032489dec68649016001672c69af339e787d8426f142",
+      "bytes": 3627
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/candidate_target_policy.jl": {
+      "sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46",
+      "bytes": 8530
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/configs/free_swim_multiwake_target_secondrow_capture0p75_l64.toml": {
+      "sha256": "38656b0082ea983a29acf6ad0e30ae68e80d01cb60d4c2f7f391092ce0ce7cce",
+      "bytes": 2479
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/configs/free_swim_multiwake_target_smoke.toml": {
+      "sha256": "268080ba9ef723ec6757d4e865b3ff2e5d7fcb15c73947750403f51762857ebd",
+      "bytes": 959
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/evaluate.jl": {
+      "sha256": "a4090660d365b88225cab4f7caaae7b2d5d85777e4d31116300c5dff2e06a78d",
+      "bytes": 1607
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/free_swim_multiwake_target_episode.jl": {
+      "sha256": "b3fe12384471a94dafc2b46eee3dfe1d0ae165f4fe5c5eb8f8af31cc751af98b",
+      "bytes": 539
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/free_swim_target_episode.jl": {
+      "sha256": "c5ebfd91fb99c55df646e54b3975a3c25680755cc3b59c93a9e61bbbf55e4fd9",
+      "bytes": 45807
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/free_swim_vtk_watch_render.jl": {
+      "sha256": "d7ef4374f2787b2051df99ab7721c7a50c3818153889ca3e05535dbcd7ba149d",
+      "bytes": 37536
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/free_swim_wake_episode.jl": {
+      "sha256": "18a4499a7c9ee9c055cdbc44c2145e1958118c6a95f1afaf8082945ba74f4167",
+      "bytes": 97941
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/run_job.jl": {
+      "sha256": "39605666abc8dc57a28180b8e442589d400302e0c9ccb2f7746e7fbeb1737b97",
+      "bytes": 3012
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/artifacts.jl": {
+      "sha256": "51373414184a50e518ed56e45754cf55c020f4ddaff6ec0a38f78d091fb8c0fa",
+      "bytes": 24553
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/assays.jl": {
+      "sha256": "ce43f60b7ca3f00a6b20de5da4ba7f9f5f551841dd3a514277d4e40b600e9f38",
+      "bytes": 6344
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/batch_runner.jl": {
+      "sha256": "edeea4650954ae08340b866712a672ce2467f2cad9f8ee13eaf6e1e2cc3c1f79",
+      "bytes": 6434
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/DogfishShapePolicyTestbed.jl": {
+      "sha256": "f029b3eaa56954524e4821b7dfd4a2970eae6d7418796eaa8e20279904384669",
+      "bytes": 2374
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/evaluation.jl": {
+      "sha256": "7985ca1079692f6a195d0c7bdf5fdbe228d390f47cfe547514aa45be7be8dd05",
+      "bytes": 17895
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/free_swim.jl": {
+      "sha256": "d67c179a042f083469b0628560bbec4257a3cad3797bb00b911b93434ad84710",
+      "bytes": 22830
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/geometry.jl": {
+      "sha256": "415c75e6ea08e4345d32e290b4c42729c43eb7b894568a0fbd95d1b65091bec0",
+      "bytes": 1902
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/jobs.jl": {
+      "sha256": "28a7743d1b780fc2c35e1d0d729eeffaf6d36bb9f24622201c3ef4ea4bc61e19",
+      "bytes": 11503
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/joint_control.jl": {
+      "sha256": "13c1e589b31780fc609836647ca606bddb6fa8191181d177961800c5b6c97306",
+      "bytes": 2435
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/kinematics.jl": {
+      "sha256": "6a5605b1d244f6a43f85e59825955044db69e2d5556abe0be0d4e5bb455fc0f0",
+      "bytes": 3636
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/performance.jl": {
+      "sha256": "05822035d136c6c4f01a64469149168b9a25774e583ddca7971eb079170a895b",
+      "bytes": 6186
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/run_config.jl": {
+      "sha256": "8cab650c3bd64b2cf57020ce97315ee46e632b522c9c5bf785e0aa18e724129a",
+      "bytes": 3672
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/simulation.jl": {
+      "sha256": "f2d808296397f6a73ff1b37534431a0936804778a1f52fedf8ede71597d2e4f3",
+      "bytes": 16212
+    },
+    "source_2d/cases/dogfish_2d_shape_policy/src/vtk_stream.jl": {
+      "sha256": "c2019d67e88bb71dd80930b5e16ae25df5c58455419425590b215d29db9c914b",
+      "bytes": 7860
+    },
+    "source_2d/Manifest.toml": {
+      "sha256": "1ba1591376673285bebb654fc6931c3fb7f55a040f0f34ddfa396c4e86610f76",
+      "bytes": 58705
+    },
+    "source_2d/Project.toml": {
+      "sha256": "cb342ada311b01c556e92ce16da6b114f6bac4526fba7966313b5fa0f5cf74e4",
+      "bytes": 712
+    },
+    "source_2d/src/AquaTestbed.jl": {
+      "sha256": "c79473eeaf101ec055ae6fb834a29fdf8f8983565311788d838742a4e983968c",
+      "bytes": 23
+    }
+  },
+  "policy_replacement": {
+    "path": "source_2d/cases/dogfish_2d_shape_policy/candidate_target_policy.jl",
+    "original_sha256": "511b898cd3be991fff977679bafb58050e3428809fd88da18d04d654ec5052fd",
+    "replay_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+  },
+  "dynamics_instrumentation": "none; original full output cadence, then select requested original frame indices"
+}

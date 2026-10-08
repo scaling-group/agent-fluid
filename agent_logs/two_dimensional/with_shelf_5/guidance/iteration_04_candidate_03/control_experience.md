@@ -1,0 +1,97 @@
+# Dogfish L64 Second-Row Wake-Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. The same guidance is used by matched 2-, 3-, and 4-worker runs.
+- The fixed task is `L64`, target `(9,9.5)L`, first-crossing radius `0.75L`,
+  inflow `0.18`, held-fish prewarm `200`, released horizon `300`, and actuator
+  envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect shared prewarm and released keyframe sheets before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination.
+- In the common seed failure, the fish left the lower boundary after only
+  `50.127` released time with head displacement `(-3.545,-13.300)L`, while
+  mean velocity differed from mean local flow by only about `0.038U` and both
+  joint velocity and acceleration limits were reached. Large world displacement
+  is therefore not evidence of useful propulsion when local-flow advection
+  explains most of it. For a target-blind, advection-dominated failure with no
+  visible recovery turn, test bounded body-frame target-bearing mean curvature
+  before increasing drive or adding an uncalibrated wake residual; this lesson
+  does not apply once target-directed turning is visible, and is falsified for
+  this controller family if the added bias leaves the turn sign and
+  lower-boundary trajectory topology unchanged.
+- Once bounded target-bearing curvature establishes the useful route, preserve
+  its carrier and far/middle commands. Two sampled copies of the `0.55`-period,
+  `28 deg` carrier with an `8 deg` mean-curvature limit reached the target in
+  `93.032`, whereas inherited global reductions to period `0.90`/amplitude
+  `14 deg` and an increase to `12 deg` static bias exited right within `17.457`
+  and `16.791` with negative progress; a slow/narrow carrier plus global
+  heading-rate damping was unstable. A smooth amplitude envelope active only
+  inside `2.5L` preserved capture but improved score by just `0.00097`, with
+  effectively unchanged aggregate command effort, joint caps, force, and
+  moment. Therefore do not continue scalar-only carrier, bias, or terminal
+  amplitude tuning for this topology; test a bounded state-gated correction
+  that is exactly inactive on the demonstrated far route. This implication
+  applies while the `8 deg` controller retains its target-reaching topology and
+  is falsified if a localized mechanism changes pre-gate actions, delays or
+  loses capture, or fails to alter the terminal behavior it was designed for.
+- A normalized terminal gate is not itself a new control mechanism. On the
+  same successful carrier, the prefill, a `2.5L`-gated amplitude envelope, that
+  envelope plus lateral-target steering, and that envelope plus bearing-rate
+  lead all reached in `93.026`--`93.071` with scores spanning less than
+  `0.001`. Their released keyframes show the same broad redirect and wake-entry
+  topology; all retain identical joint-angle/rate/acceleration maxima, roughly
+  `9.05e4` command energy, and RMS force/moment near `95.5/1147`. Treat this as
+  a concrete negative result for stacking more terminal amplitude, bearing,
+  or lateral-coordinate blends onto the stiff, clipped Van der Pol restoring
+  command. After this pattern, change one actuator feedback primitive under an
+  exactly inactive far-range gate--for example half-cycle timing, posterior
+  lag, or direct command shaping--and require a visible terminal trajectory or
+  action-history difference before tuning its gains. This boundary applies to
+  the current clipped two-joint oscillator and is falsified if sign-resolved
+  histories show that one of the tested terminal blends materially changed
+  commands despite the indistinguishable aggregate and visual evidence.
+- Prefer normalized body-frame feedback. Wake phase, inflow, cylinder layout,
+  and target position are intended held-out axes; coordinate memorization is
+  not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

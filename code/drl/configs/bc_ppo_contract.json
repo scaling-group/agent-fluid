@@ -1,0 +1,70 @@
+{
+  "action": {
+    "action_repeat": 4,
+    "dimension": 2,
+    "mode": "absolute",
+    "physical_scale_deg_s2": 1800.0
+  },
+  "behavior_cloning": {
+    "accounting": "Teacher CFD transitions and completed/partial teacher episodes are charged separately and are never free samples.",
+    "batch_size": 512,
+    "environment_count": 4,
+    "epochs": 30,
+    "learning_rate": 0.001,
+    "require_complete_teacher_episode_per_environment": true,
+    "steps_per_environment": 8192,
+    "teacher_action_noise_std": 0.05,
+    "validation_fraction": 0.1
+  },
+  "observation_history_length": 8,
+  "ppo": {
+    "activation": "tanh",
+    "actor_hidden_layers": [
+      128,
+      128
+    ],
+    "batch_size": 64,
+    "checkpoint_interval_episodes": 10,
+    "clip_range": 0.2,
+    "critic_hidden_layers": [
+      128,
+      128
+    ],
+    "environment_count": 4,
+    "episode_budget": 600,
+    "freeze_observation_normalization": true,
+    "gae_lambda": 0.9980014995000627,
+    "gamma": 0.9996000599960001,
+    "implementation": "stable-baselines3 2.9.0 PPO-Clip",
+    "initial_action_standard_deviation": 0.05,
+    "learning_rate": 3e-05,
+    "n_epochs": 10,
+    "n_steps": 512,
+    "score_based_early_stopping": false,
+    "target_kl": 0.03
+  },
+  "schema_version": "agent-fluid.bc-absolute-ppo-minimal-seed-aligned.v1",
+  "seed_policy": {
+    "observations_used_by_teacher": [
+      "phi",
+      "phi_dot"
+    ],
+    "role": "behavior-cloning teacher only; disabled during PPO",
+    "sha256": "511b898cd3be991fff977679bafb58050e3428809fd88da18d04d654ec5052fd",
+    "source_milestone": "i000_seed",
+    "source_run": "minimal_cue_20x4_20260805",
+    "target_aware": false
+  },
+  "selection_rule": "No seed substitution and no score-based stopping. Preserve every checkpoint at 10-episode intervals. Frozen deterministic checkpoint evaluation is a separate charged stage.",
+  "task_hashes": {
+    "environment_config_sha256": "a8f34386bdc76b287a914ab716f551d2cce80e75b4216e8d2927134e0d3a32af",
+    "prewarm_snapshot_sha256": "d846eea2437b9380085ca387aaf035b3aadcd1b46013b79d1c1be44f8c59b0b4"
+  },
+  "training_seeds": [
+    174318026,
+    900773107,
+    1296852818,
+    1743685058,
+    20260825
+  ]
+}

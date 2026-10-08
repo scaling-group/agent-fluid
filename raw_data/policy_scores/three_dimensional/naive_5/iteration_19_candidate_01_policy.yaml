@@ -1,0 +1,5 @@
+score: -100.0
+summary: 3D moving-window CFD episode failed
+metrics: {}
+artifacts:
+  score_yaml: evaluation_workspaces/20260912_204725_step_19_5965f31d92d4/logs/evaluate/score.yaml

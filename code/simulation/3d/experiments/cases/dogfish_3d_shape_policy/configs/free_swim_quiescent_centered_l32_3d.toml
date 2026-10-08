@@ -1,0 +1,67 @@
+schema_version = "dogfish.projected_multiwake_3d.v1"
+
+# Isolated quiescent-water body/control capability case.  This is deliberately
+# separate from the formal U=0.18 uniform-inflow physics.  The fish is centered
+# in x/y so mirrored turns and an initial backward impulse have ample clearance.
+
+[free_swim]
+L = 32
+backend = "cuda"
+Re = 1000.0
+body_density = 1.0
+added_mass_scale = 1.0
+added_inertia_scale = 1.0
+max_dimensionless_dt = 0.0055
+
+[projected_multiwake_3d]
+source_case = "isolated_quiescent_centered_body_control_capability"
+source_case_sha256 = "not-applicable-isolated-capability-case"
+reference_3d_commit = "4f6d6617ed9fc69ee720da4ea23b77edf5088dc0"
+projection_contract = "isolated_quiescent_xy_plus_locked_z"
+
+domain_scale_x_L = 16.0
+domain_scale_y_L = 16.0
+domain_scale_z_L = 2.0
+z_plane_fraction = 0.5
+
+initial_center_x_L = 8.0
+initial_center_y_L = 8.0
+initial_heading_deg = 0.0
+
+target_x_L = 2.0
+target_y_L = 8.0
+capture_metric = "planar_xy"
+success_radius_L = 0.5
+
+cylinder_centers_x_L = []
+cylinder_centers_y_L = []
+cylinder_diameters_L = []
+cylinder_span_mode = "none"
+
+flow_velocity_L = [0.0, 0.0, 0.0]
+flow_perturbation = 0.0
+flow_seed = 20260723
+exit_bc = true
+prewarm_horizon = 0.05
+rollout_horizon = 12.0
+
+height_scale = 1.0
+caudal_fin = false
+fin_x_start = 0.80
+fin_x_end = 1.07
+fin_height = 0.11
+fin_half_thickness = 0.012
+locked_dofs = ["heave", "roll", "pitch"]
+
+initial_phi1_deg = 0.0
+initial_phi2_deg = 0.0
+phi_limit_deg = 45.0
+phi_dot_limit_deg = 260.0
+phi_ddot_limit_deg = 1800.0
+observation_history_length = 8
+
+vtk = false
+vtk_collection_name = "quiescent_centered_capability3d"
+vtk_fields = ["lambda2", "body"]
+vtk_flush_collection = true
+vtk_compress = true

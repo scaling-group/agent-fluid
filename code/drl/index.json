@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "python": "3.12",
+    "requirements": "code/drl/environment/requirements.txt",
+    "julia": "1.10.9",
+    "project": "code/drl/environment/Project.toml",
+    "manifest": "code/drl/environment/Manifest.toml"
+  },
+  "source": {
+    "commits": [
+      "fd86b1bd81323551ac8322deb3f9b437196b6d66",
+      "6e9b38838a16c6b406ea4d5db5c6fff8ffd5d05f"
+    ]
+  },
+  "simulation": "code/simulation/2d",
+  "worker": "code/drl/julia/ppo_env_worker.jl",
+  "policy_bridge": "code/drl/julia/residual_policy_bridge.jl",
+  "configuration": "code/drl/configs/free_swim_multiwake_ppo_l64.toml",
+  "contract": "code/drl/configs/bc_ppo_contract.json",
+  "teacher_policy": "code/simulation/2d/cases/dogfish_2d_shape_policy/candidate_target_policy.jl",
+  "fixed_policies": "code/generalization/policies/index.json",
+  "training_records": "raw_data/drl_training",
+  "training_entry_point": "python -m agent_fluid_ppo.train"
+}

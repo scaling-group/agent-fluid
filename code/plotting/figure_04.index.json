@@ -1,0 +1,95 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "figure_04",
+  "display_label": "Figure 4",
+  "title": "Physical mechanisms of adaptive wake navigation",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Growth of control structure",
+      "mapping": "Count non-comment code lines, parameters and state-feedback signals in the seven Julia milestone policies (0, 1, 6, 7, 12, 18, 19).",
+      "inputs": [
+        "code/iteration_00.jl",
+        "code/iteration_01.jl",
+        "code/iteration_06.jl",
+        "code/iteration_07.jl",
+        "code/iteration_12.jl",
+        "code/iteration_18.jl",
+        "code/iteration_19.jl"
+      ],
+      "output_stem": "figure_04_a"
+    },
+    {
+      "id": "b",
+      "content": "Trajectory and wake field",
+      "mapping": "Use center_x_L and center_y_L for the trajectory; release/redirect/capture field arrays and frame indices provide vorticity and swimmer geometry.",
+      "inputs": [
+        "data/phase_0.csv",
+        "data/frames.csv",
+        "data/field_0.npz",
+        "data/field_1.npz",
+        "data/field_2.npz"
+      ],
+      "output_stem": "figure_04_b"
+    },
+    {
+      "id": "c",
+      "content": "Signed surface-pressure loading",
+      "mapping": "Three matched release/redirect/capture snapshots. Sample pressure on the body surface defined by the signed-distance arrays.",
+      "inputs": [
+        "data/frames.csv",
+        "data/field_0.npz",
+        "data/field_1.npz",
+        "data/field_2.npz"
+      ],
+      "output_stem": "figure_04_c"
+    },
+    {
+      "id": "d",
+      "content": "Command counterfactuals and yaw moment",
+      "mapping": "Plot episode_time_T against the six clipped joint-command effects and yaw_moment_z_L2.",
+      "inputs": [
+        "data/phase_0.csv"
+      ],
+      "output_stem": "figure_04_d"
+    },
+    {
+      "id": "e",
+      "content": "Wake-state robustness",
+      "mapping": "Plot distance_L against episode_time_T for all three release states; preserve every time sample.",
+      "inputs": [
+        "data/phase_0.csv",
+        "data/phase_1.csv",
+        "data/phase_2.csv"
+      ],
+      "output_stem": "figure_04_e"
+    },
+    {
+      "id": "f",
+      "content": "Full-rollout ablations",
+      "mapping": "Use all 18 paired ablation/release-state records and their target-capture flags and capture-time changes.",
+      "inputs": [
+        "data/ablation.csv"
+      ],
+      "output_stem": "figure_04_f"
+    }
+  ],
+  "inputs": {
+    "code/iteration_00.jl": "511b898cd3be991fff977679bafb58050e3428809fd88da18d04d654ec5052fd",
+    "code/iteration_01.jl": "0474f5f1127d4b53ca11f7d11f1d4503bc775c42fa33e5761b09d6ec9c7c9bc9",
+    "code/iteration_06.jl": "2c777c094ef7e5d79cb5ed016cdeb39d585c127865f794f2d510b8bcb4d757d3",
+    "code/iteration_07.jl": "33dae3f571cf52c1dc0f9f90f0b60aa6ea63b4662e5508cf20ebe4f2ccd54313",
+    "code/iteration_12.jl": "f639b35ff787519048d25cb45a218a51f42352f2f06772596d0770d6d933b657",
+    "code/iteration_18.jl": "143e87600dd802e77075d7765300a07427410326f237d1fc5a18c3528d2c4c24",
+    "code/iteration_19.jl": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46",
+    "data/ablation.csv": "618804902bd777f7302af32fc4bbb974b9c6844a7cde206daebffc96da0c7648",
+    "data/field_0.npz": "9cb23eb7cebcc7742b09c3c588cdc9e406e05787b6b490a869ff825f65aa3ba6",
+    "data/field_1.npz": "d6c485725929a2394bd49e2fcc6f07e54cbbca5c7661209f6f758960a8cb0440",
+    "data/field_2.npz": "33b3dd40fafb016c2d21f8ee3646909613ef602feb514814c61a96425357f8c7",
+    "data/frames.csv": "1d664d85756cbc2c49aecb64c9cc8766db1588fd8d13521a6c8c91fbe95c17cd",
+    "data/phase_0.csv": "bf4c7f36ac0e9a0119d7394b3e46454b9d046297289bc5d9645e751d432daa58",
+    "data/phase_1.csv": "7d62b509dd30aa7091446a0222e06b047eef5bf3e6cb42ee2476147d2e59dc82",
+    "data/phase_2.csv": "cd70297365511ba0ebe879e658e12114bd2a5b01034b75c72afe3db64a1cfbcf"
+  },
+  "build_id": "4"
+}

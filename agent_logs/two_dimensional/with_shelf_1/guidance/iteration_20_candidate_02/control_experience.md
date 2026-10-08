@@ -1,0 +1,203 @@
+# Dogfish L64 Second-Row Wake-Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 40-iteration lineage with no solver or optimizer population
+  import. The same guidance is used by matched 2-, 3-, and 4-worker runs.
+- The fixed task is `L64`, target `(9,9.5)L`, first-crossing radius `0.75L`,
+  inflow `0.18`, held-fish prewarm `200`, released horizon `300`, and actuator
+  envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect shared prewarm and released keyframe sheets before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination.
+- The sampled siblings now validate one narrow steering translation: adding a
+  bounded, same-sign body-frame bearing residual directly to the seed's
+  `0.55`-period acceleration carrier reached `0.7496L` after `62.304` time
+  units with head displacement `(-10.922,-4.153)L`. The target-blind seed
+  instead exited downward after `50.127`; an opposite-signed curvature-center
+  translation exited after `13.915` with negative progress; and a wholesale
+  slower/smaller curvature-center carrier became unstable after `121.517`
+  with RMS force/moment `16749.8/290421`. Preserve the successful carrier,
+  steering sign, and acceleration-residual interface before testing a new
+  mechanism; avoid interpreting slower scalar gait settings or an abstract
+  curvature bias as interchangeable with the validated residual. This lesson
+  is bounded to the shared prewarm case and is falsified if a later wake phase
+  loses target reach with the same residual topology.
+- Four independently sampled evaluations of the steering-prioritized
+  allocator reproduce the same success metrics exactly: `49.142` arrival,
+  `2.1560L` mean distance, `62522/1272.3` total/mean command energy,
+  `0.2301` RMS relative crossflow, and `39.05/617.13` RMS force/moment. Their
+  released sheets likewise show the same sharp initial redirect followed by a
+  long upstream traverse. In contrast, the inherited lower-effort
+  curvature-equilibrium replacement used mean command energy `419.1` but
+  terminated unstable at `121.517` with force/moment RMS
+  `16749.8/290421`. Treat the repeated success as a deterministic same-prewarm
+  baseline for one-mechanism comparisons, not evidence of wake-phase
+  robustness or permission to rank effort alone. The baseline still touches
+  both joint speed and acceleration limits, so retain a new structural
+  feedback only if it preserves target reach and leftward propulsion while
+  improving effort, load, limit contact, or route compactness; falsify any
+  robustness claim until a changed wake phase or held-out layout also succeeds.
+- Two same-prewarm, one-mechanism children now expose an objective tradeoff
+  around that deterministic allocator baseline. Scheduling the reserved
+  steering share upward with absolute body-frame bearing improves arrival
+  from `49.142` to `46.035`, mean distance from `2.1560L` to `2.0695L`, and
+  total/mean command energy from `62522/1272.3` to `56948/1237.1`, but raises
+  RMS force/moment from `39.05/617.13` to `51.40/761.46`. Course-slip damping
+  instead reaches in `48.032` with lower RMS force/moment `37.92/605.38`, but
+  its mean command energy rises to `1299.7` and mean distance is `2.1003L`.
+  Because both retain the same coherent redirect-and-upstream trajectory and
+  still touch joint-speed and `30.0` command limits, treat large-bearing
+  reserve scheduling as an arrival/effort mechanism and course-slip damping
+  as a load/route mechanism, not as interchangeable generic steering gains.
+  Do not claim a combined benefit without a direct rollout; falsify either
+  interpretation if a changed wake phase loses capture, or if the respective
+  arrival/effort or load advantage disappears.
+- Half-cycle asymmetry is a redirect/route-compactness mechanism, not a
+  terminal-distance mechanism. Relative to the inherited raw-bearing-reserve
+  plus course-slip controller, the joint-state-aligned half-cycle translation
+  improves arrival `45.727 -> 36.471`, mean distance `2.0543L -> 1.6860L`,
+  and total command energy `57829 -> 48700`; three independently sampled
+  copies reproduce the latter rollout exactly. The tradeoff is higher mean
+  command energy (`1264.7 -> 1335.3`) and force/moment RMS
+  (`49.36/799.31 -> 63.59/953.42`), with both joint-speed and `30.0`
+  acceleration limits still touched. Fading only the extra asymmetry with
+  distance down to a `0.20` fraction near capture leaves the keyframe route
+  visually unchanged and changes arrival by only `-0.0165`, total energy by
+  `-21.3`, and force/moment RMS by `-0.33/-2.83`, while slightly worsening
+  mean distance and score. Do not treat a near-target distance taper as a new
+  control capability here; test response-, limit-, or disturbance-gated
+  release if lowering half-cycle load, and require capture plus a meaningful
+  arrival/distance or load change. This boundary is limited to the shared
+  prewarm and is falsified if a changed wake phase makes terminal taper
+  materially affect capture or route topology.
+- Localize response feedback to the transient redirect mechanism rather than
+  feeding it into persistent route steering. Against three exactly reproduced
+  base-asymmetry successes, scheduling only the extra half-cycle burst with
+  recent bearing closure improves arrival `36.471 -> 34.821`, mean distance
+  `1.6860L -> 1.6270L`, and total command energy `48700 -> 47151`, while
+  raising mean command energy `1335.3 -> 1354.1` and force/moment RMS
+  `63.59/953.42 -> 77.09/1142.74`. The inherited predictive-bearing child
+  instead put bearing trend into the mean route residual and exited after
+  `18.304` with negative progress. Preserve raw-bearing ownership of mean
+  steering and reserve; treat response-gated burst as an arrival/route
+  mechanism with a load penalty, and test fast load- or limit-aware release
+  only on the extra burst. This is bounded to the shared prewarm and is
+  falsified if a changed wake phase loses capture, or if response gating no
+  longer improves arrival/route while keeping persistent steering intact.
+- Treat actuator-pressure release for a coupled traveling bend as one coherent
+  maneuver modulation, not two independent joint-local steering schedules.
+  The assigned parent recorded two exact coherent-release copies; the current
+  sample raises that to three independently sampled policies using maximum
+  normalized two-joint speed as one release signal. All three reach in
+  `34.7105` with `1.62283L` mean distance, `46985.9` total command energy, and
+  `68.96/1036.40` force/moment RMS. Independent per-joint release instead
+  reaches in `34.8590` with `1.62681L`, `47176.8`, and `74.24/1105.81`, despite
+  slightly lower mean command energy (`1353.36` versus `1353.65`); inherited
+  logs also show that gating moment credit by one targetward joint phase raises
+  load further to `82.35/1231.74`. Preserve carrier, mean steering, base
+  asymmetry, and signed-moment ownership while sharing only optional-burst
+  release. An inherited speed-only gate regressed arrival and load, so this is
+  not evidence that speed is a standalone wake proxy; the lesson applies only
+  to the compatible response-and-moment mechanism and is falsified by failed
+  replication, lost capture under a changed wake phase, or a genuinely
+  joint-specific mechanism benefiting from independent gating.
+- Once coherent whole-carrier speed release is established, do not stack a
+  second generic actuator-pressure gate onto the optional redirect burst. A
+  previous-command-pressure child retained capture but regressed the exact
+  coherent-release baseline in arrival (`34.7105 -> 35.1285`), mean distance
+  (`1.62283L -> 1.64127L`), total energy (`46985.9 -> 47457.0`), relative
+  crossflow (`0.24023 -> 0.24265`), and force/moment RMS
+  (`68.96/1036.40 -> 71.47/1078.27`), without removing joint-speed or command-
+  envelope contact. Treat that result as evidence against accumulating scalar
+  limit proxies, not against response release itself. After an exact-result
+  plateau, hold the carrier, route steering, base asymmetry, and coherent speed
+  release fixed and replace at most one response cue with a semantically direct
+  body-frame measurement; require capture plus a meaningful route, load, or
+  limit-contact benefit. Falsify this boundary if an independently evidenced
+  pressure signal acts earlier and improves those joint metrics without route
+  regression.
+- Do not equate a slightly faster target crossing with a better response cue.
+  Against four sampled coherent-release copies (`34.7105` arrival,
+  `1.62283L` mean distance, `46985.9` total energy, and `68.96/1036.40`
+  force/moment RMS), the assigned parent's heading-rate replacement and one
+  independent inherited run reproduce the same tradeoff exactly: arrival
+  improves by only `0.0385` and total energy falls `0.58%`, while mean distance
+  worsens to `1.62669L` and force/moment RMS rise about `32%/34%` to
+  `91.30/1389.74`; speed and command limits remain touched. Avoid substituting
+  direct yaw rate for bearing-window closure when seeking load release. A
+  later direct wake-response test should change only the optional burst cue,
+  preserve route steering and propulsion, and earn retention through capture
+  plus a meaningful load or limit-contact benefit. This boundary is limited to
+  the shared prewarm and is falsified if separately gated yaw response lowers
+  load under a changed wake phase without route regression.
+- Direct hydrodynamic response cues are not interchangeable. Replacing bearing-
+  window closure only inside the optional redirect burst with targetward
+  relative crossflow preserves the coherent route and improves the replicated
+  baseline in arrival (`34.7105 -> 33.9460`), mean distance (`1.62283L ->
+  1.60066L`), total energy (`46985.9 -> 46092.2`), and score (`0.25101 ->
+  0.27204`), but raises force/moment RMS from `68.96/1036.40` to
+  `85.04/1244.16` and leaves speed and command-envelope contact. Adding a
+  capped targetward lateral-force credit to the bearing-window baseline instead
+  regresses arrival, mean distance, total energy, and load to `34.9415`,
+  `1.63256L`, `47284.7`, and `73.70/1106.47`. Treat relative crossflow as an
+  evidenced route/total-effort cue with a load penalty, not as generic load
+  release; do not promote direct force credit from this result. Two later
+  clean substitutions sharpen that boundary. Requiring co-signed lateral force
+  to confirm the relative-crossflow response improves arrival by only `0.2200`,
+  mean distance by `0.00654L`, and total energy by `315.9`, while raising
+  force/moment RMS another `10.1%/11.2%` to `93.64/1383.73`; it therefore
+  falsifies its intended load reduction. Replacing relative crossflow with
+  local body-frame crossflow is slightly slower (`33.9900` versus `33.9460`),
+  uses slightly more total energy (`46157.5` versus `46092.2`), and likewise
+  raises load to `94.55/1395.74`. Do not assume that separating fluid motion
+  from fish lateral response produces a purer or safer wake cue, and do not
+  force-confirm targetward crossflow when load is the objective. Preserve the
+  relative-crossflow route cue and test any load relief as a separately bounded
+  optional-channel disturbance mechanism. This boundary is limited to the
+  shared prewarm and is falsified if a changed wake phase removes the relative-
+  crossflow route benefit, makes local flow materially safer at equal route
+  quality, or makes force confirmation load-reducing.
+- Prefer normalized body-frame feedback. Wake phase, inflow, cylinder layout,
+  and target position are intended held-out axes; coordinate memorization is
+  not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

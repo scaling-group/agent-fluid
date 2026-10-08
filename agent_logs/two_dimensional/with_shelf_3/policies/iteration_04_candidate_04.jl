@@ -1,0 +1,95 @@
+function target_policy_params()
+    return (
+        control_period=0.55,
+        oscillator_amplitude=28.0 * pi / 180,
+        oscillator_mu=0.35,
+        tail_lag_gain=0.8,
+        tail_damping=0.65,
+        max_turn_curvature=12.0 * pi / 180,
+        bearing_scale=20.0 * pi / 180,
+        bearing_filter_period_fraction=0.35,
+        max_yaw_damping_curvature=3.0 * pi / 180,
+        yaw_rate_scale_per_period=30.0 * pi / 180,
+        anterior_bias_fraction=0.45,
+    )
+end
+
+function target_policy(state, params)
+    omega = 2 * pi / params.control_period
+    amp = params.oscillator_amplitude
+    q1 = state.phi[1]
+    q2 = state.phi[2]
+    qd1 = state.phi_dot[1]
+    qd2 = state.phi_dot[2]
+
+    # Extract the persistent route error from the short body-frame history so
+    # beat-scale yaw does not move the oscillator centers on every control call.
+    # The episode pads early history with the current value; the fallback keeps
+    # the public policy usable by callers that provide only the current bearing.
+    bearing_now = clamp(Float64(state.bearing), -pi / 2, pi / 2)
+    bearing_history = hasproperty(state, :bearing_history) ?
+        state.bearing_history : (bearing_now,)
+    history_offsets = hasproperty(state, :history_time_offsets) ?
+        state.history_time_offsets : ntuple(_ -> 0.0, length(bearing_history))
+    filter_horizon = max(
+        params.bearing_filter_period_fraction * params.control_period,
+        eps(Float64),
+    )
+    bearing_sin = 0.0
+    bearing_cos = 0.0
+    bearing_weight = 0.0
+    for index in eachindex(bearing_history)
+        bearing_sample = bearing_history[index]
+        bounded_sample = clamp(Float64(bearing_sample), -pi / 2, pi / 2)
+        history_offset = index <= length(history_offsets) ?
+            min(Float64(history_offsets[index]), 0.0) : 0.0
+        sample_weight = exp(max(history_offset / filter_horizon, -20.0))
+        bearing_sin += sample_weight * sin(bounded_sample)
+        bearing_cos += sample_weight * cos(bounded_sample)
+        bearing_weight += sample_weight
+    end
+    persistent_bearing = bearing_weight <= eps(Float64) ?
+        bearing_now : atan(bearing_sin, bearing_cos)
+
+    # Keep persistent route steering distinct from fast yaw rejection. The
+    # empirical actuation sign is positive curvature -> negative body yaw, so
+    # the rate residual has the same sign as measured heading rate. Expressing
+    # rate as heading change per gait period keeps the feedback scale-free.
+    route_curvature = params.max_turn_curvature * tanh(
+        persistent_bearing / max(params.bearing_scale, eps(params.bearing_scale)),
+    )
+    heading_rate = hasproperty(state, :heading_rate) ?
+        Float64(state.heading_rate) : 0.0
+    heading_change_per_period = heading_rate * params.control_period
+    yaw_damping_curvature = params.max_yaw_damping_curvature * tanh(
+        heading_change_per_period /
+        max(params.yaw_rate_scale_per_period, eps(params.yaw_rate_scale_per_period)),
+    )
+    turn_curvature = clamp(
+        route_curvature + yaw_damping_curvature,
+        -params.max_turn_curvature,
+        params.max_turn_curvature,
+    )
+    anterior_fraction = clamp(params.anterior_bias_fraction, 0.0, 1.0)
+    q1_center = anterior_fraction * turn_curvature
+    q2_center = (1 - anterior_fraction) * turn_curvature
+
+    # Preserve the seed's state-only reflex oscillator, but center the traveling
+    # bend on the requested curvature instead of remaining target-blind.
+    q1_wave = q1 - q1_center
+    vdp_drive = params.oscillator_mu * (1 - (q1_wave / amp)^2) * qd1
+    a1 = vdp_drive - omega^2 * q1_wave
+
+    # Tail follows the first joint with a velocity-dependent lag, producing a
+    # smooth traveling bend around the posterior share of the curvature bias.
+    phase_lag_target = q2_center - q1_wave -
+        params.tail_lag_gain * qd1 / max(omega, eps(omega))
+    a2 = omega^2 * (phase_lag_target - q2) - 2 * params.tail_damping * omega * qd2
+
+    return (
+        phi_ddot=(
+            a1,
+            a2,
+        ),
+    )
+end

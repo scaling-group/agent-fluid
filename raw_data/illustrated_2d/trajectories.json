@@ -1,0 +1,5 @@
+{
+  "seed": "raw_data/illustrated_2d/seed/trajectory.csv.gz",
+  "i6": "raw_data/illustrated_2d/i6/trajectory.csv.gz",
+  "i19": "raw_data/generalization/SEAS_1/nominal/trajectory.csv.gz"
+}

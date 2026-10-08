@@ -1,0 +1,6 @@
+{
+  "snapshot_sha256": "fe470b0ffa0674cf16a46a9ac7de69fc5cde9efb78d7db725b1103a91453af4a",
+  "sidecar": "prewarm/prewarm_snapshot.jld2.json",
+  "sidecar_sha256": "2ae0bb3eea9055150bb898c8638220ecb28eaf0f6910c044e5e74c7f9b8b2037",
+  "release_configuration": "config.toml"
+}

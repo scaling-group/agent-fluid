@@ -1,0 +1,105 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "figure_03",
+  "display_label": "Figure 3",
+  "title": "Two-dimensional generalization storyboards",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Target shift (a1)",
+      "mapping": "Six original VTI fields at the recorded simulation times, in chronological order. The final frame overlays all recorded centreline samples. BodySDF supplies the swimmer silhouette; vorticity limits are +/-0.8.",
+      "inputs": [
+        "data/a1_trajectory.csv",
+        "data/fields.json",
+        "data/fields/a1_frame_000001_start.npz",
+        "data/fields/a1_frame_000026_20pct.npz",
+        "data/fields/a1_frame_000051_40pct.npz",
+        "data/fields/a1_frame_000077_60pct.npz",
+        "data/fields/a1_frame_000102_80pct.npz",
+        "data/fields/a1_frame_000127_final.npz"
+      ],
+      "output_stem": "figure_03_a1"
+    },
+    {
+      "id": "b",
+      "content": "Rear-row stagger (b3)",
+      "mapping": "Six original VTI fields at the recorded simulation times, in chronological order. The final frame overlays all recorded centreline samples. BodySDF supplies the swimmer silhouette; vorticity limits are +/-0.8.",
+      "inputs": [
+        "data/b3_trajectory.csv",
+        "data/fields.json",
+        "data/fields/b3_frame_000001_start.npz",
+        "data/fields/b3_frame_000023_20pct.npz",
+        "data/fields/b3_frame_000045_40pct.npz",
+        "data/fields/b3_frame_000067_60pct.npz",
+        "data/fields/b3_frame_000089_80pct.npz",
+        "data/fields/b3_frame_000111_final.npz"
+      ],
+      "output_stem": "figure_03_b3"
+    },
+    {
+      "id": "c",
+      "content": "Three-cylinder layout (c1)",
+      "mapping": "Six original VTI fields at the recorded simulation times, in chronological order. The final frame overlays all recorded centreline samples. BodySDF supplies the swimmer silhouette; vorticity limits are +/-0.8.",
+      "inputs": [
+        "data/c1_trajectory.csv",
+        "data/fields.json",
+        "data/fields/c1_frame_000001_start.npz",
+        "data/fields/c1_frame_000023_20pct.npz",
+        "data/fields/c1_frame_000044_40pct.npz",
+        "data/fields/c1_frame_000066_60pct.npz",
+        "data/fields/c1_frame_000087_80pct.npz",
+        "data/fields/c1_frame_000109_final.npz"
+      ],
+      "output_stem": "figure_03_c1"
+    },
+    {
+      "id": "d",
+      "content": "Flow speed +22% (d3)",
+      "mapping": "Six original VTI fields at the recorded simulation times, in chronological order. The final frame overlays all recorded centreline samples. BodySDF supplies the swimmer silhouette; vorticity limits are +/-0.8.",
+      "inputs": [
+        "data/d3_trajectory.csv",
+        "data/fields.json",
+        "data/fields/d3_frame_000001_start.npz",
+        "data/fields/d3_frame_000025_20pct.npz",
+        "data/fields/d3_frame_000050_40pct.npz",
+        "data/fields/d3_frame_000074_60pct.npz",
+        "data/fields/d3_frame_000099_80pct.npz",
+        "data/fields/d3_frame_000123_final.npz"
+      ],
+      "output_stem": "figure_03_d3"
+    }
+  ],
+  "inputs": {
+    "data/a1_trajectory.csv": "8db5de3f95ce9bd359b61ed9b9b2d07c793334a5efc1ea871bbed5bd6807e2ac",
+    "data/b3_trajectory.csv": "ebcf3fc2dc185ae244dabdddbc5ca4acb4597f6db8b9eca651bbc01bd83baf9b",
+    "data/c1_trajectory.csv": "a9888a6c7a5874afe12dcd9b4491ca6423d016dc549bae10d934d090eeaad611",
+    "data/d3_trajectory.csv": "3191df5317bebc0c644aba2ece318b26f5f44e11a338fd4a01723d4cc569ea56",
+    "data/fields.json": "afe261a5132c430ed4d824fd59b4bdaac13cb7250045753851045fcdc3ba074c",
+    "data/fields/a1_frame_000001_start.npz": "c1f65fc021a60a267eb832117fbaf82a184fa329158f49b499c7b72b388c885c",
+    "data/fields/a1_frame_000026_20pct.npz": "7f986f7f9587bd9921d38024bd60e1d84f10262d065d2c73806d78c58a536b0b",
+    "data/fields/a1_frame_000051_40pct.npz": "54039ed20a3d2d6c283cecee0f88e5d857b5c4d3a288d0ef93acb93389d436a3",
+    "data/fields/a1_frame_000077_60pct.npz": "9df9d57d6f26ebcabd050013dd8a11d3c8698424f854bd5866c01d6f4d7b29a1",
+    "data/fields/a1_frame_000102_80pct.npz": "e26b0c1557d2c6bed0bbed017ace72b455b73e625baad7c8af266270a54be86e",
+    "data/fields/a1_frame_000127_final.npz": "b8940c414fd7f7b61c051c3c2a78d7a77de6503cc5e3ff5bd107fc3a2e00aa71",
+    "data/fields/b3_frame_000001_start.npz": "b12df0a8db3033fe6f9b2dc0370774201f848f3a3d946bf0e3f99a2aacb871d3",
+    "data/fields/b3_frame_000023_20pct.npz": "d6d547639b6e25cdb189a0e4064bc61ffe076b7cc0f8c5c9dc1f396a6a224eca",
+    "data/fields/b3_frame_000045_40pct.npz": "a6b99945384188d9e9324113e4d87f2be9e7cd49d875ac1b2c314fc213aa0a8f",
+    "data/fields/b3_frame_000067_60pct.npz": "7ac0933ab68c52541329f83793148dad856fa6f5638831b388bf1b0217bdb742",
+    "data/fields/b3_frame_000089_80pct.npz": "5de78862a4d83d4dda0808f2422e95719b9c917465cbc95818a235a425d53d4d",
+    "data/fields/b3_frame_000111_final.npz": "f23bebb9edd6e183c8ca2f28e495f4c09f0c38edc390cdb0e56156a2743917bb",
+    "data/fields/c1_frame_000001_start.npz": "620a5ae20d30c533cbcbe0e7f99bcd92c24c393247db5058667f55769147eb72",
+    "data/fields/c1_frame_000023_20pct.npz": "3a60c2fc0a9f7969fcca7399c113dce25777b1ff95b881d6b89941f425e39954",
+    "data/fields/c1_frame_000044_40pct.npz": "84acf1ef2f2c7505bc7292197e06528a8c6961876975f189425de9f71ddc87f3",
+    "data/fields/c1_frame_000066_60pct.npz": "98f73190aa59d32c183ecae4513ba2ebdd7c3bf7470c7546e371cd159d5e6914",
+    "data/fields/c1_frame_000087_80pct.npz": "0289d837e08793ac47cfd81c0cd27dfccd76f573c4670d300d493f74d27258f9",
+    "data/fields/c1_frame_000109_final.npz": "9ae597517887df1109fa7f86d746392a10fe7ba3ea81ff668c4985fb4ef4056b",
+    "data/fields/d3_frame_000001_start.npz": "04856160de224d8a5d401abcc8ae5e095a320f1f79202310d2c38b0ef5e427f6",
+    "data/fields/d3_frame_000025_20pct.npz": "ec499472dcfd6ac202567b7a0b11e3f6aee5f845a4b3c34043668283295714d5",
+    "data/fields/d3_frame_000050_40pct.npz": "e5f5a0da94b6f44411a935414f63399cd9fdbdc69dbb6a700c30dc7a1bb719b9",
+    "data/fields/d3_frame_000074_60pct.npz": "6b4d4a8be75bcc6b578d583e54077af1bfae8573ae94cf41dab88053edeb99c7",
+    "data/fields/d3_frame_000099_80pct.npz": "871096607038ce8266dd57382e2019b12f929f85b8017fc12814fc3f6f1388a9",
+    "data/fields/d3_frame_000123_final.npz": "82b7928984cdc66b1ae10d9c8adce8bf2fb1af5756891f8409d11041aa4d3d27",
+    "data/flow_rendering.json": "7a86d7dc3b90ce26e3d1d04c6f4f3e03a1ea87d846b4dcf6e1a9e9cfd5a59830"
+  },
+  "build_id": "3"
+}

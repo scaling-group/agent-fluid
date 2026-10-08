@@ -1,0 +1,103 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 10-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- In direct-uniform still water, a coherent alternating wake does not establish
+  useful target control. The target-blind `0.55T`, `28 deg` naive carrier was
+  visibly self-propelled, yet it swept past the initially small body-frame
+  bearing, reached only `12.078L` from `12.328L`, and left the upper boundary at
+  `8.547T` with joint velocity at its limit. For this failure topology, test a
+  bounded target-geometry-to-mean-curvature loop with bearing-trend or yaw-rate
+  release before adding drive; falsify the lesson if a target-blind replicate
+  holds bearing, or if the added loop destroys thrust/coherence instead of
+  improving closest approach and termination. This implication does not rank
+  already target-directed candidates or establish wake-rejection behavior in
+  cylinder cases.
+- For the coherent-propulsion/upper-exit topology, inertial course is a more
+  useful steering-response signal than bearing trend or local crossflow alone,
+  and posterior headroom must be judged together with trajectory response. The
+  sampled target-versus-course mean-curvature policy preserved a coherent 3D
+  wake, survived `16.879T`, and reached `6.218L`; relieving only the posterior
+  wave lobe opposed to its turn request then extended survival to `18.975T`,
+  improved closest approach to `5.144L`, and reduced posterior
+  acceleration-limit residence from about 61 to 36 percent. Do not amplify the
+  aiding half-cycle or merely increase continuous curvature: retain the course
+  residual and one-sided relief, then test whether a slowly varying off-axis
+  gate can reallocate saturated anterior propulsion toward mean-curvature
+  authority. The result remains partial because it still exited the upper
+  boundary with course and bearing on opposite sides of the body axis and
+  joint-1 action limited in about 52 percent of samples. Falsify the lesson if
+  one-sided relief loses comparable wake coherence or progress under another
+  pose, or if lower limit residence fails to produce earlier course correction
+  or a better termination class.
+- Once a speed-reliable target-versus-course redirect produces capture, keep
+  terminal drive relief and posterior action allocation as separate control
+  roles. All four sampled redirect descendants captured near `16.26T`, but the
+  closing-gated partial drive-relief policy achieved the best score
+  (`-0.066121`) while reducing whole-rollout anterior/posterior acceleration
+  limiting only marginally to about `48/59%`; a full near-target joint hold
+  lowered near-field limiting further but regressed score and arrival slightly.
+  In contrast, mean-first posterior allocation retained `16.258T` capture and
+  cut posterior limit residence to about `22.5%` from the unallocated capture's
+  `60.4%`. Thus do not replace a successful terminal traveling wave with a
+  hold merely to reduce effort: preserve mild proximity-and-closing-gated drive
+  relief, and test it compatibly with response-gated mean-curvature-first
+  allocation. This lesson applies after target-directed capture already works;
+  falsify the combination if it loses the coherent wake or capture, materially
+  exceeds `16.29T`, returns posterior limiting toward `60%`, or recreates the
+  full-hold score regression.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

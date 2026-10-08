@@ -1,0 +1,16 @@
+{
+  "returncode": 0,
+  "summary_exists": true,
+  "termination": "target_reached",
+  "release_elapsed": 33.54447937011719,
+  "score": 0.2735475533343936,
+  "score_metrics": null,
+  "frames": 109,
+  "selected_vti_count": 6,
+  "requested_vti_count": 6,
+  "exact_time_count": 6,
+  "missing_time_count": 0,
+  "schema": "aqua-evaluation-replay-result.v1",
+  "id": "2d_c1",
+  "kind": "2d"
+}

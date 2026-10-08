@@ -1,0 +1,167 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "figure_02",
+  "display_label": "Figure 2",
+  "title": "Evolutionary acceleration of target capture",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Running-best SEAS and BC-PPO navigation scores",
+      "mapping": "All 800 SEAS candidates and 3,000 unique DRL training episodes. Group by condition/run; cumulative maximum score. Five traces per condition, with the median-final-value run highlighted. The logarithmic horizontal coordinate is evolutionary iteration for SEAS and training episode for BC-PPO, labelled Evolution iteration / Episode. Reference summaries are validation inputs, not the displayed uncertainty.",
+      "inputs": [
+        "data/figure_02_ab_candidates.csv",
+        "data/figure_02_ab_reference_summary.csv",
+        "data/figure_02_drl_comparison.csv",
+        "data/figure_02_drl_cohort.json"
+      ],
+      "output_stem": "figure_02a_navigation_score"
+    },
+    {
+      "id": "b",
+      "content": "Best successful target-reach time",
+      "mapping": "Use success and release_elapsed for each SEAS candidate; preserve all five runs per condition. Dashed segments mark pre-capture status; the no-capture run is explicitly marked.",
+      "inputs": [
+        "data/figure_02_ab_candidates.csv",
+        "data/figure_02_ab_reference_summary.csv"
+      ],
+      "output_stem": "figure_02b_target_reach_time"
+    },
+    {
+      "id": "c",
+      "content": "Executable controller structure",
+      "mapping": "Nine controller nodes and nine directed dependencies read from the retained 244-line champion. Joint-phase feedback is structural inspection, not an ablation claim.",
+      "inputs": [
+        "code/figure_02_champion_policy.jl"
+      ],
+      "output_stem": "figure_02c_champion_policy"
+    },
+    {
+      "id": "d",
+      "content": "Flow setup, center trajectories and swimmer poses at iterations 0, 6 and 19",
+      "mapping": "All 790 original centreline samples and 18 recorded poses, reconstructed with solver width, distributed joint and deformed-centroid definitions. Target and obstacles retain the recorded physical coordinates.",
+      "inputs": [
+        "data/trajectory_centerlines.csv",
+        "data/swimmer_pose_states.csv",
+        "data/fields/seed.npz",
+        "data/fields.json"
+      ],
+      "output_stem": "figure_02d_policy_trajectories"
+    },
+    {
+      "id": "e",
+      "content": "Final vorticity fields for the seed and two evolved policies",
+      "mapping": "Three original final Vorticity/BodySDF fields at iterations 0, 6 and 19, with original trajectories and elapsed times. Vorticity color limits are fixed at +/-0.8.",
+      "inputs": [
+        "data/fields.json",
+        "data/trajectory_centerlines.csv",
+        "data/fields/i19.npz",
+        "data/fields/i6.npz",
+        "data/fields/seed.npz"
+      ],
+      "output_stem": "figure_02e_flow_fields"
+    }
+  ],
+  "inputs": {
+    "code/figure_02_champion_policy.jl": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46",
+    "data/fields.json": "a79f961117a2042478fa0aa81bba26de2c49f9baed3cdf4a66bdbaf15ed00078",
+    "data/fields/i19.npz": "56de7944f60d905647b9e25153ea0d5cda6f5d66888ec79bf3e2cbbf44120009",
+    "data/fields/i6.npz": "5a2bd1b3300e3b988e1cdb95e44b06255675d60a8d910d749b6c985011ca6578",
+    "data/fields/seed.npz": "c67a98e47ba138f23cea4962d89fc76fe474299cc5338ab8cac2ffc6a12826ae",
+    "data/figure_02_ab_candidates.csv": "776d488e2f488ed594cecd26f92fcf60b68487f8be91e5c0f54e4608806d3eba",
+    "data/figure_02_ab_reference_summary.csv": "cec7cbf6e7fd4ea5114511df3384661b4ae6d50928126cba538e264fd019de9f",
+    "data/figure_02_drl_cohort.json": "39d13cd232ef6ca40a026adebe6f6b078035cf2bbaf9f13b202258cedaa05591",
+    "data/figure_02_drl_comparison.csv": "38d6e84b71e72bcff20df4f45a91114cc2052d999b9862a785331c312603a180",
+    "data/flow_rendering.json": "af80bd52b60328cc9aa92f734aeb2c0a27d321701f413919ce9ec33e5a3ecef3",
+    "data/swimmer_pose_states.csv": "927c75e621f9d7bda72b6523220119490442b457d1bc2535166447fd519e719c",
+    "data/trajectory_centerlines.csv": "5564bd708a541099284fb07e9ef59f4684d8c54d27a7fb17f5f09c928afa4716"
+  },
+  "build_id": "2",
+  "render": {
+    "counts": {
+      "candidates": 800,
+      "successful_candidates": 532,
+      "runs_per_condition": 5,
+      "drl_episodes": 3000,
+      "drl_runs": 5,
+      "best_time_run_iteration_positions": 200,
+      "seas_runs_without_any_capture": 1,
+      "displayed_time_positions_above_upper_limit": 7,
+      "b_finite_run_endpoints": 9,
+      "policy_source_lines": 244
+    },
+    "representative_runs": {
+      "a": {
+        "bc_ppo": {
+          "run": 5,
+          "final_iteration": 600,
+          "final_value": -1.7511650067225664,
+          "ranked_runs_best_to_worst": [
+            4,
+            3,
+            5,
+            2,
+            1
+          ],
+          "runs_without_final_capture": []
+        },
+        "with_shelf": {
+          "run": 2,
+          "final_iteration": 20,
+          "final_value": -1.7061774556386493,
+          "ranked_runs_best_to_worst": [
+            3,
+            1,
+            2,
+            5,
+            4
+          ],
+          "runs_without_final_capture": []
+        },
+        "without_shelf": {
+          "run": 1,
+          "final_iteration": 20,
+          "final_value": -2.7356058818668663,
+          "ranked_runs_best_to_worst": [
+            5,
+            2,
+            1,
+            4,
+            3
+          ],
+          "runs_without_final_capture": []
+        }
+      },
+      "b": {
+        "with_shelf": {
+          "run": 5,
+          "final_iteration": 20,
+          "final_value": 39.0499267578125,
+          "ranked_runs_best_to_worst": [
+            3,
+            1,
+            5,
+            2,
+            4
+          ],
+          "runs_without_final_capture": []
+        },
+        "without_shelf": {
+          "run": 1,
+          "final_iteration": 20,
+          "final_value": 88.10696411132812,
+          "ranked_runs_best_to_worst": [
+            5,
+            2,
+            1,
+            4,
+            3
+          ],
+          "runs_without_final_capture": [
+            3
+          ]
+        }
+      }
+    }
+  },
+  "run_selection_rule": "Rank final score/time independently by condition; highlight the median run, break ties by run number, and rank never-capture last."
+}

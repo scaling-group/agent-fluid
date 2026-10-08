@@ -1,0 +1,19 @@
+{
+  "center": [
+    647.284912109375,
+    609.9218139648438
+  ],
+  "compress": false,
+  "cycles": 0.8190900675455729,
+  "fields": [
+    "vorticity",
+    "body"
+  ],
+  "frame_index": 6,
+  "frame_path": "wake_episode/vtk/wake_flow_000006.vti",
+  "heading": -0.42746999859809875,
+  "pvd_path": "wake_episode/vtk/wake_flow.pvd",
+  "schema_version": "dogfish.free_swim_vtk_frame.v1",
+  "sim_time": 245.72702026367188,
+  "status": "ready"
+}

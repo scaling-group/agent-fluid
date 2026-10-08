@@ -1,0 +1,49 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "table_01",
+  "display_label": "Fixed-policy generalization matrix",
+  "title": "Fixed-policy generalization matrix",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Target position",
+      "mapping": "matrix.csv supplies the displayed settings, success counts, time and score. policy_results.csv supplies all 130 individual nominal/transfer evaluations; Reach (x/5) counts target captures among five frozen policies per method. The raw test identifier 0 is displayed as Original in the manuscript. The Agent header groups Reach, t_champ and s_champ; DRL reports Reach. The champ subscript identifies SEAS_1, the same retained EvE champion (archival method name SEAS) across all tests; t_champ and s_champ display the raw t_end and s fields, respectively.",
+      "inputs": [
+        "data/matrix.csv",
+        "data/policy_results.csv"
+      ]
+    },
+    {
+      "id": "b",
+      "content": "Rear-row geometry",
+      "mapping": "matrix.csv supplies the displayed settings, success counts, time and score. policy_results.csv supplies all 130 individual nominal/transfer evaluations; Reach (x/5) counts target captures among five frozen policies per method. The raw test identifier 0 is displayed as Original in the manuscript. The Agent header groups Reach, t_champ and s_champ; DRL reports Reach. The champ subscript identifies SEAS_1, the same retained EvE champion (archival method name SEAS) across all tests; t_champ and s_champ display the raw t_end and s fields, respectively.",
+      "inputs": [
+        "data/matrix.csv",
+        "data/policy_results.csv"
+      ]
+    },
+    {
+      "id": "c",
+      "content": "Cylinder count",
+      "mapping": "matrix.csv supplies the displayed settings, success counts, time and score. policy_results.csv supplies all 130 individual nominal/transfer evaluations; Reach (x/5) counts target captures among five frozen policies per method. The raw test identifier 0 is displayed as Original in the manuscript. The Agent header groups Reach, t_champ and s_champ; DRL reports Reach. The champ subscript identifies SEAS_1, the same retained EvE champion (archival method name SEAS) across all tests; t_champ and s_champ display the raw t_end and s fields, respectively.",
+      "inputs": [
+        "data/matrix.csv",
+        "data/policy_results.csv"
+      ]
+    },
+    {
+      "id": "d",
+      "content": "Inflow speed",
+      "mapping": "matrix.csv supplies the displayed settings, success counts, time and score. policy_results.csv supplies all 130 individual nominal/transfer evaluations; Reach (x/5) counts target captures among five frozen policies per method. The raw test identifier 0 is displayed as Original in the manuscript. The Agent header groups Reach, t_champ and s_champ; DRL reports Reach. The champ subscript identifies SEAS_1, the same retained EvE champion (archival method name SEAS) across all tests; t_champ and s_champ display the raw t_end and s fields, respectively.",
+      "inputs": [
+        "data/matrix.csv",
+        "data/policy_results.csv"
+      ]
+    }
+  ],
+  "inputs": {
+    "data/matrix.csv": "c6e36a580e4d177a4ba07b44e8d4c73d6a8931d219338fe53cc5ccff6a78064e",
+    "data/policy_results.csv": "210b9a0e9cce49eebb3d32a411ad5f522dc199aad49eecd62d0d32e11832347c"
+  },
+  "output_stem": "table_01_generalization_matrix"
+}

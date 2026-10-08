@@ -1,0 +1,288 @@
+{
+  "schema": "agent-fluid-selected-keyframes.v1",
+  "retained": [
+    {
+      "figure": "figure_02",
+      "stage": "seed",
+      "path": "raw_data/illustrated_2d/seed/final.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_02",
+      "stage": "i6",
+      "path": "raw_data/illustrated_2d/i6/final.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_02",
+      "stage": "i19",
+      "path": "raw_data/illustrated_2d/i19/final.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_04",
+      "frame_index": 1,
+      "path": "raw_data/physical_mechanisms/vtk/wake_flow_000001.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_04",
+      "frame_index": 2,
+      "path": "raw_data/physical_mechanisms/vtk/wake_flow_000002.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_04",
+      "frame_index": 4,
+      "path": "raw_data/physical_mechanisms/vtk/wake_flow_000004.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_05",
+      "frame_index": 1,
+      "path": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000001.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_05",
+      "frame_index": 2,
+      "path": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000002.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_05",
+      "frame_index": 3,
+      "path": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000003.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_05",
+      "frame_index": 4,
+      "path": "raw_data/three_dimensional/illustrated_replay/vtk/frame_000004.vti.gz",
+      "status": "retained"
+    },
+    {
+      "figure": "figure_03",
+      "case": "a1",
+      "frame_index": 1,
+      "path": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "actual_sim_time": 200.0054931640625,
+      "result": "raw_data/illustrated_generalization/a1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "a1",
+      "frame_index": 26,
+      "path": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000026.vti.gz",
+      "actual_sim_time": 207.8154296875,
+      "result": "raw_data/illustrated_generalization/a1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "a1",
+      "frame_index": 51,
+      "path": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000051.vti.gz",
+      "actual_sim_time": 215.62539672851562,
+      "result": "raw_data/illustrated_generalization/a1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "a1",
+      "frame_index": 77,
+      "path": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000077.vti.gz",
+      "actual_sim_time": 223.75453186035156,
+      "result": "raw_data/illustrated_generalization/a1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "a1",
+      "frame_index": 102,
+      "path": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000102.vti.gz",
+      "actual_sim_time": 231.56446838378906,
+      "result": "raw_data/illustrated_generalization/a1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "a1",
+      "frame_index": 127,
+      "path": "raw_data/illustrated_generalization/a1/simulation/episode/vtk/wake_flow_000127.vti.gz",
+      "actual_sim_time": 239.07192993164062,
+      "result": "raw_data/illustrated_generalization/a1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "b3",
+      "frame_index": 1,
+      "path": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "actual_sim_time": 200.0054931640625,
+      "result": "raw_data/illustrated_generalization/b3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "b3",
+      "frame_index": 23,
+      "path": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000023.vti.gz",
+      "actual_sim_time": 206.88043212890625,
+      "result": "raw_data/illustrated_generalization/b3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "b3",
+      "frame_index": 45,
+      "path": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000045.vti.gz",
+      "actual_sim_time": 213.75003051757812,
+      "result": "raw_data/illustrated_generalization/b3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "b3",
+      "frame_index": 67,
+      "path": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000067.vti.gz",
+      "actual_sim_time": 220.63047790527344,
+      "result": "raw_data/illustrated_generalization/b3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "b3",
+      "frame_index": 89,
+      "path": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000089.vti.gz",
+      "actual_sim_time": 227.50540161132812,
+      "result": "raw_data/illustrated_generalization/b3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "b3",
+      "frame_index": 111,
+      "path": "raw_data/illustrated_generalization/b3/simulation/episode/vtk/wake_flow_000111.vti.gz",
+      "actual_sim_time": 234.29249572753906,
+      "result": "raw_data/illustrated_generalization/b3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "c1",
+      "frame_index": 1,
+      "path": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "actual_sim_time": 200.0054931640625,
+      "result": "raw_data/illustrated_generalization/c1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "c1",
+      "frame_index": 23,
+      "path": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000023.vti.gz",
+      "actual_sim_time": 206.88043212890625,
+      "result": "raw_data/illustrated_generalization/c1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "c1",
+      "frame_index": 44,
+      "path": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000044.vti.gz",
+      "actual_sim_time": 213.4420166015625,
+      "result": "raw_data/illustrated_generalization/c1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "c1",
+      "frame_index": 66,
+      "path": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000066.vti.gz",
+      "actual_sim_time": 220.31695556640625,
+      "result": "raw_data/illustrated_generalization/c1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "c1",
+      "frame_index": 87,
+      "path": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000087.vti.gz",
+      "actual_sim_time": 226.87840270996094,
+      "result": "raw_data/illustrated_generalization/c1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "c1",
+      "frame_index": 109,
+      "path": "raw_data/illustrated_generalization/c1/simulation/episode/vtk/wake_flow_000109.vti.gz",
+      "actual_sim_time": 233.5444793701172,
+      "result": "raw_data/illustrated_generalization/c1/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "d3",
+      "frame_index": 1,
+      "path": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000001.vti.gz",
+      "actual_sim_time": 200.0054931640625,
+      "result": "raw_data/illustrated_generalization/d3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "d3",
+      "frame_index": 25,
+      "path": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000025.vti.gz",
+      "actual_sim_time": 207.501953125,
+      "result": "raw_data/illustrated_generalization/d3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "d3",
+      "frame_index": 50,
+      "path": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000050.vti.gz",
+      "actual_sim_time": 215.31700134277344,
+      "result": "raw_data/illustrated_generalization/d3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "d3",
+      "frame_index": 74,
+      "path": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000074.vti.gz",
+      "actual_sim_time": 222.8135986328125,
+      "result": "raw_data/illustrated_generalization/d3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "d3",
+      "frame_index": 99,
+      "path": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000099.vti.gz",
+      "actual_sim_time": 230.62904357910156,
+      "result": "raw_data/illustrated_generalization/d3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_03",
+      "case": "d3",
+      "frame_index": 123,
+      "path": "raw_data/illustrated_generalization/d3/simulation/episode/vtk/wake_flow_000123.vti.gz",
+      "actual_sim_time": 237.82852172851562,
+      "result": "raw_data/illustrated_generalization/d3/simulation/result.json",
+      "policy_sha256": "b116957dac4228d2d8deb97357ccd350327a3806b3c2f5609ab520de4c7a6f46"
+    },
+    {
+      "figure": "figure_05",
+      "stage": "t09",
+      "path": "raw_data/three_dimensional/illustrated_replay_t09/frame_t09.vti.gz",
+      "sim_time": 9.003498077392578,
+      "status": "retained"
+    }
+  ]
+}

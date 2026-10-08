@@ -1,0 +1,33 @@
+score: -0.61730385635575
+summary: L64 3D moving-window episode; termination=capture; min_distance_L=0.7495813369750977;
+  final_distance_L=0.7495813369750977
+metrics:
+  capture_bonus: 2.0
+  captured: true
+  distance_integral_L: 2.520066627962195
+  distance_integral_weight: 1.0
+  elapsed_fraction: 0.2633951950073242
+  final_distance_L: 0.7495813369750977
+  final_distance_weight: 0.2
+  initial_distance_L: 12.327719688415527
+  mean_distance_L: 2.520066627962195
+  minimum_distance_L: 0.7495813369750977
+  minimum_progress: 0.9391954590207395
+  observed_distance_integral_L: 1.967921413413504
+  progress: 0.9391954590207395
+  score: -0.61730385635575
+  score_semantics: dogfish.projected_multiwake_target3d.v1
+  survival_bonus_weight: 0.2
+  terminal_hold_integral_L: 0.552145214548691
+  unstable: false
+  unstable_dynamics_penalty: 2.0
+  termination: capture
+  status: ok
+  achieved_horizon: 26.339519500732422
+  horizon: 100.0
+  steps: 4789
+artifacts:
+  score_yaml: evaluation_workspaces/20260912_234547_step_26_aa7ebe3919f7/logs/evaluate/score.yaml
+  root: evaluation_workspaces/20260912_234547_step_26_aa7ebe3919f7/artifacts/moving_window3d_episode
+  summary_json: evaluation_workspaces/20260912_234547_step_26_aa7ebe3919f7/artifacts/moving_window3d_episode/summary.json
+  summary_sha256: f2c0b385f0529947b8f321d9b3a70bbed614876cee4b04306c9174aa2b90d7c8

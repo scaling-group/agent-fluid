@@ -1,0 +1,20 @@
+# @package _global_
+# Minimal-cue structured Bookshelf variant with mandatory persistent experience updates.
+
+optimizer:
+  initial_guidance: configs/eve/optimizer/dogfish_2d_wake_policy_secondrow_capture0p75_24x16_bookshelf_guidance_evolving_minimal_cue/initial_optimizer
+  workers:
+    selection:
+      _target_: scaling_evolve.algorithms.eve.workspace.worker_selection.RandomWorkerSelector
+    items:
+      - name: wake-policy-bookshelf-structured-guidance-evolving-minimal-cue
+        weight: 1.0
+        immutable: configs/eve/optimizer/dogfish_2d_wake_policy/immutable_guidance_evolving
+        prompt: configs/eve/optimizer/dogfish_2d_wake_policy/prompt_bookshelf_structured_guidance_evolving
+  immutable_renderer:
+    _target_: scaling_evolve.algorithms.eve.workspace.immutable_renderers.default.DefaultRenderer
+  evaluation:
+    _target_: scaling_evolve.algorithms.eve.populations.evaluators.elo.ScalarEloEvaluator
+    k_factor: 32.0
+    initial_score:
+      elo: 1500.0

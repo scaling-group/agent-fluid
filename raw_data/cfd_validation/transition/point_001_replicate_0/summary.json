@@ -1,0 +1,49 @@
+{
+  "A_D": 0.986797,
+  "Re": 1173.0,
+  "Sr": 0.16,
+  "St_A": 0.15788752,
+  "alignment_note": "Physical foil, Re, Sr, A_D, no-slip condition and force normalisation match the paper. The paper does not report domain dimensions or stretching function; this run uses a uniform WaterLily domain with convective outlet.",
+  "domain_c": [
+    20.0,
+    16.0
+  ],
+  "fixed_grid_dt": 0.024,
+  "fixed_phase_dt": 0.000375,
+  "foil": "NACA0016",
+  "force_convention": "CT=(pressure_force_x+viscous_force_x)/(0.5*rho*U^2*c)",
+  "frequency_c_over_U": 1.0,
+  "grid_L": 64,
+  "heave_amplitude_over_c": 0.07894375920295715,
+  "leading_edge_x_c": 5.0,
+  "maximum_C_T": 0.09248231243107408,
+  "mean_C_L": 0.0008728166390724435,
+  "mean_C_T": -0.008823051605054687,
+  "mean_C_T_pressure": 0.025004531947493462,
+  "mean_C_T_viscous": -0.03382758355254815,
+  "minimum_C_T": -0.11046600011808325,
+  "minimum_cfl_to_fixed_dt_ratio": 14.730139325062433,
+  "motion": "pitch",
+  "peak_to_peak_C_T": 0.20294831254915732,
+  "period_tU_over_c": 1.0,
+  "pitch_amplitude_degrees": 4.527855344206513,
+  "pivot_fraction": 0.0,
+  "reference": "Lagopoulos, Weymouth & Ganapathisubramani, JFM 872, R1 (2019)",
+  "rms_C_L": 1.7153814354829076,
+  "sample_cycles": 4,
+  "sample_stride_steps": 13,
+  "schema_version": "waterlily_validation.lagopoulos2019_flapping.v1",
+  "trace_csv": "force_history.csv",
+  "vorticity_snapshot": {
+    "array_order": "Julia column-major",
+    "array_shape": [
+      1282,
+      1026
+    ],
+    "dtype": "Float32 little-endian",
+    "file": "vorticity_final.f32",
+    "phase_cycles": 33.997875
+  },
+  "wall_seconds": 606.2824659347534,
+  "warmup_cycles": 30
+}

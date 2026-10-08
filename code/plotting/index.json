@@ -1,0 +1,65 @@
+{
+  "schema": "agent-fluid.plotting-index.v1",
+  "displays": [
+    {
+      "id": "figure_01",
+      "kind": "figure",
+      "index": "code/plotting/figure_01.index.json"
+    },
+    {
+      "id": "figure_02",
+      "kind": "figure",
+      "index": "code/plotting/figure_02.index.json"
+    },
+    {
+      "id": "figure_03",
+      "kind": "figure",
+      "index": "code/plotting/figure_03.index.json"
+    },
+    {
+      "id": "figure_04",
+      "kind": "figure",
+      "index": "code/plotting/figure_04.index.json"
+    },
+    {
+      "id": "figure_05",
+      "kind": "figure",
+      "index": "code/plotting/figure_05.index.json"
+    },
+    {
+      "id": "figure_06",
+      "kind": "figure",
+      "index": "code/plotting/figure_06.index.json"
+    },
+    {
+      "id": "supplementary_figure_01",
+      "kind": "figure",
+      "index": "code/plotting/supplementary_figure_01.index.json"
+    },
+    {
+      "id": "supplementary_figure_02",
+      "kind": "figure",
+      "index": "code/plotting/supplementary_figure_02.index.json"
+    },
+    {
+      "id": "supplementary_figure_03",
+      "kind": "figure",
+      "index": "code/plotting/supplementary_figure_03.index.json"
+    },
+    {
+      "id": "table_01",
+      "kind": "table",
+      "index": "code/plotting/table_01.index.json"
+    },
+    {
+      "id": "supplementary_table_01",
+      "kind": "table",
+      "index": "code/plotting/supplementary_table_01.index.json"
+    },
+    {
+      "id": "supplementary_table_02",
+      "kind": "table",
+      "index": "code/plotting/supplementary_table_02.index.json"
+    }
+  ]
+}

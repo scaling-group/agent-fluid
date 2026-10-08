@@ -1,0 +1,33 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "supplementary_table_01",
+  "display_label": "Five-release matched full-field versus moving-window validation",
+  "title": "Five-release matched full-field versus moving-window validation",
+  "panels": [
+    {
+      "id": "table",
+      "content": "Five releases and their arithmetic means",
+      "mapping": "Five paired simulations with a stationary target. Rows give translations, RMS centre position, heading and velocity differences, and measured full-field/moving-window wall time per solver step. The Mean row is the arithmetic mean across the five releases. Maximum errors support the accompanying validation text.",
+      "inputs": [
+        "data/paired_releases.csv"
+      ]
+    }
+  ],
+  "inputs": {
+    "data/paired_releases.csv": "5cd9780c4a696060be4626b9c725e8d1b0b82b1c571ed8acc90f202efb1fce74"
+  },
+  "output_stem": "supplementary_table_01_moving_window_validation",
+  "units": {
+    "center_rms_L": "body length L",
+    "heading_rms_deg": "degrees",
+    "velocity_rms_U": "reference velocity U",
+    "full_to_moving_ms_per_step_ratio": "dimensionless",
+    "center_maximum_L": "body length L",
+    "heading_maximum_deg": "degrees"
+  },
+  "raw_records": {
+    "repository": "https://github.com/scaling-group/agent-fluid",
+    "index": "raw_data/moving_window_validation/index.json",
+    "extractor": "code/reproduction/moving_window_validation.py"
+  }
+}

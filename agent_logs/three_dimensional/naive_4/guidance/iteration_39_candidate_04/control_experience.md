@@ -1,0 +1,384 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 10-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- In direct-uniform still water, target feedback should leave the anterior
+  carrier equilibrium unchanged until contrary evidence appears. Among the
+  sampled first-generation policies, posterior-only bearing-plus-trend bias
+  retained the coherent alternating 3D wake and improved the seed's
+  minimum/final distance from `12.078/12.380L` to `11.413/11.421L`. Centering
+  the same kind of bias on both joints instead held joint excursions near
+  `10 deg`, delayed visible wake growth, made a broad U-turn, and ended at
+  `13.411L`. Apply this lesson to a working traveling-bend carrier; falsify it
+  if a future shared-bias design preserves comparable joint/wake amplitude and
+  improves target progress rather than merely surviving longer.
+- On a working target-versus-course posterior-curvature carrier, phase
+  conditioning is useful specifically as attenuation-only wave relief. The
+  sampled one-sided policy never amplified the aiding lobe, retained the
+  coherent alternating top-down and oblique 3D wake, cut posterior
+  acceleration-limit residence from `60.8%` to `35.9%` versus the otherwise
+  matching continuous-bias policy, improved closest approach from `6.218L` to
+  `5.144L`, and delayed upper exit from `16.879T` to `18.975T`. Do not generalize
+  this to arbitrary half-cycle scaling: the inherited two-sided
+  strengthen/weaken policy regressed to `11.778L` and `8.800T`, and one-sided
+  acceleration-lobe gating reached only `11.448L` at `9.053T`. Preserve the
+  successful relief scaffold when testing a response-gated redirect, but do
+  not claim steering is solved: its best rollout still passed its closest
+  point and exited at center y=`15.203L` with `0.632 U` positive-y velocity.
+  Falsify the reusable implication if attenuation loses wake/x progress on a
+  different carrier, or if a simpler continuous bias achieves a better
+  termination class with comparably low limit residence.
+- A speed-reliable, response-gated increase from cruise curvature to a strong
+  posterior redirect is now positive evidence, not merely a proposed rescue.
+  Applied on the one-sided-relief scaffold above, it preserved the coherent
+  alternating top-down and oblique wake and changed the sampled outcome from a
+  `5.144L` closest approach plus upper exit at `18.975T` to capture at `0.746L`
+  in `16.291T`. The reusable mechanism is to open extra posterior curvature
+  only for a large target-versus-course mismatch after forward translation is
+  reliable, then release it continuously as measured course realigns. Its cost
+  is also material: posterior acceleration-limit residence rose from `35.9%`
+  to `60.4%`, despite posterior angle staying within `30.4 deg`. Thus limit
+  residence alone must not veto a better termination class, but follow-up
+  designs should preserve the evidenced mean redirect while testing whether
+  the joint-state wave can yield acceleration headroom. Falsify this transfer
+  on carriers without coherent cruise propulsion, or if the stronger redirect
+  loses capture/early x progress, fails to release with course response, or
+  creates instability rather than a finite target-directed path.
+- Closing-conditioned redirect persistence is also positive evidence when it
+  is confined to an already reliable final approach. On the allocated,
+  closing-relief carrier, lowering the strong-redirect onset only through the
+  existing proximity-plus-target-closing gate left the trajectory unchanged
+  through the `2L` crossing, advanced capture from `16.258T` to `16.225T`,
+  improved score from `-0.066284` to `-0.063208`, and retained low posterior
+  hard-limit residence (`21.3%` versus `22.5%`). This supports keeping mean
+  curvature engaged through a measured terminal course mismatch rather than
+  releasing it at the cruise dead zone. Apply only after capture-directed
+  translation and a closing-conditioned approach exist; falsify if the
+  pre-approach route changes, capture is delayed or lost, or limit residence
+  returns toward the unallocated `58-59%` samples.
+- Separating repeatable carrier motion from persistent navigation error is now
+  positive closed-loop evidence on this carrier. Normalized anterior joint
+  phase explained `94.3-99.1%` of within-regime target-versus-course-error
+  variance in the parent traces; subtracting only one quarter of that fitted
+  phase component from the high-authority redirect gate, while retaining raw
+  error for direction and a pointwise relief guard, preserved the coherent 3D
+  wake and advanced every `8/6/4/2L` milestone. Capture improved from
+  `16.225T`, score `-0.063208`, to `16.044T`, score `-0.058311`, with slightly
+  lower mean posterior acceleration but exact acceleration-limit residence
+  increasing from `21.3%` to `22.7%`. Prefer this bounded phase residual to
+  short-window prediction: the sampled bearing-phase-lead alternative retained
+  the baseline `16.225T` arrival and regressed to `-0.065510`. Do not force the
+  residual to be attenuation-only: capping its redirect gate by the raw gate
+  preserved the coherent wake and capture but delayed every distance milestone,
+  moving arrival from `16.044T` to `16.115T` and score from `-0.058311` to
+  `-0.064714`. Residual-created authority can therefore contain useful
+  persistent route evidence even when its pointwise interpretation is
+  uncertain. Apply only as a selector for high steering authority on a
+  coherent state-feedback carrier, retain raw error for redirect direction and
+  pointwise acceleration relief, and falsify if capture or wake coherence is
+  lost, the upper-exit topology returns, or limiting/load growth outweighs the
+  route improvement.
+- Near-target drive relief must remain subordinate to measured steering need,
+  but that ordering is a terminal-shape result rather than an arrival-speed
+  result. The inherited approach law that applied damping and wave attenuation
+  while either redirect selector was large still captured at `16.044T`, but
+  finished at `0.748557L` and scored `-0.059985`. Reversing those roles on the
+  same carrier—settling only after both raw and carrier-residual redirect duty
+  released—created a distinct terminal velocity/heading state, improved final
+  distance to `0.745461L` and score to `-0.056774`, while leaving the earlier
+  milestones unchanged and delaying capture slightly to `16.049T` versus the
+  `16.044T`, `-0.058311` unconditioned phase-residual baseline. Preserve the
+  rule that unresolved course demand retains rhythmic authority, but do not
+  stack further approach-relief gates and claim faster capture from the scalar
+  score alone. The assigned-parent closed-loop test sharpens the geometric
+  boundary: using a closing predicted-miss corridor to attenuate high-authority
+  mean steering preserved the coherent wake, all `8/6/4/2L` milestones, and
+  `16.049T` capture, but changed only six posterior commands and worsened final
+  distance from `0.745461L` to `0.745652L` and score from `-0.056774` to
+  `-0.056973`. A locally safe projected course is therefore not sufficient
+  evidence that mean steering is redundant. Preserve the evaluated steering
+  law when reusing this corridor signal; test a distinct terminal role such as
+  releasing residual carrier braking, and require the gate to restore settling
+  as soon as predicted miss worsens. Falsify this boundary only if a future
+  steering-release policy improves target progress or limiting without losing
+  wake coherence or altering the pre-approach route. The current three-way
+  closed-loop comparison resolves that terminal role: using the corridor to
+  release only anterior damping preserved the same coherent two-view wake and
+  `16.0545T` capture while achieving `0.744345L`, `-0.055617`, and `24.0%`
+  approach posterior acceleration-limit residence. Extending the same gate to
+  release posterior wave settling left milestones through `1.25L` and arrival
+  time unchanged but worsened the crossing to `0.745354L`, `-0.056672`, and
+  raised posterior limit residence to `29.2%`; releasing high-authority mean
+  steering was also worse at `0.745652L`, `-0.056973`. Therefore a locally safe
+  intercept may release residual anterior braking, but it is not permission to
+  release posterior wave shaping or target-directed curvature. Reopen anterior
+  damping continuously if closing, course reliability, or the intercept
+  corridor is lost; falsify this role boundary if a posterior release improves
+  distance integral or limiting without changing the proven route or wake.
+- When the episode's hard joint-speed clamp is active, a same-sign outward
+  acceleration is redundant actuator demand: it cannot change the next
+  velocity or angle. Across the sampled captures, `2.8%` of anterior and
+  `4.9-5.5%` of posterior commands have this signature. Closed-loop evaluation
+  of the exact-boundary projection matched the unprojected best's `16.044T`
+  capture, `-0.058311` score, all `8/6/4/2L` milestones, distance integral,
+  joint extrema, and force/moment peaks, while lowering mean absolute commanded
+  acceleration from `23.452/25.514` to `23.294/24.871 rad/T^2`. This supports a
+  reflection-equivariant anti-windup projection only at the exact observed
+  boundary, not a softer near-limit gait change. The present four-solver sample
+  sharpens the negative boundary: three distinct policy source hashes,
+  spanning the unprojected phase-residual carrier and exact-boundary projected
+  variants, produced byte-identical wake sheets and the same `16.0435T`,
+  `0.746962L`, `-0.058311` capture also repeated in inherited step-9 through
+  step-11 logs. Therefore rejected-command cleanup is useful but is not new
+  physical trajectory diversity; later workers seeking a hydrodynamic change
+  should alter feasible action under an evidence-conditioned gate instead of
+  stacking another clamp-equivalent wrapper. Falsify or revise the equivalence
+  for actuator models where rejected demand affects work, compliance, or fluid
+  coupling, and do not extrapolate it away from the exact clamp.
+- Pre-limit posterior speed-headroom guarding is a replicated negative result
+  on this carrier, even when it attenuates only outward wave acceleration and
+  passes a pointwise same-sign/no-larger-command test. The inherited factorial
+  rollout on the response-conditioned approach reduced posterior speed- and
+  acceleration-limit residence (`6.066%` to `5.850%` and `22.892%` to
+  `22.751%`) plus peak force/moment, but delayed every `8/6/4/2L` milestone,
+  moved capture from `16.049T` to `16.077T`, and regressed score from
+  `-0.056774` to `-0.058139`. The assigned-parent combination with the older
+  unconditional approach likewise retained capture but required `236` rather
+  than `229` window shifts and reached the target at `16.071T`, `-0.057037`,
+  versus the sampled anterior-only corridor result at `16.0545T`, `-0.055617`.
+  A pointwise actuator-relief predicate therefore does not establish
+  closed-loop route neutrality: the wake can remain visually coherent while
+  small phase-local changes accumulate into a longer path. Do not tune another
+  near-speed onset on this scaffold; revisit pre-limit guarding only with a
+  distinct response observable and require milestone/distance-integral benefit,
+  not lower saturation or loads alone.
+- Carrier-phase subtraction can expose a useful yaw-response residual as well
+  as a route-error residual, provided the residual changes feasible steering
+  rather than merely wrapping a clamp. Three independent assigned-parent
+  samples were byte-identical at `16.0545T`, `1.938857L` distance integral,
+  and `-0.055617`; adding posterior mean curvature only when normalized
+  measured yaw minus joint-phase-predicted yaw opposed a reliable raw redirect
+  preserved the coherent alternating top-down and oblique 3D wake and capture
+  time, advanced every `8/6/4/2/1.25L` milestone by `0.072-0.127T`, lowered
+  the distance integral to `1.931257L`, and improved score to `-0.048654`.
+  This was not broad authority escalation: mean absolute posterior command and
+  acceleration-limit residence fell from `24.888` to `24.616 rad/T^2` and
+  `22.47%` to `21.86%`, while peak yaw moment also fell. Apply the mechanism
+  only on a coherent carrier with an evidenced joint-phase yaw model, reliable
+  target-directed redirect sign, and a bounded opposition-only addition;
+  aiding yaw must receive no extra action. Preserve the caveats that posterior
+  excursion grew from `31.7` to `36.4 deg`, peak lateral force rose from
+  `0.03193` to `0.03320`, and the final crossing geometry changed even though
+  capture time did not. The assigned-parent evidence and inherited step-18/19
+  logs establish a narrow terminal role boundary. Two independent copies that
+  release only supplemental curvature when a closing capture corridor and
+  measured target-signed yaw agree reproduce `16.0545T` capture, `0.746953L`
+  final distance, `1.930772L` distance integral, and the same two-view sheet.
+  An instantaneous bearing-rate escape extension remains trajectory-equivalent
+  at `0.746955L`, `1.930773L`, and `-0.048055`; do not tune another such
+  threshold. In contrast, moving reopening response into a smooth
+  small-bearing closing-approach cone preserves the coherent alternating wake,
+  all `239` shifts, and effectively the same arrival time, while improving the
+  crossing to `0.746212L`, distance integral to `1.930147L`, and score to
+  `-0.047281`. Thus release geometry can affect the last fraction of a beat,
+  but this is still terminal shaping rather than a new route or held-out
+  robustness result. Trace reconstruction specifies the remaining terminal
+  response: over the last `0.0715T`, projected miss improves from `0.503L` to
+  `0.373L` and closing speed from `0.926U` to `1.029U`, yet bearing reopens
+  from `0.021` to `0.178 rad`, its seven-sample rate grows from `0.568` to
+  `2.716 rad/T`, and target-signed yaw rises from `0.53` to `2.02 rad/T`.
+  The sampled four-solver combination now confirms that the two previously
+  positive response-local reductions are compatible. Three independently
+  sourced copies of redirect-increment handoff plus bounded safe-corridor yaw
+  damping produce byte-identical two-view sheets and the same `16.0544T`,
+  `0.745943L`, `1.929921L`, `-0.047001` capture; yaw damping without the
+  handoff retains the same arrival step and coherent wake but regresses to
+  `0.746051L`, `1.930012L`, and `-0.047113`, while the inherited handoff-only
+  result was `0.746070L`, `1.930028L`, and `-0.047133`. Complementary terminal
+  gates can therefore improve crossing geometry when their response support
+  differs, but three identical outcomes also establish that rewriting or
+  retuning this combination is not trajectory diversity. Preserve the proven
+  carrier, redirect, wave shaping, anterior release, and both terminal roles;
+  a distinct follow-up may separate body yaw from body-frame translational
+  line-of-sight slip, which remains present while bearing reopens, but must
+  alter feasible posterior action only in the reliable closing corridor.
+  Falsify that transfer if it changes pre-corridor milestones, delays or loses
+  capture, disrupts wake coherence, regresses distance integral/final
+  crossing, or merely duplicates the existing yaw damper.
+- Carrier demodulation transfers from route-error and yaw-response selection
+  to line-of-sight response, but it remains a trace-scale mean-curvature tool
+  on this carrier. The assigned-parent net bearing-rate damper was duplicated
+  at `16.0544T`, `0.745854L`, distance integral `1.929846L`, and score
+  `-0.046908`; two independently sampled copies that subtract the normalized
+  anterior-joint carrier-yaw prediction before middle-approach damping retain
+  the same arrival step, all 239 shifts, and the coherent top-down/oblique wake
+  while improving the crossing to `0.745846L`, the integral to `1.929840L`,
+  and score to `-0.046900`. Mean posterior demand and exact acceleration-limit
+  residence fall slightly from about `24.5858` to `24.5845 rad/T^2` and
+  `21.86%` to `21.79%`, at the cost of a small peak lateral-force increase
+  from about `0.03223` to `0.03239`. The reusable structure is to subtract a
+  joint-state prediction of repeatable carrier motion before applying bounded
+  sensory mean correction in the reliable middle corridor, then fade into the
+  measured net target-line response near capture; do not use the residual to
+  redefine direction or propulsion. The inherited phase-action comparison is
+  a negative boundary: slip-conditioned half-cycle relief changed only four
+  terminal samples and reached `-0.046923`, while broader raw-bearing-rate
+  posterior-lobe relief regressed to `-0.046998`. Do not stack another terminal
+  phase gate or tune another onset/curvature scalar expecting route diversity.
+  Revisit phase shaping only if a distinct residual acts over measurable
+  response support and improves target progress, not command effort alone.
+  Falsify the mean-residual transfer if capture, earlier milestones, wake
+  coherence, distance integral, limiting, or force envelope regresses, or if
+  held-out conditions show that the fitted carrier prediction aliases useful
+  route response. The current four-solver sample now supplies that
+  falsification boundary for two classifier-centered extensions. Relative to
+  the evaluated linear moment observer at `15.735508T`, `0.744372L`, distance
+  integral `1.919818L`, and score `-0.037222`, an odd-cubic observer that
+  increased explained route-moment variance from about `96.1%` to `97.2%` and
+  could only veto supplemental mean-curvature duty delayed capture to
+  `15.741009T`, worsened the integral to `1.920970L` and score to `-0.038337`,
+  and produced eight additional replayed acceleration-ceiling outputs. A
+  separate moment-plus-lateral-load consensus increment delayed capture to
+  `15.746509T`, worsened the integral to `1.921600L`, and scored `-0.039050`.
+  Both retained an effectively indistinguishable coherent two-view wake, so
+  neither higher carrier-fit variance nor independent load agreement proves
+  that feasible moment steering should be suppressed or stacked. Preserve the
+  linear moment residual and its existing curvature ceiling; a materially
+  different follow-up should allocate that same envelope from measured route
+  response, and must improve milestones or distance integral rather than fit,
+  limiting, load, or crossing geometry alone. Revise this boundary only if a
+  held-out or closed-loop result shows that a richer carrier classifier or
+  corroborating load gate improves the route without sacrificing capture and
+  wake coherence.
+- Direct body-frame target-line translation is positive evidence as a release
+  signal for an existing bounded response correction, not as another terminal
+  damper. Smoothly unioning target-opposing translational line-of-sight rate
+  with the carrier-demodulated moment gate inside the same `2 deg` posterior
+  curvature ceiling preserved the coherent top-down and oblique wake and
+  advanced every sampled `8/6/4/2/1.25L` milestone. Relative to moment-only,
+  capture improved from `15.735508T`, distance integral `1.919818L`, final
+  distance `0.744372L`, 231 shifts, and score `-0.037222` to `15.686007T`,
+  `1.916135L`, `0.743392L`, 226 shifts, and `-0.033442`; posterior
+  acceleration-limit residence fell from `23.59%` to `22.34%` and excursion
+  from `35.15` to `34.17 deg`. This supports retaining a target-signed mean
+  correction while center translation still rotates the line of sight against
+  the requested redirect, then releasing continuously when that direct route
+  response realigns. It does not support generic authority escalation: mean
+  posterior demand rose from `25.01` to `25.20 rad/T^2` and peak yaw moment
+  from `0.01920` to `0.02036`. Two controls sharpen the boundary. Replacing
+  the proven net near-capture damper with translation-only damping was exactly
+  trajectory-equivalent to moment-only despite a distinct policy hash, while
+  releasing moment duty as soon as demodulated body yaw became target-aiding
+  captured at `15.713508T`, integral `1.917987L`, and was worse than direct
+  translation persistence at every milestone. The assigned-parent test
+  supplies the stronger negative boundary: allowing adverse translation to
+  hold supplemental curvature independently after the raw target-versus-course
+  gate released delayed every `8/6/4/2/1.25L` milestone, capture from
+  `15.686007T` to `15.730008T`, and raised distance integral from `1.916135L`
+  to `1.920874L`, even though posterior acceleration-limit residence fell from
+  `22.34%` to `20.59%`, posterior excursion from `34.17` to `33.19 deg`, and
+  peak body-lateral force from about `0.03395` to `0.03195`. Thus a direct
+  translation signal evidenced as a release selector inside an error-opened
+  envelope is not evidence for an independent steering hold; do not trade a
+  longer route for lower limiting or load. Apply the response signal only
+  after course reliability exists and within the raw-error-opened shared
+  curvature envelope, preserve the carrier, and do not treat realized yaw as
+  interchangeable with target-line translation. Falsify if the result fails
+  to survive held-out geometry or wake disturbance, if earlier route
+  progress/capture regresses, or if force, moment, limiting, or wake coherence
+  worsens without a distance benefit.
+- A body-forward-speed-deficit gate on only the supplemental posterior
+  traveling wave is a replicated useful perturbation, but its startup-thrust
+  interpretation is falsified. Three independently allocated copies preserve
+  the coherent alternating top-down and oblique wake and reproduce capture at
+  `15.977511T`, `0.744402707L`, distance integral `1.928580797L`, 238 shifts,
+  and score `-0.045506315`, improving the carrier-demodulated parent at
+  `16.054371T`, `0.745845616L`, `1.929839552L`, 239 shifts, and
+  `-0.046899933`. Yet the gated policy delays the `8L/6L` milestones by
+  `0.0165/0.0110T`, leaves `4L/2L` unchanged, and gains only on the later
+  approach while posterior acceleration-limit residence rises from `21.79%`
+  to `22.58%` and peak lateral force from about `0.03239` to `0.03334`.
+  Therefore preserve this branch as evidence that an early feasible posterior
+  perturbation can reproducibly improve a later route/crossing, but do not
+  escalate its gain or retune its speed onset as though more amplitude implied
+  faster launch. The sampled trace defines a structurally different follow-up:
+  while the gate is open, nonpositive normalized body-forward force occupies
+  `31.2%` of samples and contains `7.87%` posterior limit residence, whereas
+  force at least `0.003` occupies `33.2%`, has zero limit residence, and
+  coincides with positive forward acceleration. Test response-gating only on
+  the supplemental wave while leaving the base carrier and navigation intact;
+  accept it only if route milestones and capture improve along with effort or
+  loads. Falsify the transfer if the coherent wake, later approach gain,
+  distance integral, capture, or held-out behavior regresses, or if apparent
+  pointwise relief repeats the inherited longer-path pre-limit-guard failure.
+- Carrier-demodulated target-aiding yaw is not a generic handoff signal on the
+  translational-response carrier. Relative to persistent correction at
+  `15.686007T`, distance integral `1.916135L`, and score `-0.033442`, releasing
+  redirect wave relief delayed every milestone and reached `15.708008T`,
+  `1.918172L`, and `-0.035505`; releasing shared mean correction reached
+  `15.697008T`, `1.919504L`, and `-0.036840`, while the moment-only yaw handoff
+  reached `15.713508T`, `1.917987L`, and `-0.035331`. The inherited
+  component-matched handoff also failed: it retained the `15.686007T` arrival
+  step but worsened distance integral to `1.920285L`, final distance to
+  `0.747417L`, and score to `-0.038396`. All retained a coherent alternating
+  top-down and oblique 3D wake, so visible gait survival does not establish
+  route neutrality. Preserve the persistent raw-error-opened mean correction
+  and redirect wave relief; do not add another aiding-yaw release unless a
+  distinct held-out response shows earlier milestones or lower distance
+  integral without losing capture, wake coherence, or the established
+  force/moment envelope.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

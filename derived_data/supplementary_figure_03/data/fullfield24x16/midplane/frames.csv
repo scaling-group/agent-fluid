@@ -1,0 +1,2 @@
+frame,elapsed,file,center_x_L,center_y_L,local_center_x_L,local_center_y_L,frame_origin_x_L,frame_origin_y_L,heading_rad,phi1_rad,phi2_rad
+10,10.0,field.npz,8.956920623779297,4.205756664276123,8.956920623779297,4.205756664276123,0.0,0.0,-3.016207456588745,-0.34687882532114983,0.2552730422858443

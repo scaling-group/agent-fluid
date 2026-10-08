@@ -1,0 +1,151 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 10-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- This lineage starts from the transferred 2D clean-B iteration-20 champion.
+  It contains target-aware feedback; evaluate its actual 3D performance rather
+  than assuming either successful transfer or a missing steering mechanism.
+  No 3D solver or optimizer population is imported.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- The far-field response-release hypothesis has a concrete negative result in
+  direct-uniform still water.  Relative to the transferred seed, gating only
+  geometric steering when measured yaw had the requested sign changed minimum
+  and final distance from `4.780/9.709L` to `4.660/9.604L`, but preserved the
+  lower-boundary exit, roughly `98%` exposure to at least one raw acceleration
+  command above the actuator envelope, and essentially the same thresholded
+  yaw-reversal count (82 versus 84).  The evaluator's seven-sample
+  `turn_rate_recent` window spans only about `0.0385T`, so it is dominated by
+  within-beat rotation and must not be treated as a route-scale response signal
+  or repaired by another release-gain tweak.  Preserve the coherent carrier
+  and deep early approach, but test steering authority upstream of clipping.
+  Do not replace the carrier wholesale: a corrected-sign `12 deg` static mean
+  curvature reached only `12.206L` before an upper exit, while the assigned
+  parent's globally slower, soft-limited progress redirect removed raw
+  acceleration exceedance but degraded closest approach to `8.752L` and also
+  exited above.  The inherited course-response experiment closes an important
+  loophole: even an initial negative tail-tangent bias below `0.5 deg`, released
+  and reversed using measured swimming direction, reached only `12.083L` and
+  exited above at `8.618T`.  Thus correct actuator polarity or course alignment
+  alone does not make an always-on mean bend safe at the release pose.  In this
+  direct-uniform, fixed-initial-joint regime, keep the demonstrated carrier and
+  leave mean curvature dormant near the initial centerline.  The completed
+  materially off-axis wrong-polarity veto now closes the release-only branch:
+  relative to the response-release child it improved minimum distance from
+  `4.660L` to `4.141L` and delayed the lower exit from `28.369T` to `32.197T`,
+  but still finished at `9.570L` through the same lower boundary with a
+  coherent unrecovered diagonal wake.  Thus geometric withdrawal can preserve
+  and modestly extend the useful approach, but another veto threshold or
+  release gain is unlikely to supply route-scale turning.  Its completed
+  phase-selective successor validates a distinct useful mechanism: attenuating
+  only the contradicted posterior half-cycle improved closest approach again
+  from `4.141L` to `3.033L`, reduced raw acceleration-envelope exposure from
+  `98.09%` to `93.63%` and joint-rate-limit exposure from `19.41%` to
+  `12.68%`, preserved the coherent wake, and changed the lower exit into a
+  later left-boundary exit at `40.331T`.  Preserve that allocation rather than
+  retuning it as a scalar.  The completed descendants close the posterior-only
+  recapture branch: carrier-unloaded and persistent-route pivots reach only
+  `3.024L` and `2.996L` and execute nearly the same broad upper loop, while a
+  pre-passage sector pulse improves the pass to `2.579L` but still exits above.
+  Giving that sector steering first claim on the acceleration envelope is the
+  first large allocation improvement, reaching `1.076L` and lowering mean
+  distance from `6.913L` to `6.178L`, but it overshoots to an upper exit at
+  `37.823T`.  Its posterior joint is held at the `-45 deg` hard limit during
+  the redirect and its peak normalized lateral force/yaw moment jumps to
+  `0.441/0.211`, versus at most about `0.028/0.015` for the three sampled
+  comparators.  Thus preserve bounded steering priority but do not add another
+  late recapture gain or more sector magnitude.  The completed
+  mirror-equivariant velocity-course preview validates the missing
+  route-scale mechanism: blending normalized course-to-target cross-product
+  error through unused sector-request headroom between `6.5L` and `3.5L`
+  (exactly dormant farther out and first active at `13.442T` in the inherited
+  parent-trace replay)
+  changes the broad upper loop into capture at `24.580T` and `0.747L`, reduces
+  mean distance from `6.178L` to `2.360L`, and lowers the exceptional peak
+  lateral-force/yaw-moment class from `0.441/0.211` to `0.178/0.143` while the
+  visual wake remains coherent.  Preserve course prediction, range dormancy,
+  reflection equivariance, and bounded blending as one structural mechanism;
+  terminal carrier unloading and recapture-priority changes without that
+  preview remain negative controls (`1.148L` and `1.092L` minima with the same
+  upper exit).  The unguarded capture is not itself a reusable low-load
+  solution: raw acceleration exceeds the envelope on `72.84%` of samples, the
+  posterior joint occupies the `45 deg` limit on `23.38%`, and joint-rate
+  limiting occurs on `15.15%`, with only about `0.003L` capture margin.  A
+  completed proprioceptive allocation guard supplies the first validated load
+  relief without losing the route mechanism: only when posterior angle is
+  near its stroke boundary and steering pushes farther outward, admitting
+  bounded carrier headroom preserves capture at `24.618T` while cutting
+  posterior hard-stop occupancy to `12.60%`, peak planar-force magnitude from
+  `0.323` to `0.203`, peak yaw moment from `0.143` to `0.089`, and mean
+  absolute posterior raw acceleration from `42.65` to `39.50 rad/T^2`.
+  Its small mean-distance penalty (`2.360L` to `2.362L`) is not a semantic
+  failure.  Preserve the simple joint-side/outward-pressure conjunction:
+  conditioning the same relief on course alignment delays capture to
+  `24.761T` and gives back most of the benefit (`21.59%` hard-stop occupancy,
+  `0.274/0.121` peak planar force/moment), while conditioning its release on
+  inward beat phase is physically neutral (`12.68%`, `0.203/0.089`).  These
+  guards do not solve raw acceleration or rate exposure, which remain near
+  `72.7%/15.1%`; another relief threshold, course-response gate, or phase
+  blend is therefore the wrong next branch.  A completed final-output
+  projection answers the raw-command portion without disturbing the validated
+  controller: symmetrically clamping both fully allocated accelerations to the
+  owned `1800 deg/T^2` envelope reproduces the v28 rollout exactly (capture at
+  `24.618T`, `0.748724L`, mean distance `2.36225L`, and the same reduced-load
+  path) while making returned-command exceedance zero by construction.
+  Preserve this interface-feasibility layer when unavailable downstream-
+  clipped authority would otherwise be reported as policy effort, but do not
+  claim that it reduces physical effort, hydrodynamic load, or the remaining
+  `15.1%` joint-rate exposure; improving those outcomes requires an upstream
+  controller mechanism.  Falsify the lesson if a matched downstream actuator
+  does not reproduce the unclipped policy's trajectory or if any returned
+  acceleration exceeds the owned bound.  Reject future load relief if it loses
+  capture, changes the dormant far path, or restores the unguarded load class.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

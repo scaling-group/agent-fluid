@@ -1,0 +1,135 @@
+# Dogfish L64 3D Moving-Window Still-Water Policy Experience
+
+## Persistence contract
+
+This file is mutable optimizer state, not a static task description. Every
+successful worker must leave it with at least one material, evidence-backed
+lesson added or revised from its assigned parent. Distill sampled solver results
+and available inherited logs into a reusable control implication plus an
+applicability or falsification boundary. When prior evidence shows no
+improvement, record the concrete negative result and what later workers should
+avoid or test; do not use a generic no-progress sentence or a cosmetic or
+identifier-only change. The current worker's new CFD evaluation occurs after
+it exits and therefore becomes evidence for a later sampled worker.
+
+- This is a fresh 10-iteration lineage with no solver or optimizer population
+  import. Its logical Phase-2 population is always four workers even when the
+  four CFD evaluations are mapped across different PBS/GPU allocations.
+- The fixed task is WaterLily 3D at `L64`, `Re=1000`, target `(9,9.5)L`,
+  first-crossing radius `0.75L`, still water `U_infinity=0`, direct uniform
+  initialization without prewarm, released horizon `100T`, a `24L x 16L`
+  inertial virtual field stored in a `4L x 3L x 1.5L` moving window, and the
+  actuator envelope `45/260/1800` in degree-based units.
+- The common naive seed has only a state-feedback oscillator and posterior
+  phase lag. It reads joint state but not the task target, flow, force, moment,
+  world position, learned route, or any external phase signal, and it is not
+  intended to complete the task.
+- Direct-uniform still-water evidence separates propulsion progress from route
+  control. The drive-only seed formed a coherent 3D posterior wake but reached
+  only `12.078L` before upper exit. Four inherited shared/partial
+  mean-curvature variants then retained `left_domain` and regressed final
+  distance to `13.258--15.361L`; do not retry common, shared, or tail-biased
+  moving equilibria by scalar gain changes. Anterior useful-half-cycle steering
+  instead improved minimum/final distance to `11.782/11.797L`, while posterior
+  half-cycle scaling and a shared residual were weaker (`12.006/12.205L` and
+  `12.140/12.686L`). A later slip-aware, both-stroke anterior residual retained
+  the alternating wake and improved monotonically to `10.062L`, yet all sampled
+  variants still hit the `260 deg/T` rate cap and exited the upper boundary. In
+  that strongest trace, bearing reversal was followed by opposite joint means
+  of about `-0.081/+0.122 rad` near exit because the full biased anterior angle
+  entered the `-q1` tail target. Reuse the narrow positive result—body-frame
+  slip feedback and anterior steering can preserve thrust and substantially
+  improve progress—but do not treat an opposite-mean posterior response or
+  more drive gain as directed turning. The subsequent anterior-only curvature
+  center with a zero-mean posterior lag is a real semantic improvement: all
+  four sampled descendants replace the early upper hook with a long
+  lower-going trajectory, preserve self-propelled 3D wake evidence, and reach
+  `4.233--5.033L`. It is not yet route control. The plain center passes below
+  the target with bearing near `1.13 rad` at its `5.033L` minimum and exits at
+  `28.59T`. Bearing-gated posterior relief gives the narrow best result:
+  minimum/mean distance improve to `4.233/8.611L`, survival extends to
+  `31.87T`, and tail rate-cap occupancy falls from about `13.4%` to `5.2%`;
+  nevertheless bearing is still `1.405 rad` at closest approach and the same
+  lower exit remains. Target-signed slip rectification independently reaches
+  `4.252L` but retains that topology, so it is not a reliable missing
+  mechanism. Recent-yaw unloading reaches `4.376L` but lets joint motion,
+  command effort, and the visible wake decay nearly to zero after about `18T`,
+  leaving an inertial coast to the boundary. Reuse anterior/tail mean
+  separation and modest posterior relief, but avoid direct recent-yaw
+  unloading and further slip or relief scalar tuning as substitutes for yaw
+  authority. The subsequently tested large-bearing anterior half-cycle
+  residual supplies only a narrow benefit when paired with relief: closest
+  approach improves from `4.233L` to `4.018L` and bearing there falls from
+  `1.405` to `1.333 rad`, but the lower exit and large-error topology remain.
+  Without relief it is worse (`4.859L`, `28.74T`) and restores about `12.5%`
+  posterior rate-cap occupancy, so anterior phase selection must not replace
+  the evidenced tail unloading. Posterior half-cycle redistribution instead
+  gives the best sampled approach (`3.909L`) and survival (`32.64T`) with only
+  about `4.9%` posterior rate-cap occupancy, yet closest-approach bearing stays
+  `1.410 rad`; treat it as useful trajectory shaping, not established yaw
+  control. Combining anterior and posterior phase selection confirms that
+  their distance effects are compatible: the alternating three-dimensional
+  wake survives, closest approach improves to the sampled best `3.691L`, and
+  survival reaches `33.27T`. It fails the more important orientation boundary:
+  full target error is still `1.364 rad` at the minimum, the trajectory again
+  exits low, and the anterior command is acceleration-limited for about `68%`
+  of samples. Do not escalate that phase residual by another scalar change;
+  it is spending additional actuator authority without establishing net yaw.
+  Replacing folded bearing with the full body-frame target angle is also
+  insufficient by itself: the sampled full-angle posterior-redistribution
+  policy still reaches only `3.909L`, carries about `2.75 rad` of true error at
+  the same lower exit, and is visually indistinguishable in route topology.
+  Keep full-angle semantics when a controller has recovery authority, but do
+  not count the semantic repair as that authority. The completed
+  one-sided-envelope test preserves the alternating wake and slightly reduces
+  full error at closest approach from `1.364` to `1.291 rad`, but it misses at
+  `3.712L` and exits low at `32.95T`; over `28--32T` its opposite joint means
+  (`+0.215/-0.082 rad`) produce only `0.009 rad/T` mean yaw. This falsifies
+  trading only anterior cancelling excursion as a capture mechanism: do not
+  retry envelope magnitude or proximity thresholds by scalar tuning. The
+  independently completed same-sign posterior C-bend is a stronger actuator
+  sign result. It realizes a positive posterior mean (`+0.100 rad` over
+  `28--32T`) but drives mean yaw the wrong way (`+0.320 rad/T`), wraps full
+  target error through pi, and advances the same lower exit to `32.23T` while
+  retaining a `3.692L` minimum. Do not assume visually intuitive same-sign
+  curvature has the intended hydrodynamic yaw sign, and do not retry that
+  C-bend with more offset. A discriminating posterior-steering test must use
+  the measured opposite sign, retain the live traveling wave, and release on
+  target-side yaw response rather than on time or oscillator suppression.
+  Falsify it if the `3.691L` approach or coherent wake degrades, full error does
+  not turn downward before the old lower pass, lower exit is not delayed or
+  avoided, posterior rate-cap occupancy materially exceeds about `5.5%`, or
+  normalized force/moment peaks exceed about `0.032/0.016`.
+- Inspect the seed rollout, diagnostics, available observations, and inherited
+  evidence to determine what capability is missing. Preserve behavior that the
+  evidence shows is useful.
+- Prefer normalized body-frame feedback changes that are bounded and carry a
+  falsifiable expectation. Let evidence choose the observation and mechanism;
+  do not hard-code a global-direction command, coordinates, target identity,
+  elapsed time, step count, iteration number, or a case-specific route.
+- The `fish-control-primitives` shelf exists for mechanism-level transfer
+  across biological swimming, robotic fish, CFD, and wake-control problems.
+  Transfer qualitative invariants into this lane's observations and actuation;
+  never copy numerical gains, species-specific kinematics, or a memorized
+  route. The worker entrypoint defines the consultation protocol.
+- Inspect both top-down and oblique 3D keyframe rows before policy edits, then
+  cross-check visual claims against distance progress, local/relative flow,
+  force, moment, joint state, previous action, and termination. A prewarm
+  artifact is a contract failure in this direct-uniform experiment.
+- Prefer normalized body-frame feedback. Inflow, target position, initial pose,
+  and hydrodynamic conditions are intended held-out axes; coordinate
+  memorization is not a valid solution.
+- Treat every proposed observation as an empirical hypothesis: establish its
+  scale, convention, and measurable effect from the current evidence before
+  relying on it.
+- Compare successful, near-miss, and failed trajectories without assuming a
+  particular causal decomposition in advance.
+- Do not rank successful policies by scalar score alone. Compare semantic
+  success, arrival, distance integral, final/mean distance, clearance,
+  saturation, switching, effort, and force/moment loads.
+- The hard limits are an actuation envelope, not a muscle-power model. Reject
+  persistent bang-bang action, implausible load spikes, and fragile success
+  even when scalar score improves.
+- Record candidate-specific hypotheses under `logs/optimize/`; every successful
+  worker must update this file with a durable lesson that should survive across
+  later iterations.

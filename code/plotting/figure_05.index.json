@@ -1,0 +1,62 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "figure_05",
+  "display_label": "Figure 5",
+  "title": "Three-dimensional adaptation",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Moving-window trajectory",
+      "mapping": "Full illustrated-replay head trajectory and a z=48 curl(Velocity).z slice from exactly the same original t=12.001007080078125 VTI used in panel b.",
+      "inputs": [
+        "data/replay_trajectory.csv",
+        "data/replay_scene.json",
+        "data/fields.json",
+        "data/midplane_t12.npz"
+      ],
+      "output_stem": "figure_05_a"
+    },
+    {
+      "id": "b",
+      "content": "Three-dimensional CFD snapshots",
+      "mapping": "Four original measured snapshots at 3.003, 9.0035, 12.001 and 18.6505 T. The 9T frame is a separate execution of the same controller/configuration, not an interpolated frame. BodySDF=0 and Lambda2 contours use the recorded smoothing, thresholds and common color scale.",
+      "inputs": [
+        "data/fields.json",
+        "data/replay_scene.json",
+        "data/replay_trajectory.csv",
+        "data/fields/t03.npz",
+        "data/fields/t09.npz",
+        "data/fields/t12.npz",
+        "data/fields/t18.npz"
+      ],
+      "output_stem": "figure_05_b"
+    },
+    {
+      "id": "c",
+      "content": "Evolutionary adaptation",
+      "mapping": "Group learning_curves.csv by replicate_id and condition and draw cumulative best valid distance-integral scores from iteration 0 through 40. All five naive_seed experiments (naive_1 through naive_5) and all five two_dimensional_champion experiments (transfer_1 through transfer_5) are shown. Thin curves show individual experiments; the thick curve is the complete experiment with the median final score in its condition (naive_3 and transfer_3), not a pointwise median. Failed evaluations have no plotted score and remain recorded in the raw score index. Supporting tables retain all 40 final-iteration candidates, endpoint calculations and point-level score origins.",
+      "inputs": [
+        "data/learning_curves.csv",
+        "data/iteration40_measured_candidates.csv",
+        "data/iteration40_endpoints.csv",
+        "data/point_provenance.csv"
+      ],
+      "output_stem": "figure_05_c"
+    }
+  ],
+  "inputs": {
+    "data/fields.json": "e16ef3be19fee027e733659bbca4b80ce01c104e5a9bf3535114da06e8d2538a",
+    "data/fields/t03.npz": "03f8f4d457c84db0fcb84a065dd1e1682ef2b60fc9441657af6d48e4b5dc5ba2",
+    "data/fields/t09.npz": "5220670755afa1fa04ab45459d67e6f92c274adb15fed9e5d519d2539fd0d952",
+    "data/fields/t12.npz": "de527377592db1a3e6cd1337974433400c4615cc0aaaef31f89e01b459cc5527",
+    "data/fields/t18.npz": "9ee80c9ccd70e5b42b0005454315bfed3340f0f0362bcb2d041f72fb796e1567",
+    "data/iteration40_endpoints.csv": "6655925a3ebb6a16a8001a1d857cb3d82752c0c6533958064dd9eb87ae3e90ef",
+    "data/iteration40_measured_candidates.csv": "ca3e2beeb4efe510dcd7537409d0b3a8da3ff7b11a292ec422fa3a9430bcfb16",
+    "data/learning_curves.csv": "01e2d9636032aaf5338ca9114f1c0166aaa97e54bce8cf357cc84e6b2de91d8c",
+    "data/midplane_t12.npz": "1810a7542fdb5e7da3ab77b25fa1e14e25399e31358699ac9d5f59f7097d07be",
+    "data/point_provenance.csv": "6436955a8862b9340f0b95e5b9d9de95e6238c4ff8605dcb85afaf03a840cdc2",
+    "data/replay_scene.json": "01a249c294bd3be7632752a07c9f24853cc2bddc03986c7b8c1cc6c71035a8ec",
+    "data/replay_trajectory.csv": "8840a448526ac8069d81eec38b01309545e7bbe73299383396ee394dcc0b239c"
+  },
+  "build_id": "5"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "supplementary_figure_02",
+  "display_label": "Supplementary Figure 2",
+  "title": "Three-dimensional oscillating-cylinder validation",
+  "panels": [
+    {
+      "id": "whole",
+      "content": "Grid resolution versus mean signed power",
+      "mapping": "Plot n versus mean_CP; reference values -4.39 (numerical) and -4.52 (experiment) are encoded in the plotting script. The archived cycle uncertainty column is retained, although this figure draws no error bars.",
+      "inputs": [
+        "data/oscillating_cylinder_resolution_convergence.csv"
+      ],
+      "output_stem": "supplementary_figure_02"
+    }
+  ],
+  "inputs": {
+    "data/oscillating_cylinder_resolution_convergence.csv": "67d6ab0ae961060feac4bfddcad1ea22628cc5e0e89277a368583a3772260914"
+  },
+  "build_id": "S2"
+}

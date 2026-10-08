@@ -1,0 +1,28 @@
+{
+  "schema": "agent-fluid.scientific-display.v1",
+  "id": "figure_06",
+  "display_label": "Extended Data Figure 1",
+  "title": "Deformable swimmer and CFD-body integration",
+  "panels": [
+    {
+      "id": "a",
+      "content": "Two-joint deformable swimmer",
+      "mapping": "Conceptual swimmer illustration; no experimental data. Excluded from the required numerical reproduction pipeline.",
+      "inputs": [],
+      "reproduction": "conceptual_illustration"
+    },
+    {
+      "id": "b",
+      "content": "CFD-body integration",
+      "mapping": "Text/equation diagram of the CFD-body update cycle; no experimental measurements. Excluded from required numerical reproduction.",
+      "inputs": [],
+      "reproduction": "conceptual_illustration"
+    }
+  ],
+  "inputs": {},
+  "scientific_sources": [
+    "code/simulation/2d/cases/dogfish_2d_shape_policy/src/geometry.jl",
+    "code/simulation/2d/cases/dogfish_2d_shape_policy/src/joint_control.jl",
+    "code/simulation/2d/cases/dogfish_2d_shape_policy/src/free_swim.jl"
+  ]
+}
